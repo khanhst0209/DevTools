@@ -10,6 +10,8 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using MyWebAPI.Services.Interfaces;
 using MyWebAPI.Services;
+using DevTools.Services.Interfaces;
+using DevTools.Services;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -56,6 +58,7 @@ builder.Services.AddAuthentication(options => {
 });
 builder.Services.AddScoped<IItemRepository, ItemRepository>();
 builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.AddScoped<IStringEncoderService, StringEncoderService>();
 
 var app = builder.Build();
 
