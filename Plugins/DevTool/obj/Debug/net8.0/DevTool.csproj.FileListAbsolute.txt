@@ -1,0 +1,11 @@
+D:\Coding\TKPM\Plugins\DevTool\bin\Debug\net8.0\DevTool.deps.json
+D:\Coding\TKPM\Plugins\DevTool\bin\Debug\net8.0\DevTool.dll
+D:\Coding\TKPM\Plugins\DevTool\bin\Debug\net8.0\DevTool.pdb
+D:\Coding\TKPM\Plugins\DevTool\obj\Debug\net8.0\DevTool.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\TKPM\Plugins\DevTool\obj\Debug\net8.0\DevTool.AssemblyInfoInputs.cache
+D:\Coding\TKPM\Plugins\DevTool\obj\Debug\net8.0\DevTool.AssemblyInfo.cs
+D:\Coding\TKPM\Plugins\DevTool\obj\Debug\net8.0\DevTool.csproj.CoreCompileInputs.cache
+D:\Coding\TKPM\Plugins\DevTool\obj\Debug\net8.0\DevTool.dll
+D:\Coding\TKPM\Plugins\DevTool\obj\Debug\net8.0\refint\DevTool.dll
+D:\Coding\TKPM\Plugins\DevTool\obj\Debug\net8.0\DevTool.pdb
+D:\Coding\TKPM\Plugins\DevTool\obj\Debug\net8.0\ref\DevTool.dll

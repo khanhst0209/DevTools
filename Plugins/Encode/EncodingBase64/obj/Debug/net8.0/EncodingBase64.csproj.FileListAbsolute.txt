@@ -1,0 +1,15 @@
+D:\Coding\TKPM\Plugins\Encode\EncodingBase64\bin\Debug\net8.0\EncodingBase64.deps.json
+D:\Coding\TKPM\Plugins\Encode\EncodingBase64\bin\Debug\net8.0\EncodingBase64.dll
+D:\Coding\TKPM\Plugins\Encode\EncodingBase64\bin\Debug\net8.0\EncodingBase64.pdb
+D:\Coding\TKPM\Plugins\Encode\EncodingBase64\bin\Debug\net8.0\DevTool.dll
+D:\Coding\TKPM\Plugins\Encode\EncodingBase64\bin\Debug\net8.0\DevTool.pdb
+D:\Coding\TKPM\Plugins\Encode\EncodingBase64\obj\Debug\net8.0\EncodingBase64.csproj.AssemblyReference.cache
+D:\Coding\TKPM\Plugins\Encode\EncodingBase64\obj\Debug\net8.0\EncodingBase64.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\TKPM\Plugins\Encode\EncodingBase64\obj\Debug\net8.0\EncodingBase64.AssemblyInfoInputs.cache
+D:\Coding\TKPM\Plugins\Encode\EncodingBase64\obj\Debug\net8.0\EncodingBase64.AssemblyInfo.cs
+D:\Coding\TKPM\Plugins\Encode\EncodingBase64\obj\Debug\net8.0\EncodingBase64.csproj.CoreCompileInputs.cache
+D:\Coding\TKPM\Plugins\Encode\EncodingBase64\obj\Debug\net8.0\Encoding.77EB1556.Up2Date
+D:\Coding\TKPM\Plugins\Encode\EncodingBase64\obj\Debug\net8.0\EncodingBase64.dll
+D:\Coding\TKPM\Plugins\Encode\EncodingBase64\obj\Debug\net8.0\refint\EncodingBase64.dll
+D:\Coding\TKPM\Plugins\Encode\EncodingBase64\obj\Debug\net8.0\EncodingBase64.pdb
+D:\Coding\TKPM\Plugins\Encode\EncodingBase64\obj\Debug\net8.0\ref\EncodingBase64.dll
