@@ -16,17 +16,23 @@ namespace MyWebAPI.Services
             _configuration = configuration;
             _key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:SigninKey"]));
         }
-        public string CreateToken(User user)
+        public string CreateToken(User user, IList<string> roles)
         {
             var claims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.Email, user.Email),
-                new Claim(JwtRegisteredClaimNames.GivenName, user.UserName)
+                new Claim(JwtRegisteredClaimNames.GivenName, user.UserName),
             };
+
+            foreach (var role in roles)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, role)); 
+            }
 
             var creds = new SigningCredentials(_key, SecurityAlgorithms.HmacSha256Signature);
 
-            var TokenDescriptor = new SecurityTokenDescriptor{
+            var TokenDescriptor = new SecurityTokenDescriptor
+            {
                 Subject = new ClaimsIdentity(claims),
                 Expires = DateTime.Now.AddDays(7),
                 SigningCredentials = creds,
@@ -38,7 +44,7 @@ namespace MyWebAPI.Services
 
             var token = TokenHandler.CreateToken(TokenDescriptor);
 
-            return TokenHandler.WriteToken(token); 
+            return TokenHandler.WriteToken(token);
         }
 
     }

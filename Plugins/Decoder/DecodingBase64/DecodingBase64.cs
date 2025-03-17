@@ -1,15 +1,23 @@
-﻿using System.Text;
+﻿using System.IO.Pipes;
+using System.Text;
+using DevTool.Roles;
 using Plugins.DevTool;
 
 namespace Plugins.Decoding;
 
 public class DecodingBase64 : IDevToolPlugin
 {
-    public int id => 2;
+    public int id { get; set; }
 
     public string Name => "DecodingBase64";
 
     public string Category => "Decode";
+    public string Description { get; set; } = "This is Decoding Method used to decode a string(Base 64) to string. Input : string , output : string";
+    
+    public bool IsActive { get; set; } = true;
+
+    public Roles AccessiableRole { get ; set; } = Roles.Anonymous;
+    public bool IsPremiumTool { get; set; } = false;
 
     public object Execute(object input)
     {
@@ -17,7 +25,7 @@ public class DecodingBase64 : IDevToolPlugin
         {
             throw new ArgumentException("Invalid input. Expected a Base64 string.");
         }
-        
+
         try
         {
             byte[] bytes = Convert.FromBase64String(base64String);

@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using DevTool.Roles;
 using Plugins.DevTool;
 
 
@@ -6,10 +7,17 @@ namespace Plugins.Encode
 {
     public class EncodingBase64 : IDevToolPlugin
     {
-        public int id => 1;
         public string Name => "EncodingBase64";
 
-        public string Category => "";
+        public string Category => "Encode";
+        
+        public int id { get ; set; }
+
+        public string Description { get; set; } = "This is Encoding Method used to encode a string into Base 64. Input : string , output : string";
+        
+        public Roles AccessiableRole { get; set;} = Roles.Anonymous;
+        public bool IsActive { get; set; } = true;
+        public bool IsPremiumTool { get; set;} = false;
 
         public object Execute(object input)
         {

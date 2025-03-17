@@ -13,3 +13,4 @@ D:\Coding\TKPM\Plugins\Decoder\DecodingBase64\obj\Release\net8.0\DecodingBase64.
 D:\Coding\TKPM\Plugins\Decoder\DecodingBase64\obj\Release\net8.0\refint\DecodingBase64.dll
 D:\Coding\TKPM\Plugins\Decoder\DecodingBase64\obj\Release\net8.0\DecodingBase64.pdb
 D:\Coding\TKPM\Plugins\Decoder\DecodingBase64\obj\Release\net8.0\ref\DecodingBase64.dll
+D:\Coding\TKPM\Plugins\Decoder\DecodingBase64\obj\Release\net8.0\DecodingBase64.sourcelink.json

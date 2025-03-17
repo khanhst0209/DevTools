@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EncodingBase64")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1f3a76a03d7593328360c7f7d5afbf9cc3d749a3")]
 [assembly: System.Reflection.AssemblyProductAttribute("EncodingBase64")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EncodingBase64")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

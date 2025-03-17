@@ -2,7 +2,7 @@ namespace DevTools.Dto.Plugins
 {
     public class PluginRequest
     {
-        public string PluginName { get; set; }
+        public int id { get; set; }
         public object Input { get; set; }
     }
 }

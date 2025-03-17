@@ -22,23 +22,6 @@ namespace MyWebAPI.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("DevTools.data.concac", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
-
-                    b.Property<string>("name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("id");
-
-                    b.ToTable("concacnho");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -68,15 +51,21 @@ namespace MyWebAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "1a2b3c4d-1234-5678-9abc-def123456789",
+                            Id = "c1e2bcd1-5f2b-4ad8-b8d5-08d3b2f8e63b",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "2b3c4d5e-2345-6789-abcd-ef1234567890",
+                            Id = "aa24b563-3c1d-41f2-91ad-08d3b2f8e63c",
                             Name = "User",
                             NormalizedName = "USER"
+                        },
+                        new
+                        {
+                            Id = "f3b87c41-1f6d-4a2f-8d1a-08d3b2f8e63d",
+                            Name = "Premium",
+                            NormalizedName = "PREMIUM"
                         });
                 });
 

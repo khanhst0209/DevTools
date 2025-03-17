@@ -1,4 +1,4 @@
-using DevTools.data;
+
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -15,7 +15,6 @@ namespace MyWebAPI.data
 
         #region DbSet
         public DbSet<Item> Items { get; set; }
-        public DbSet<concac> concacs {get; set;}
         #endregion
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -45,24 +44,30 @@ namespace MyWebAPI.data
             //     .HasForeignKey(e => e.ReceiptId).
             //     HasConstraintName("FK_ReceiptDetails_Receipt");
 
-                
+
             // });
 
             List<IdentityRole> roles = new List<IdentityRole>
+            {
+                new IdentityRole()
                 {
-                    new IdentityRole()
-                    {
-                        Id = "1a2b3c4d-1234-5678-9abc-def123456789",  
-                        Name = "Admin",
-                        NormalizedName = "ADMIN"
-                    },
-                    new IdentityRole()
-                    {
-                        Id = "2b3c4d5e-2345-6789-abcd-ef1234567890",  
-                        Name = "User",
-                        NormalizedName = "USER"
-                    }
-                };
+                    Id = "c1e2bcd1-5f2b-4ad8-b8d5-08d3b2f8e63b", // 👈 Đặt GUID cố định
+                    Name = "Admin",
+                    NormalizedName = "ADMIN"
+                },
+                new IdentityRole()
+                {
+                    Id = "aa24b563-3c1d-41f2-91ad-08d3b2f8e63c", // 👈 Đặt GUID cố định
+                    Name = "User",
+                    NormalizedName = "USER"
+                },
+                new IdentityRole()
+                {
+                    Id = "f3b87c41-1f6d-4a2f-8d1a-08d3b2f8e63d", // 👈 Đặt GUID cố định
+                    Name = "Premium",
+                    NormalizedName = "PREMIUM"
+                }
+            };
             modelBuilder.Entity<IdentityRole>().HasData(roles);
         }
     }

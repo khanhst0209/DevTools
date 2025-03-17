@@ -1,7 +1,9 @@
 using System.IO;
-namespace Plugins.Manager;
 using System;
 using System.IO;
+using Plugins.Manager;
+namespace Services.BackgroundServices.PluginsWatchers;
+
 
 public static class PluginWatcher
 {
@@ -14,9 +16,9 @@ public static class PluginWatcher
             NotifyFilter = NotifyFilters.FileName | NotifyFilters.LastWrite
         };
 
-        _watcher.Created += (s, e) => ReloadPlugins();
+        _watcher.Created += OnCreated;
         _watcher.Changed += (s, e) => ReloadPlugins();
-        _watcher.Deleted += (s, e) => ReloadPlugins();
+        _watcher.Deleted += OnDeleted;
 
         _watcher.EnableRaisingEvents = true;
     }
@@ -25,5 +27,17 @@ public static class PluginWatcher
     {
         Console.WriteLine("🔄 Plugin folder changed. Reloading plugins...");
         PluginManager.LoadPlugins();
+    }
+
+    private static void OnCreated(object sender, FileSystemEventArgs e)
+    {
+        Console.WriteLine("🔄 Plugin folder Created. Adding New Plugin");
+        PluginManager.AddPlugin(e.FullPath);
+    }
+
+    private static void OnDeleted(object sender, FileSystemEventArgs e)
+    {
+        Console.WriteLine($"🗑️ Plugin bị xóa: {e.FullPath}");
+        PluginManager.RemovePlugin(e.FullPath);
     }
 }
