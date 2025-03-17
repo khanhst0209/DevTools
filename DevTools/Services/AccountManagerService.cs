@@ -5,6 +5,7 @@ using MyWebAPI.data;
 using MyWebAPI.Dto.user;
 using MyWebAPI.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using DevTools.Exceptions.AccountManager.LoginException;
 
 
 namespace DevTools.Services
@@ -25,20 +26,17 @@ namespace DevTools.Services
         public async Task<NewUserDTO> Login(LoginDTO logindto)
         {
             var user = await _userManager.Users.FirstOrDefaultAsync(x => x.UserName == logindto.username);
-            Console.WriteLine("check 1");
             if (user == null)
             {
-                return null;
+                throw new InvalidUsernameOrPassword(logindto.username, logindto.password);
             }
-            Console.WriteLine("check 1");
 
             var result = await _signinManager.CheckPasswordSignInAsync(user, logindto.password, false);
 
             if (!result.Succeeded)
-                return null;
-            Console.WriteLine("check 2");
+                throw new InvalidUsernameOrPassword(logindto.username, logindto.password);
             var roles = await _userManager.GetRolesAsync(user);
-            Console.WriteLine("check 3");
+            
             return new NewUserDTO
             {
                 UserName = user.UserName,

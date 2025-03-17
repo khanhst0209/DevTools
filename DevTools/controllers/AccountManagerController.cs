@@ -1,4 +1,5 @@
 using DevTools.Dto.user;
+using DevTools.Exceptions.AccountManager.LoginException;
 using DevTools.Exceptions.AccountManager.RegisterException;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -23,19 +24,24 @@ namespace MyWebAPI.controllers
         [HttpPost("Login")]
         public async Task<IActionResult> Login(LoginDTO logindto)
         {
-            Console.WriteLine("check -2");
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                return BadRequest(new ErrorRespones(ModelState.ToString()));
             }
-            Console.WriteLine("check -1");
-            var user = _accountManagerService.Login(logindto);
-            if (user == null)
+            try
             {
-                return Unauthorized("Invalid Username or Password");
-            }
+                var user = await _accountManagerService.Login(logindto);
+                if (user == null)
+                {
+                    return Unauthorized("Invalid Username or Password");
+                }
 
-            return Ok(user);
+                return Ok(user);
+            }
+            catch(InvalidUsernameOrPassword ex)
+            {
+                return Unauthorized(new ErrorRespones(ex.Message));
+            }
 
         }
 
@@ -44,7 +50,7 @@ namespace MyWebAPI.controllers
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest(registerDto);
+                return BadRequest(new ErrorRespones(registerDto.ToString()));
             }
             try
             {
@@ -53,15 +59,15 @@ namespace MyWebAPI.controllers
             }
             catch (UserCreationFailedException ex)
             {
-                return BadRequest(new { Error = ex.Message });
+                return BadRequest(new ErrorRespones(ex.Message));
             }
             catch (RoleAssignmentFailedException ex)
             {
-                return StatusCode(500, new { Error = ex.Message });
+                return StatusCode(500, new ErrorRespones(ex.Message));
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { Error = "An unexpected error occurred: " + ex.Message });
+                return StatusCode(500, new ErrorRespones("An unexpected error occurred: " + ex.Message));
             }
         }
 
