@@ -60,6 +60,12 @@ namespace MyWebAPI.data
             {
                 new IdentityRole()
                 {
+                    Id = "c1e2bcd1-5f2b-4ad8-b8d5-08d3b2f81231", 
+                    Name = "Anonymous",
+                    NormalizedName = "ANONYMOUS"
+                },
+                new IdentityRole()
+                {
                     Id = "c1e2bcd1-5f2b-4ad8-b8d5-08d3b2f8e63b", 
                     Name = "Admin",
                     NormalizedName = "ADMIN"

@@ -12,8 +12,8 @@ using MyWebAPI.data;
 namespace MyWebAPI.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20250309134319_addconac")]
-    partial class addconac
+    [Migration("20250318104619_cac")]
+    partial class cac
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,7 +25,7 @@ namespace MyWebAPI.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("DevTools.data.concac", b =>
+            modelBuilder.Entity("DevTools.data.Plugin", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -33,13 +33,53 @@ namespace MyWebAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
 
-                    b.Property<string>("name")
+                    b.Property<string>("AccessiableRole")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Categoryid")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsPremiumTool")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("id");
 
-                    b.ToTable("concacnho");
+                    b.HasIndex("AccessiableRole");
+
+                    b.HasIndex("Categoryid");
+
+                    b.ToTable("Plugin");
+                });
+
+            modelBuilder.Entity("DevTools.data.PluginCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PluginCategory");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -71,15 +111,27 @@ namespace MyWebAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "1a2b3c4d-1234-5678-9abc-def123456789",
+                            Id = "c1e2bcd1-5f2b-4ad8-b8d5-08d3b2f81231",
+                            Name = "Anonymous",
+                            NormalizedName = "ANONYMOUS"
+                        },
+                        new
+                        {
+                            Id = "c1e2bcd1-5f2b-4ad8-b8d5-08d3b2f8e63b",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "2b3c4d5e-2345-6789-abcd-ef1234567890",
+                            Id = "aa24b563-3c1d-41f2-91ad-08d3b2f8e63c",
                             Name = "User",
                             NormalizedName = "USER"
+                        },
+                        new
+                        {
+                            Id = "f3b87c41-1f6d-4a2f-8d1a-08d3b2f8e63d",
+                            Name = "Premium",
+                            NormalizedName = "PREMIUM"
                         });
                 });
 
@@ -282,6 +334,25 @@ namespace MyWebAPI.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("DevTools.data.Plugin", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", "Role")
+                        .WithMany()
+                        .HasForeignKey("AccessiableRole")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DevTools.data.PluginCategory", "category")
+                        .WithMany("Plugins")
+                        .HasForeignKey("Categoryid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Role");
+
+                    b.Navigation("category");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -331,6 +402,11 @@ namespace MyWebAPI.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("DevTools.data.PluginCategory", b =>
+                {
+                    b.Navigation("Plugins");
                 });
 #pragma warning restore 612, 618
         }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyWebAPI.data;
 
@@ -11,9 +12,11 @@ using MyWebAPI.data;
 namespace MyWebAPI.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250318104021_ehehehhe")]
+    partial class ehehehhe
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,6 +38,7 @@ namespace MyWebAPI.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("Categoryid")
+                        .HasMaxLength(50)
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
@@ -340,7 +344,7 @@ namespace MyWebAPI.Migrations
                         .IsRequired();
 
                     b.HasOne("DevTools.data.PluginCategory", "category")
-                        .WithMany("Plugins")
+                        .WithMany()
                         .HasForeignKey("Categoryid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -399,11 +403,6 @@ namespace MyWebAPI.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("DevTools.data.PluginCategory", b =>
-                {
-                    b.Navigation("Plugins");
                 });
 #pragma warning restore 612, 618
         }

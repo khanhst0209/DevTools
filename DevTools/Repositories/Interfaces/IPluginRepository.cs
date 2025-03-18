@@ -13,6 +13,8 @@ namespace DevTools.Repositories.Interfaces
          Task PremiumAsync(int pluginId, bool IsPremium);
          Task RemovePluginAsync(int pluginId);
 
-         Task<bool> CheckExistByName(string name);
+         Task<int> GetIdByName(string name);
+
+         Task CheckPluginExistInFoulder();
     }
 }

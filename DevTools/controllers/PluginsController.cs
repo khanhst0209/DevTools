@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
-using Plugins.Manager;
 using DevTools.Dto.Plugins;
 using System.Security.Claims;
+using DevTools.Services.Interfaces;
+using MyWebAPI.Dto;
+using System.Threading.Tasks;
 
 namespace DevTools.controllers
 {
@@ -9,11 +11,25 @@ namespace DevTools.controllers
     [ApiController]
     public class PluginsController : ControllerBase
     {
-        [HttpGet("plugins")]
-        public IActionResult GetPlugins()
+
+
+        private readonly IPluginManagerService _pluginmanagerService;
+        public PluginsController(IPluginManagerService _pluginmanagerService)
         {
-            var plugins = PluginManager.GetPlugins().Select(p => new { p.Name, p.Category, p.id });
-            return Ok(plugins);
+            this._pluginmanagerService = _pluginmanagerService;
+        }
+        [HttpGet("plugins")]
+        public async Task<IActionResult> GetPlugins()
+        {
+            try
+            {
+                var plugin = await _pluginmanagerService.GetAllActivePlugin();
+                return Ok(plugin);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ErrorRespones(ex.Message));
+            }
         }
 
         [HttpPost("execute")]
@@ -21,16 +37,12 @@ namespace DevTools.controllers
         {
             try
             {
-                var plugin = PluginManager.GetPlugins().FirstOrDefault(p => p.id == request.id);
-                if (plugin == null) return NotFound("Plugin not found");
-               
-
-                string result = plugin.Execute(request.Input.ToString()).ToString();
-                return Ok(new { Result = result });
+                var result = _pluginmanagerService.Execute(request.id, request.Input.ToString());
+                return Ok(result);
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                return BadRequest(e.Message);
+                return BadRequest(new ErrorRespones(ex.Message));
             }
         }
     }

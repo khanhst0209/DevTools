@@ -17,7 +17,6 @@ namespace DevTools.data
         public string Name { get; set; }
 
         [Required]
-        [MaxLength(50)]
         public int Categoryid { get; set; }
 
         [MaxLength(500)]
@@ -34,5 +33,8 @@ namespace DevTools.data
 
         [ForeignKey("AccessiableRole")]
         public IdentityRole Role { get; set; }
+        
+        [ForeignKey("Categoryid")]
+        public PluginCategory category {get; set;}
     }
 }

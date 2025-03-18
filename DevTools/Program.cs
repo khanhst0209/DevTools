@@ -11,8 +11,11 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 using MyWebAPI.Services.Interfaces;
 using MyWebAPI.Services;
 using DevTools.Services;
-using Plugins.Manager;
-using Services.BackgroundServices.PluginsWatchers;
+// using Services.BackgroundServices.PluginsWatchers;
+using DevTools.Services.Interfaces;
+using DevTools.Repositories.Interfaces;
+using DevTools.data;
+using DevTools.Repositories;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -86,9 +89,21 @@ builder.Services.AddAuthentication(options => {
         IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(builder.Configuration["JWT:SigninKey"]))
     };
 });
+
+//  services
 builder.Services.AddScoped<IItemRepository, ItemRepository>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IAccountManagerService, AccountManagerService>();
+builder.Services.AddScoped<IPluginManagerService, PluginManagerService>();
+
+//  repositories
+builder.Services.AddScoped<IPluginCategoryRepository, PluginCategoryRepository>();
+builder.Services.AddScoped<IPluginManagerRepository, PluginManagerRepository>();
+builder.Services.AddScoped<IPluginRepository, PluginRepository>();
+builder.Services.AddScoped<IRoleRepository, RoleRepository>();
+
+// Background Services
+builder.Services.AddHostedService<PluginWatcherService>(); // Thêm vào Hosted Services
 
 var app = builder.Build();
 
@@ -105,9 +120,14 @@ app.UseAuthentication();
 app.UseAuthorization(); 
 app.MapControllers();
 
-PluginManager.LoadPlugins();
+using (var scope = app.Services.CreateScope())
+{
+    var pluginManagerService = scope.ServiceProvider.GetRequiredService<IPluginManagerService>();
+    await pluginManagerService.LoadPlugins();
+}
 
-PluginWatcher.StartWatching();
+// var pluginWatcher = app.Services.GetRequiredService<PluginWatcher>();
+// pluginWatcher.StartWatching();
 
 app.Run();
 
