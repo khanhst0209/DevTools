@@ -62,7 +62,7 @@ namespace DevTools.Services
                             var temp = new CreatePluginDTO
                             {
                                 Name = plugin.Name,
-                                Category = plugin.Category,
+                                Category = plugin.Category.ToString(),
                                 Description = plugin.Description,
                                 AccessiableRole = plugin.AccessiableRole,
                                 IsActive = plugin.IsActive,
@@ -133,10 +133,9 @@ namespace DevTools.Services
         {
             try
             {
-                
                 var plugin = await _pluginmanagerRepository.GetByIdAsync(Id);
 
-                var result = plugin.Execute(input);
+                var result =  plugin.Execute(input);
                 return result;
             }
             catch (PluginNotFound ex)

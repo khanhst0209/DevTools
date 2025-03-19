@@ -1,5 +1,6 @@
 ﻿using System.IO.Pipes;
 using System.Text;
+using DevTool.Categories;
 using DevTool.Roles;
 using Plugins.DevTool;
 
@@ -11,7 +12,7 @@ public class DecodingBase64 : IDevToolPlugin
 
     public string Name => "DecodingBase64";
 
-    public string Category => "Decode";
+    public Category Category => Category.Decode;
     public string Description { get; set; } = "This is Decoding Method used to decode a string(Base 64) to string. Input : string , output : string";
     
     public bool IsActive { get; set; } = true;

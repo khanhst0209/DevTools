@@ -351,3 +351,4 @@ D:\Coding\TKPM\DevTools\obj\Debug\net8.0\refint\MyWebAPI.dll
 D:\Coding\TKPM\DevTools\obj\Debug\net8.0\MyWebAPI.pdb
 D:\Coding\TKPM\DevTools\obj\Debug\net8.0\MyWebAPI.genruntimeconfig.cache
 D:\Coding\TKPM\DevTools\obj\Debug\net8.0\ref\MyWebAPI.dll
+D:\Coding\TKPM\DevTools\bin\Debug\net8.0\Newtonsoft.Json.dll

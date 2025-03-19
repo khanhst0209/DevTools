@@ -1,4 +1,5 @@
-﻿using DevTool.Roles;
+﻿using DevTool.Categories;
+using DevTool.Roles;
 
 namespace Plugins.DevTool
 {
@@ -6,7 +7,7 @@ namespace Plugins.DevTool
     {
         public int id { get; set; }
         public string Name { get; }
-        public string Category { get; } // Encode, Generate,...
+        public Category Category { get; } // Encode, Generate,...
         public string Description { get; set; }
 
         public Roles AccessiableRole { get; set; }

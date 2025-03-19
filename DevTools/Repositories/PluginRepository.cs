@@ -56,7 +56,6 @@ namespace DevTools.Repositories
 
         public async Task AddPluginAsync(CreatePluginDTO createplugindto)
         {
-
             if (await _plugincategoryrepository.CheckExistByNameAsync(createplugindto.Category) == false)
             {
                 await _plugincategoryrepository.AddPluginCategoryAsync(createplugindto.Category);

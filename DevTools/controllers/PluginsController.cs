@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using DevTools.Dto.Plugins;
-using System.Security.Claims;
 using DevTools.Services.Interfaces;
 using MyWebAPI.Dto;
-using System.Threading.Tasks;
+using DevTools.Helper.Converter;
+
 
 namespace DevTools.controllers
 {
@@ -32,12 +32,17 @@ namespace DevTools.controllers
             }
         }
 
+
+
         [HttpPost("execute")]
-        public IActionResult ExecutePlugin([FromBody] PluginRequest request)
+        public async Task<IActionResult> ExecutePlugin([FromBody] PluginRequest request)
         {
             try
             {
-                var result = _pluginmanagerService.Execute(request.id, request.Input.ToString());
+                object inputData = Converter.ConvertJsonElement(request.Input);
+                Console.WriteLine($"Data type of input: {inputData.GetType()}");
+                var result = await _pluginmanagerService.Execute(request.id, inputData);
+
                 return Ok(result);
             }
             catch (Exception ex)
@@ -45,5 +50,6 @@ namespace DevTools.controllers
                 return BadRequest(new ErrorRespones(ex.Message));
             }
         }
+
     }
 }

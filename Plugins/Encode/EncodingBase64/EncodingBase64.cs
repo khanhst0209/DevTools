@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using DevTool.Categories;
 using DevTool.Roles;
 using Plugins.DevTool;
 
@@ -9,7 +10,7 @@ namespace Plugins.Encode
     {
         public string Name => "EncodingBase64";
 
-        public string Category => "Encode";
+        public Category Category => Category.Encode;
         
         public int id { get ; set; }
 
