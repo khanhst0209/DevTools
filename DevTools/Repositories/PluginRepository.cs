@@ -70,7 +70,8 @@ namespace DevTools.Repositories
                 Description = createplugindto.Description,
                 IsActive = createplugindto.IsActive,
                 IsPremiumTool = createplugindto.IsPremiumTool,
-                AccessiableRoleId = roleid
+                AccessiableRoleId = roleid,
+                Icon = createplugindto.Icon
             };
             await _context.Plugins.AddAsync(newplugin);
             await _context.SaveChangesAsync();

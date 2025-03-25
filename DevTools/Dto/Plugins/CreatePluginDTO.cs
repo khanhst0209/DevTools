@@ -10,5 +10,6 @@ namespace DevTools.Dto.Plugins
         public Roles AccessiableRole { get; set; }
         public bool IsActive { get; set; }
         public bool IsPremiumTool { get; set; }
+        public string Icon{get; set;}
     }
 }

@@ -66,7 +66,8 @@ namespace DevTools.Services
                                 Description = plugin.Description,
                                 AccessiableRole = plugin.AccessiableRole,
                                 IsActive = plugin.IsActive,
-                                IsPremiumTool = plugin.IsPremiumTool
+                                IsPremiumTool = plugin.IsPremiumTool,
+                                Icon = plugin.icon
                             };
 
                             await _pluginRepository.AddPluginAsync(temp);
@@ -125,7 +126,9 @@ namespace DevTools.Services
                 Id = plugin.Id,
                 Name = plugin.Name,
                 Category = plugin.CategoryId,
-                Decription = plugin.Description
+                Decription = plugin.Description,
+                IsPremium = plugin.IsPremiumTool,
+                Icon = plugin.Icon
             }).ToList();
         }
 

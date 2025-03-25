@@ -14,7 +14,10 @@ namespace Plugins.DevTool
         public bool IsActive { get; set; }
         public bool IsPremiumTool {get; set;}
 
+        public string icon {get; set;}
+
         public object Execute(object input);
+
 
     }
 }

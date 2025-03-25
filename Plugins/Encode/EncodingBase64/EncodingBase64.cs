@@ -19,6 +19,21 @@ namespace Plugins.Encode
         public Roles AccessiableRole { get; set;} = Roles.Anonymous;
         public bool IsActive { get; set; } = true;
         public bool IsPremiumTool { get; set;} = false;
+        public string icon { get; set; } = @"
+        <svg
+            className=""w-10 h-10""
+            xmlns=""http://www.w3.org/2000/svg""
+            viewBox=""0 0 24 24""
+            fill=""none""
+            stroke=""currentColor""
+            stroke-width=""2""
+            stroke-linecap=""round""
+            stroke-linejoin=""round""
+        >
+            <path d=""M4 12h16""></path>
+            <path d=""M12 4v16""></path>
+        </svg>";
+
 
         public object Execute(object input)
         {

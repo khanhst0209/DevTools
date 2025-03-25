@@ -25,6 +25,9 @@ namespace DevTools.data
         [DefaultValue(true)]
         public bool IsActive { get; set; }
 
+        [DefaultValue("")]
+        public string Icon{get; set;}
+
         [DefaultValue(false)]
         public bool IsPremiumTool { get; set; }
 

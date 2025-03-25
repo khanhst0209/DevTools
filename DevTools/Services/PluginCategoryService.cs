@@ -26,7 +26,10 @@ namespace DevTools.Services
                 plugins = x.Plugins?.Select(y => new PluginMinimize
                 {
                     Id = y.Id,
-                    Name = y.Name
+                    Name = y.Name,
+                    IsPremium = y.IsPremiumTool,
+                    Icon = y.Icon
+
                 }).ToList() ?? new List<PluginMinimize>()
             }).ToList();
 
