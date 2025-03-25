@@ -54,7 +54,7 @@ namespace MyWebAPI.data
             modelBuilder.Entity<Plugin>()
                 .HasOne(p => p.Role)
                 .WithMany()
-                .HasForeignKey(p => p.AccessiableRole);
+                .HasForeignKey(p => p.AccessiableRoleId);
 
             List<IdentityRole> roles = new List<IdentityRole>
             {

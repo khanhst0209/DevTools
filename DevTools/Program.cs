@@ -95,6 +95,7 @@ builder.Services.AddScoped<IItemRepository, ItemRepository>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IAccountManagerService, AccountManagerService>();
 builder.Services.AddScoped<IPluginManagerService, PluginManagerService>();
+builder.Services.AddScoped<IPluginCategoryService, PluginCategoryService>();
 
 //  repositories
 builder.Services.AddScoped<IPluginCategoryRepository, PluginCategoryRepository>();

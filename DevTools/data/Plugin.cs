@@ -10,14 +10,14 @@ namespace DevTools.data
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [MaxLength(100)]
         public string Name { get; set; }
 
         [Required]
-        public int Categoryid { get; set; }
+        public int CategoryId { get; set; }
 
         [MaxLength(500)]
         public string Description { get; set; }
@@ -29,12 +29,12 @@ namespace DevTools.data
         public bool IsPremiumTool { get; set; }
 
         [Required]
-        public string AccessiableRole { get; set; }
+        public string AccessiableRoleId  { get; set; }
 
-        [ForeignKey("AccessiableRole")]
+        [ForeignKey("AccessiableRoleId")]
         public IdentityRole Role { get; set; }
         
-        [ForeignKey("Categoryid")]
+        [ForeignKey("CategoryId")]
         public PluginCategory category {get; set;}
     }
 }

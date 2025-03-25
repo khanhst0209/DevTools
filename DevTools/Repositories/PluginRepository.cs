@@ -66,11 +66,11 @@ namespace DevTools.Repositories
             var newplugin = new Plugin
             {
                 Name = createplugindto.Name,
-                Categoryid = Categoryid,
+                CategoryId = Categoryid,
                 Description = createplugindto.Description,
                 IsActive = createplugindto.IsActive,
                 IsPremiumTool = createplugindto.IsPremiumTool,
-                AccessiableRole = roleid
+                AccessiableRoleId = roleid
             };
             await _context.Plugins.AddAsync(newplugin);
             await _context.SaveChangesAsync();
@@ -83,7 +83,7 @@ namespace DevTools.Repositories
 
         public async Task<List<Plugin>> GetAllByCategoryAsync(int CategoryId)
         {
-            return await _context.Plugins.Where(p => p.Categoryid == CategoryId && p.IsActive == true).ToListAsync();
+            return await _context.Plugins.Where(p => p.CategoryId == CategoryId && p.IsActive == true).ToListAsync();
         }
 
 
@@ -94,14 +94,14 @@ namespace DevTools.Repositories
                 return;
 
             _context.Plugins.Remove(item);
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
 
         public async Task<int> GetIdByName(string name)
         {
             var item = await _context.Plugins.FirstOrDefaultAsync(x => x.Name == name);
             if (item != null)
-                return item.id;
+                return item.Id;
 
             return -1;
         }
@@ -115,7 +115,7 @@ namespace DevTools.Repositories
         {
             Console.WriteLine("==============================================");
             Console.WriteLine("Check between Database and foulder tools");
-            var plugins_id = await _context.Plugins.Select(x => x.id).ToListAsync();
+            var plugins_id = await _context.Plugins.Select(x => x.Id).ToListAsync();
             foreach (var plugin_id in plugins_id)
             {
                 

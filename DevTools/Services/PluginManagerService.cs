@@ -122,9 +122,9 @@ namespace DevTools.Services
             var plugins = await _pluginRepository.GetAllAsync();
             return plugins.Select(plugin => new PluginsResponeDTO
             {
-                Id = plugin.id,
+                Id = plugin.Id,
                 Name = plugin.Name,
-                Category = plugin.Categoryid,
+                Category = plugin.CategoryId,
                 Decription = plugin.Description
             }).ToList();
         }
