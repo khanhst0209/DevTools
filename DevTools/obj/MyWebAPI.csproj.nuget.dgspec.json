@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Coding\\TKPM\\DevTools\\MyWebAPI.csproj": {}
+    "D:\\Coding\\TKPM\\Devtools\\MyWebAPI.csproj": {}
   },
   "projects": {
-    "D:\\Coding\\TKPM\\DevTools\\MyWebAPI.csproj": {
+    "D:\\Coding\\TKPM\\Devtools\\MyWebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Coding\\TKPM\\DevTools\\MyWebAPI.csproj",
+        "projectUniqueName": "D:\\Coding\\TKPM\\Devtools\\MyWebAPI.csproj",
         "projectName": "MyWebAPI",
-        "projectPath": "D:\\Coding\\TKPM\\DevTools\\MyWebAPI.csproj",
+        "projectPath": "D:\\Coding\\TKPM\\Devtools\\MyWebAPI.csproj",
         "packagesPath": "C:\\Users\\phamn\\.nuget\\packages\\",
-        "outputPath": "D:\\Coding\\TKPM\\DevTools\\obj\\",
+        "outputPath": "D:\\Coding\\TKPM\\Devtools\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\phamn\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -51,7 +51,8 @@ namespace DevTools.Services
             var appuser = new User
             {
                 UserName = registerDto.Username,
-                Email = registerDto.Email
+                Email = registerDto.Email,
+                IsPremium = false
             };
 
             var createdUser = await _userManager.CreateAsync(appuser, registerDto.Password);
