@@ -8,18 +8,18 @@ namespace Plugins.Encode
 {
     public class EncodingBase64 : IDevToolPlugin
     {
+        public int Id { get; set; }
         public string Name => "EncodingBase64";
 
         public Category Category => Category.Encode;
-        
-        public int id { get ; set; }
+
 
         public string Description { get; set; } = "This is Encoding Method used to encode a string into Base 64. Input : string , output : string";
-        
-        public Roles AccessiableRole { get; set;} = Roles.Anonymous;
+
+        public Roles AccessiableRole { get; set; } = Roles.Anonymous;
         public bool IsActive { get; set; } = true;
-        public bool IsPremiumTool { get; set;} = false;
-        public string icon { get; set; } = @"
+        public bool IsPremium { get; set; } = false;
+        public string Icon { get; set; } = @"
         <svg
             className=""w-10 h-10""
             xmlns=""http://www.w3.org/2000/svg""
@@ -37,7 +37,7 @@ namespace Plugins.Encode
 
         public object Execute(object input)
         {
-            if(input is not string)
+            if (input is not string)
             {
                 throw new Exception("Invalid input");
             }

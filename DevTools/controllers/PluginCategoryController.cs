@@ -6,7 +6,7 @@ using MyWebAPI.Dto;
 namespace DevTools.controllers
 {
 
-    [Route("api/PluginCategory")]
+    [Route("PluginCategory")]
     [ApiController]
     public class PluginCategoryController : ControllerBase
     {
@@ -16,7 +16,7 @@ namespace DevTools.controllers
             this._plugincategoryservice = _plugincategoryservice;
         }
 
-        [HttpGet("Categories")]
+        [HttpGet]
         public async Task<IActionResult> GetAllCategoriesWithPlugins()
         {
             try

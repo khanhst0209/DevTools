@@ -49,7 +49,7 @@ namespace MyWebAPI.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("IsPremiumTool")
+                    b.Property<bool>("IsPremium")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")

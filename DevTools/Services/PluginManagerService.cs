@@ -1,4 +1,5 @@
 using System.Reflection;
+using AutoMapper;
 using DevTools.Dto.Plugins;
 using DevTools.Exceptions.Plugins.PluginsException.cs;
 using DevTools.Repositories.Interfaces;
@@ -11,30 +12,34 @@ namespace DevTools.Services
     {
         private readonly IPluginManagerRepository _pluginmanagerRepository;
         private readonly IPluginRepository _pluginRepository;
-
+        private readonly IMapper _mapper;
         private readonly string _pluginFolder = "./Plugins/DevTool_Plugins";
 
-        public PluginManagerService(IPluginManagerRepository _pluginmanagerRepository,
-        IPluginRepository _pluginRepository,
-        IPluginCategoryRepository _plugincategoryrepository)
+        public PluginManagerService(
+            IPluginManagerRepository pluginmanagerRepository,
+            IPluginRepository pluginRepository,
+            IMapper mapper)
         {
             if (!Directory.Exists(_pluginFolder))
                 Directory.CreateDirectory(_pluginFolder);
-            this._pluginRepository = _pluginRepository;
-            this._pluginmanagerRepository = _pluginmanagerRepository;
-            // this._plugincategoryrepository = _plugincategoryrepository;
+
+            _pluginmanagerRepository = pluginmanagerRepository;
+            _pluginRepository = pluginRepository;
+            _mapper = mapper;
         }
 
         public async Task LoadPlugins()
         {
             Console.WriteLine("================================================");
-            Console.WriteLine("Map tool in folder into database");
+            Console.WriteLine("Mapping tools from folder into database...");
             await _pluginmanagerRepository.ClearAsync();
+
             foreach (var dll in Directory.GetFiles(_pluginFolder, "*.dll"))
             {
-                Console.WriteLine($"check {dll}");
+                Console.WriteLine($"Checking {dll}...");
                 await LoadPluginFromFile(dll);
             }
+
             await _pluginRepository.CheckPluginExistInFoulder();
             Console.WriteLine("================================================");
         }
@@ -59,30 +64,18 @@ namespace DevTools.Services
                         var id = await _pluginRepository.GetIdByName(plugin.Name);
                         if (id == -1)
                         {
-                            var temp = new CreatePluginDTO
-                            {
-                                Name = plugin.Name,
-                                Category = plugin.Category.ToString(),
-                                Description = plugin.Description,
-                                AccessiableRole = plugin.AccessiableRole,
-                                IsActive = plugin.IsActive,
-                                IsPremiumTool = plugin.IsPremiumTool,
-                                Icon = plugin.icon
-                            };
-
+                            var temp = _mapper.Map<CreatePluginDTO>(plugin);
                             await _pluginRepository.AddPluginAsync(temp);
-
-                            var Id = await _pluginRepository.GetIdByName(plugin.Name);
-                            plugin.id = Id;
+                            plugin.Id = await _pluginRepository.GetIdByName(plugin.Name);
                         }
                         else
                         {
-                            plugin.id = id;
-                            Console.WriteLine($"Plugin already existed in database");
+                            plugin.Id = id;
+                            Console.WriteLine($"Plugin already exists in database.");
                         }
 
                         await _pluginmanagerRepository.AddAsync(plugin);
-                        Console.WriteLine($"Load {dllPath} Succesfully");
+                        Console.WriteLine($"✅ Loaded {dllPath} successfully.");
                     }
                 }
             }
@@ -92,60 +85,34 @@ namespace DevTools.Services
             }
         }
 
-        public async Task RemovePlugin(string path)
-        {
-            // try
-            // {
-            //     Assembly assembly = Assembly.LoadFrom(path);
-            //     Type[] types = assembly.GetTypes();
-            //     var pluginTypes = types.Where(t => typeof(IDevToolPlugin).IsAssignableFrom(t) && !t.IsInterface);
-
-            //     foreach (var type in pluginTypes)
-            //     {
-            //         var pluginToRemove = _plugins.FirstOrDefault(p => p.GetType() == type);
-            //         if (pluginToRemove != null)
-            //         {
-            //             _plugins.Remove(pluginToRemove);
-            //             Console.WriteLine($"🗑️ Đã xóa plugin: {pluginToRemove.Name}");
-            //         }
-            //         // _pluginmanagerRepository.RemoveAsync(type);
-            //     }
-            // }
-            // catch (Exception ex)
-            // {
-            //     Console.WriteLine($"❌ Lỗi khi xóa plugin: {ex.Message}");
-            // }
-            Console.WriteLine("Deo lam cac gi ca, test thoi");
-        }
-
         public async Task<List<PluginsResponeDTO>> GetAllActivePlugin()
         {
             var plugins = await _pluginRepository.GetAllAsync();
-            return plugins.Select(plugin => new PluginsResponeDTO
-            {
-                Id = plugin.Id,
-                Name = plugin.Name,
-                Category = plugin.CategoryId,
-                Decription = plugin.Description,
-                IsPremium = plugin.IsPremiumTool,
-                Icon = plugin.Icon
-            }).ToList();
+            return _mapper.Map<List<PluginsResponeDTO>>(plugins);
         }
 
-        public async Task<object> Execute(int Id, object input)
+        public async Task<object> Execute(int id, object input)
         {
             try
             {
-                var plugin = await _pluginmanagerRepository.GetByIdAsync(Id);
-
-                var result =  plugin.Execute(input);
-                return result;
+                var plugin = await _pluginmanagerRepository.GetByIdAsync(id);
+                return plugin.Execute(input);
             }
             catch (PluginNotFound ex)
             {
                 throw ex;
             }
-            
+        }
+
+        public async Task<List<PluginsResponeDTO>> FindPluginByName(string name)
+        {
+            var plugins = await _pluginRepository.FindByNameAsync(name);
+            return _mapper.Map<List<PluginsResponeDTO>>(plugins);
+        }
+
+        public Task RemovePlugin(string path)
+        {
+            throw new NotImplementedException();
         }
 
     }

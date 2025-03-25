@@ -12,7 +12,7 @@ namespace DevTools.Repositories
 
         public async Task AddAsync(IDevToolPlugin plugin)
         {
-            var item = _plugins.FirstOrDefault(x => x.id == plugin.id);
+            var item = _plugins.FirstOrDefault(x => x.Id == plugin.Id);
             
 
             if (item != null)
@@ -24,7 +24,7 @@ namespace DevTools.Repositories
 
         public async Task<bool> CheckExisted(int Id)
         {
-            return _plugins.FirstOrDefault(x => x.id == Id) != null;
+            return _plugins.FirstOrDefault(x => x.Id == Id) != null;
         }
 
 
@@ -42,9 +42,9 @@ namespace DevTools.Repositories
         {
             // foreach(var k in _plugins)
             // {
-            //     Console.WriteLine($"Id ne : {k.id} hehe");
+            //     Console.WriteLine($"Id ne : {k.Id} hehe");
             // }
-            var item = _plugins.FirstOrDefault(x => x.id == Id);
+            var item = _plugins.FirstOrDefault(x => x.Id == Id);
             if (item != null)
                 return item;
 
@@ -53,7 +53,7 @@ namespace DevTools.Repositories
 
         public async Task RemoveAsync(int Id)
         {
-            var item = _plugins.FirstOrDefault(x => x.id == Id);
+            var item = _plugins.FirstOrDefault(x => x.Id == Id);
 
             if (item == null)
                 return;

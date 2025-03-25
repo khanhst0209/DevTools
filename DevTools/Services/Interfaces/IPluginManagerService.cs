@@ -8,9 +8,10 @@ namespace DevTools.Services.Interfaces
         Task LoadPlugins();
         Task AddPlugin(string path);
         Task RemovePlugin(string path);
-        // Task<List<IDevToolPlugin>> GetPlugins();
         Task<List<PluginsResponeDTO>> GetAllActivePlugin();
 
         Task<object> Execute(int Id, object input);
+
+        Task<List<PluginsResponeDTO>> FindPluginByName(string name);
     }
 }

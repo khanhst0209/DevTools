@@ -26,13 +26,14 @@ namespace DevTools.data
         public bool IsActive { get; set; }
 
         [DefaultValue("")]
-        public string Icon{get; set;}
+        public string Icon {get; set;}
 
         [DefaultValue(false)]
-        public bool IsPremiumTool { get; set; }
+        public bool IsPremium { get; set; }
 
         [Required]
         public string AccessiableRoleId  { get; set; }
+        
 
         [ForeignKey("AccessiableRoleId")]
         public IdentityRole Role { get; set; }

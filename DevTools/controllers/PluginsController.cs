@@ -7,7 +7,7 @@ using DevTools.Helper.Converter;
 
 namespace DevTools.controllers
 {
-    [Route("api/plugins")]
+    [Route("Plugin")]
     [ApiController]
     public class PluginsController : ControllerBase
     {
@@ -18,7 +18,7 @@ namespace DevTools.controllers
         {
             this._pluginmanagerService = _pluginmanagerService;
         }
-        [HttpGet("plugins")]
+        [HttpGet]
         public async Task<IActionResult> GetPlugins()
         {
             try
@@ -41,8 +41,22 @@ namespace DevTools.controllers
             {
                 object inputData = Converter.ConvertJsonElement(request.Input);
                 Console.WriteLine($"Data type of input: {inputData.GetType()}");
-                var result = await _pluginmanagerService.Execute(request.id, inputData);
+                var result = await _pluginmanagerService.Execute(request.Id, inputData);
 
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ErrorRespones(ex.Message));
+            }
+        }
+
+        [HttpGet("search/{name}")]
+        public async Task<IActionResult> SearchByName(string name)
+        {
+            try
+            {
+                var result = await _pluginmanagerService.FindPluginByName(name);
                 return Ok(result);
             }
             catch (Exception ex)

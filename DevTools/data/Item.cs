@@ -18,7 +18,6 @@ namespace MyWebAPI.data
         [Range(0, double.MaxValue)]
         [DefaultValue(0)]
         public double? Price {get; set;}
-
     }
     
 }

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MyWebAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class hehe : Migration
+    public partial class ChangeTableField : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -103,30 +103,6 @@ namespace MyWebAPI.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Plugin",
-                columns: table => new
-                {
-                    id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Categoryid = table.Column<int>(type: "int", maxLength: 50, nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
-                    IsActive = table.Column<bool>(type: "bit", nullable: false),
-                    IsPremiumTool = table.Column<bool>(type: "bit", nullable: false),
-                    AccessiableRole = table.Column<string>(type: "nvarchar(450)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Plugin", x => x.id);
-                    table.ForeignKey(
-                        name: "FK_Plugin_AspNetRoles_AccessiableRole",
-                        column: x => x.AccessiableRole,
-                        principalTable: "AspNetRoles",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "AspNetUserClaims",
                 columns: table => new
                 {
@@ -211,13 +187,44 @@ namespace MyWebAPI.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Plugin",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    CategoryId = table.Column<int>(type: "int", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    Icon = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsPremium = table.Column<bool>(type: "bit", nullable: false),
+                    AccessiableRoleId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Plugin", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Plugin_AspNetRoles_AccessiableRoleId",
+                        column: x => x.AccessiableRoleId,
+                        principalTable: "AspNetRoles",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Plugin_PluginCategory_CategoryId",
+                        column: x => x.CategoryId,
+                        principalTable: "PluginCategory",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
                     { "aa24b563-3c1d-41f2-91ad-08d3b2f8e63c", null, "User", "USER" },
-                    { "c1e2bcd1-5f2b-4ad8-b8d5-08d3b2f81231", null, "Anounymous", "ANOUNYMOUS" },
+                    { "c1e2bcd1-5f2b-4ad8-b8d5-08d3b2f81231", null, "Anonymous", "ANONYMOUS" },
                     { "c1e2bcd1-5f2b-4ad8-b8d5-08d3b2f8e63b", null, "Admin", "ADMIN" },
                     { "f3b87c41-1f6d-4a2f-8d1a-08d3b2f8e63d", null, "Premium", "PREMIUM" }
                 });
@@ -262,9 +269,14 @@ namespace MyWebAPI.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Plugin_AccessiableRole",
+                name: "IX_Plugin_AccessiableRoleId",
                 table: "Plugin",
-                column: "AccessiableRole");
+                column: "AccessiableRoleId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Plugin_CategoryId",
+                table: "Plugin",
+                column: "CategoryId");
         }
 
         /// <inheritdoc />
@@ -292,13 +304,13 @@ namespace MyWebAPI.Migrations
                 name: "Plugin");
 
             migrationBuilder.DropTable(
-                name: "PluginCategory");
-
-            migrationBuilder.DropTable(
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
+
+            migrationBuilder.DropTable(
+                name: "PluginCategory");
         }
     }
 }

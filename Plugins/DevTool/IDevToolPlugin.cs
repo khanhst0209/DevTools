@@ -5,16 +5,16 @@ namespace Plugins.DevTool
 {
     public interface IDevToolPlugin
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         public string Name { get; }
         public Category Category { get; } // Encode, Generate,...
         public string Description { get; set; }
 
         public Roles AccessiableRole { get; set; }
         public bool IsActive { get; set; }
-        public bool IsPremiumTool {get; set;}
+        public bool IsPremium { get; set; }
 
-        public string icon {get; set;}
+        public string Icon { get; set; }
 
         public object Execute(object input);
 

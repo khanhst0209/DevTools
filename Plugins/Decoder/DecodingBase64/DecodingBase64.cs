@@ -8,7 +8,7 @@ namespace Plugins.Decoding;
 
 public class DecodingBase64 : IDevToolPlugin
 {
-    public int id { get; set; }
+    public int Id { get; set; }
 
     public string Name => "DecodingBase64";
 
@@ -18,8 +18,8 @@ public class DecodingBase64 : IDevToolPlugin
     public bool IsActive { get; set; } = true;
 
     public Roles AccessiableRole { get; set; } = Roles.Anonymous;
-    public bool IsPremiumTool { get; set; } = false;
-    public string icon { get; set; } = @"
+    public bool IsPremium { get; set; } = false;
+    public string Icon { get; set; } = @"
                     <svg
                         className=""w-10 h-10""
                         xmlns=""http://www.w3.org/2000/svg""

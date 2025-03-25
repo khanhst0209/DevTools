@@ -12,8 +12,8 @@ using MyWebAPI.data;
 namespace MyWebAPI.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20250318095337_last hehe")]
-    partial class lasthehe
+    [Migration("20250325155044_ChangeTableField")]
+    partial class ChangeTableField
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,18 +27,17 @@ namespace MyWebAPI.Migrations
 
             modelBuilder.Entity("DevTools.data.Plugin", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("AccessiableRole")
+                    b.Property<string>("AccessiableRoleId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("Categoryid")
-                        .HasMaxLength(50)
+                    b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
@@ -46,10 +45,14 @@ namespace MyWebAPI.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
+                    b.Property<string>("Icon")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("IsPremiumTool")
+                    b.Property<bool>("IsPremium")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
@@ -57,9 +60,11 @@ namespace MyWebAPI.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
-                    b.HasIndex("AccessiableRole");
+                    b.HasIndex("AccessiableRoleId");
+
+                    b.HasIndex("CategoryId");
 
                     b.ToTable("Plugin");
                 });
@@ -337,11 +342,19 @@ namespace MyWebAPI.Migrations
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", "Role")
                         .WithMany()
-                        .HasForeignKey("AccessiableRole")
+                        .HasForeignKey("AccessiableRoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DevTools.data.PluginCategory", "category")
+                        .WithMany("Plugins")
+                        .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Role");
+
+                    b.Navigation("category");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -393,6 +406,11 @@ namespace MyWebAPI.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("DevTools.data.PluginCategory", b =>
+                {
+                    b.Navigation("Plugins");
                 });
 #pragma warning restore 612, 618
         }

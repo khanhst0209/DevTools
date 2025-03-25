@@ -16,6 +16,7 @@ using DevTools.Services.Interfaces;
 using DevTools.Repositories.Interfaces;
 using DevTools.data;
 using DevTools.Repositories;
+using DevTools.Helper.Mapper;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -105,6 +106,9 @@ builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 
 // Background Services
 builder.Services.AddHostedService<PluginWatcherService>(); // Thêm vào Hosted Services
+
+//modelmapper
+builder.Services.AddAutoMapper(typeof(UserProfile));
 
 var app = builder.Build();
 

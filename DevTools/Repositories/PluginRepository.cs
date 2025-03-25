@@ -1,3 +1,4 @@
+using AutoMapper;
 using DevTools.data;
 using DevTools.Dto.Plugins;
 using DevTools.Exceptions.AccountManager.RoleException;
@@ -15,16 +16,19 @@ namespace DevTools.Repositories
         private readonly IPluginCategoryRepository _plugincategoryrepository;
         private readonly IPluginManagerRepository _pluginmanagerRepository;
         private readonly IRoleRepository _rolerepository;
+        private readonly IMapper _mapper;
 
-        public PluginRepository(MyDbContext _context,
-        IPluginCategoryRepository _plugincategoryrepository,
-        IRoleRepository _rolerepository,
-        IPluginManagerRepository _pluginmanagerRepository)
+        public PluginRepository(MyDbContext context,
+            IPluginCategoryRepository plugincategoryrepository,
+            IRoleRepository rolerepository,
+            IPluginManagerRepository pluginmanagerRepository,
+            IMapper mapper)
         {
-            this._context = _context;
-            this._plugincategoryrepository = _plugincategoryrepository;
-            this._rolerepository = _rolerepository;
-            this._pluginmanagerRepository = _pluginmanagerRepository;
+            _context = context;
+            _plugincategoryrepository = plugincategoryrepository;
+            _rolerepository = rolerepository;
+            _pluginmanagerRepository = pluginmanagerRepository;
+            _mapper = mapper;
         }
 
         public async Task ActivateAsync(int pluginId, bool Isactivate)
@@ -46,37 +50,32 @@ namespace DevTools.Repositories
 
             if (existplugin != null)
             {
-                if (existplugin.IsPremiumTool == IsPremium)
+                if (existplugin.IsPremium == IsPremium)
                     return;
 
-                existplugin.IsPremiumTool = IsPremium;
+                existplugin.IsPremium = IsPremium;
                 await _context.SaveChangesAsync();
             }
         }
 
         public async Task AddPluginAsync(CreatePluginDTO createplugindto)
         {
-            if (await _plugincategoryrepository.CheckExistByNameAsync(createplugindto.Category) == false)
+            if (!await _plugincategoryrepository.CheckExistByNameAsync(createplugindto.Category))
             {
                 await _plugincategoryrepository.AddPluginCategoryAsync(createplugindto.Category);
             }
-            var Categoryid = await _plugincategoryrepository.GetIdByName(createplugindto.Category);
-            var roleid = await _rolerepository.GetIdByName(createplugindto.AccessiableRole.ToString());
 
-            var newplugin = new Plugin
-            {
-                Name = createplugindto.Name,
-                CategoryId = Categoryid,
-                Description = createplugindto.Description,
-                IsActive = createplugindto.IsActive,
-                IsPremiumTool = createplugindto.IsPremiumTool,
-                AccessiableRoleId = roleid,
-                Icon = createplugindto.Icon
-            };
-            await _context.Plugins.AddAsync(newplugin);
+            var categoryId = await _plugincategoryrepository.GetIdByName(createplugindto.Category);
+            var roleId = await _rolerepository.GetIdByName(createplugindto.AccessiableRole.ToString());
+
+            var newPlugin = _mapper.Map<Plugin>(createplugindto);
+            newPlugin.CategoryId = categoryId;
+            newPlugin.AccessiableRoleId = roleId;
+
+            await _context.Plugins.AddAsync(newPlugin);
             await _context.SaveChangesAsync();
-            Console.WriteLine($"    ---Added plugin : {createplugindto.Name} into database");
         }
+
         public async Task<List<Plugin>> GetAllAsync()
         {
             return await _context.Plugins.Where(x => x.IsActive == true).ToListAsync();
@@ -119,13 +118,21 @@ namespace DevTools.Repositories
             var plugins_id = await _context.Plugins.Select(x => x.Id).ToListAsync();
             foreach (var plugin_id in plugins_id)
             {
-                
+
                 if (await _pluginmanagerRepository.CheckExisted(plugin_id) == false)
                 {
                     await RemovePluginAsync(plugin_id);
                 }
             }
             Console.WriteLine("==============================================");
+        }
+
+        public async Task<List<Plugin>> FindByNameAsync(string name)
+        {
+            return await _context.Plugins
+                .Where(x => EF.Functions.Like(x.Name, $"%{name}%")) // Case-insensitive search
+                .AsNoTracking()
+                .ToListAsync();
         }
 
 
