@@ -2,6 +2,8 @@ using AutoMapper;
 using DevTools.data;
 using DevTools.Dto.Category;
 using DevTools.Dto.Plugins;
+using DevTools.Dto.user;
+using MyWebAPI.data;
 using Plugins.DevTool;
 
 namespace DevTools.Helper.Mapper
@@ -10,7 +12,6 @@ namespace DevTools.Helper.Mapper
     {
         public UserProfile()
         {
-            // CreateMap<CreatePluginDTO, Plugin>();
             CreateMap<Plugin, PluginsResponeDTO>();
 
 
@@ -24,12 +25,13 @@ namespace DevTools.Helper.Mapper
             CreateMap<Plugin, PluginMinimize>();
 
             CreateMap<CreatePluginDTO, Plugin>()
-    .ForMember(dest => dest.CategoryId, opt => opt.Ignore()) 
-    .ForMember(dest => dest.AccessiableRoleId, opt => opt.Ignore()) 
-    .ForMember(dest => dest.category, opt => opt.Ignore()); // Bỏ qua mapping cho category
+            .ForMember(dest => dest.CategoryId, opt => opt.Ignore())
+            .ForMember(dest => dest.AccessiableRoleId, opt => opt.Ignore())
+            .ForMember(dest => dest.category, opt => opt.Ignore());
 
 
-
+            CreateMap<User, UserDTO>()
+            .ForMember(dest => dest.Role, opt => opt.Ignore());
         }
     }
 }

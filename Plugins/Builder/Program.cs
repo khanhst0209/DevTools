@@ -10,8 +10,8 @@ class Program
         {
             Console.WriteLine("❌ Sai cú pháp! Vui lòng nhập đúng tham số.");
             Console.WriteLine("📌 Cách dùng:");
-            Console.WriteLine("   - Build tất cả project: dotnet run -- -all D:\\Projects");
-            Console.WriteLine("   - Build từ file: dotnet run -- -file projects.txt");
+            Console.WriteLine("   - Build tất cả project: dotnet run -all D:\\Projects");
+            Console.WriteLine("   - Build từ file: dotnet run -file projects.txt");
             return;
         }
         

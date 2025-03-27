@@ -5,7 +5,7 @@ namespace DevTools.Dto.user
     public class RegisterDTO
     {
         [Required]
-        public string? Username {get; set;}
+        public string? UserName {get; set;}
         [Required]
         [EmailAddress]
         public string? Email {get; set;}

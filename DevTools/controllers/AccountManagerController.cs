@@ -1,6 +1,7 @@
 using DevTools.Dto.user;
 using DevTools.Exceptions.AccountManager.LoginException;
 using DevTools.Exceptions.AccountManager.RegisterException;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -38,7 +39,7 @@ namespace MyWebAPI.controllers
 
                 return Ok(user);
             }
-            catch(InvalidUsernameOrPassword ex)
+            catch (InvalidUsernameOrPassword ex)
             {
                 return Unauthorized(new ErrorRespones(ex.Message));
             }
@@ -71,5 +72,19 @@ namespace MyWebAPI.controllers
             }
         }
 
+        [HttpGet("users")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> GetAllUsers()
+        {
+            try
+            {
+                var user = await _accountManagerService.GetAllUsers();
+                return Ok(user);
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

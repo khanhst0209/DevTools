@@ -4,19 +4,17 @@ using Microsoft.OpenApi.Models;
 using MyWebAPI.data;
 using MyWebAPI.Repositories;
 using MyWebAPI.Repositories.Interfaces;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.AspNetCore.Razor.TagHelpers;
 using MyWebAPI.Services.Interfaces;
 using MyWebAPI.Services;
 using DevTools.Services;
 // using Services.BackgroundServices.PluginsWatchers;
 using DevTools.Services.Interfaces;
 using DevTools.Repositories.Interfaces;
-using DevTools.data;
 using DevTools.Repositories;
 using DevTools.Helper.Mapper;
+using DevTools.data.Seed;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,13 +23,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-// builder.Services.AddSwaggerGen(c => {
-//     c.SwaggerDoc("v1", new OpenApiInfo {Title = "MyWebApi", Version = "v1"});
-// });
 
 builder.Services.AddSwaggerGen(option =>
 {
-    option.SwaggerDoc("v1", new OpenApiInfo { Title = "Demo API", Version = "v1" });
+    option.SwaggerDoc("v1", new OpenApiInfo { Title = "DevTools", Version = "v1" });
     option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         In = ParameterLocation.Header,
@@ -58,13 +53,13 @@ builder.Services.AddSwaggerGen(option =>
 });
 
 
-builder.Services.AddDbContext<MyDbContext>(op => 
+builder.Services.AddDbContext<MyDbContext>(op =>
 {
     op.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
     sqlServerOptions => sqlServerOptions.CommandTimeout(300));
 });
 
-builder.Services.AddIdentity<User, IdentityRole>(options => 
+builder.Services.AddIdentity<User, IdentityRole>(options =>
 {
     options.Password.RequireDigit = true;
     options.Password.RequireLowercase = true;
@@ -72,14 +67,15 @@ builder.Services.AddIdentity<User, IdentityRole>(options =>
     options.Password.RequireNonAlphanumeric = true;
     options.Password.RequiredLength = 12;
 }).AddEntityFrameworkStores<MyDbContext>();
-builder.Services.AddAuthentication(options => {
-    options.DefaultAuthenticateScheme = 
-    options.DefaultChallengeScheme = 
-    options.DefaultForbidScheme = 
-    options.DefaultScheme = 
-    options.DefaultSignInScheme = 
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme =
+    options.DefaultChallengeScheme =
+    options.DefaultForbidScheme =
+    options.DefaultScheme =
+    options.DefaultSignInScheme =
     options.DefaultSignOutScheme = JwtBearerDefaults.AuthenticationScheme;
-}).AddJwtBearer(options => 
+}).AddJwtBearer(options =>
 {
     options.TokenValidationParameters = new TokenValidationParameters
     {
@@ -107,11 +103,20 @@ builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 // Background Services
 builder.Services.AddHostedService<PluginWatcherService>(); // Thêm vào Hosted Services
 
+
+
 //modelmapper
 builder.Services.AddAutoMapper(typeof(UserProfile));
 
 var app = builder.Build();
 
+// Seed Data
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    await RoleSeedData.SeedRolesAsync(services);
+    await UserSeedData.SeedUsersAsync(services);
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -122,7 +127,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseAuthentication();
-app.UseAuthorization(); 
+app.UseAuthorization();
 app.MapControllers();
 
 using (var scope = app.Services.CreateScope())
@@ -131,8 +136,6 @@ using (var scope = app.Services.CreateScope())
     await pluginManagerService.LoadPlugins();
 }
 
-// var pluginWatcher = app.Services.GetRequiredService<PluginWatcher>();
-// pluginWatcher.StartWatching();
 
 app.Run();
 
