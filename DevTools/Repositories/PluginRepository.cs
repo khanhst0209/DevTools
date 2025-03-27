@@ -1,6 +1,7 @@
 using AutoMapper;
 using DevTools.data;
 using DevTools.Dto.Plugins;
+using DevTools.Dto.Querry;
 using DevTools.Exceptions.AccountManager.RoleException;
 using DevTools.Repositories.Interfaces;
 using Microsoft.AspNetCore.Identity;
@@ -78,12 +79,12 @@ namespace DevTools.Repositories
 
         public async Task<List<Plugin>> GetAllAsync()
         {
-            return await _context.Plugins.Where(x => x.IsActive == true).ToListAsync();
+            return await _context.Plugins.Where(x => x.IsActive == true).Include(p => p.category).AsNoTracking().ToListAsync();
         }
 
         public async Task<List<Plugin>> GetAllByCategoryAsync(int CategoryId)
         {
-            return await _context.Plugins.Where(p => p.CategoryId == CategoryId && p.IsActive == true).ToListAsync();
+            return await _context.Plugins.Where(p => p.CategoryId == CategoryId && p.IsActive == true).Include(p => p.category).AsNoTracking().ToListAsync();
         }
 
 
@@ -127,14 +128,33 @@ namespace DevTools.Repositories
             Console.WriteLine("==============================================");
         }
 
-        public async Task<List<Plugin>> FindByNameAsync(string name)
+        public async Task<List<Plugin>> GetAllByQuerryAsync(PluginQuerry querry)
         {
-            return await _context.Plugins
-                .Where(x => EF.Functions.Like(x.Name, $"%{name}%")) // Case-insensitive search
-                .AsNoTracking()
-                .ToListAsync();
-        }
+            var plugins = _context.Plugins.Where(x => x.IsActive == true).AsQueryable().AsNoTracking();
 
+            if (querry.CategoryId != null)
+            {
+                plugins = plugins.Where(x => x.CategoryId == querry.CategoryId);
+            }
+            if (querry.Premium != null && querry.Premium == true)
+            {
+                plugins = plugins.Where(x => x.IsPremium == true);
+            }
+            if (querry.Name != null)
+            {
+                plugins = plugins.Where(x => EF.Functions.Like(x.Name, $"%{querry.Name}%"));
+            }
+
+            if (querry.SortBy != null)
+            {
+                if (querry.SortBy == "Name")
+                {
+                    plugins = querry.IsDescending ? plugins.OrderByDescending(x => x.Name) : plugins.OrderBy(x => x.Name);
+                }
+            }
+
+            return await plugins.ToListAsync();
+        }
 
     }
 }

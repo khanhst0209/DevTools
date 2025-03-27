@@ -3,6 +3,7 @@ using DevTools.Dto.Plugins;
 using DevTools.Services.Interfaces;
 using MyWebAPI.Dto;
 using DevTools.Helper.Converter;
+using DevTools.Dto.Querry;
 
 
 namespace DevTools.controllers
@@ -32,6 +33,19 @@ namespace DevTools.controllers
             }
         }
 
+        [HttpGet("search")]
+        public async Task<IActionResult> GetPluginsByQuerry([FromQuery] PluginQuerry querry)
+        {
+            try
+            {
+                var plugin = await _pluginmanagerService.GetAllByQuerry(querry);
+                return Ok(plugin);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ErrorRespones(ex.Message));
+            }
+        }
 
 
         [HttpPost("execute")]
@@ -51,19 +65,7 @@ namespace DevTools.controllers
             }
         }
 
-        [HttpGet("search/{name}")]
-        public async Task<IActionResult> SearchByName(string name)
-        {
-            try
-            {
-                var result = await _pluginmanagerService.FindPluginByName(name);
-                return Ok(result);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new ErrorRespones(ex.Message));
-            }
-        }
+
 
     }
 }

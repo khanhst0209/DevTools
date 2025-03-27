@@ -64,6 +64,7 @@ namespace DevTools.Services
 
             return new NewUserDTO
             {
+                FullName = user.FullName,
                 UserName = user.UserName,
                 Email = user.Email,
                 Token = _tokenService.CreateToken(user, roles)
@@ -75,6 +76,7 @@ namespace DevTools.Services
         {
             var appuser = new User
             {
+                FullName = registerDto.FullName,
                 UserName = registerDto.UserName,
                 Email = registerDto.Email,
                 IsPremium = false
@@ -97,6 +99,7 @@ namespace DevTools.Services
             var roles = await _userManager.GetRolesAsync(appuser);
             return new NewUserDTO
             {
+                FullName = appuser.FullName,
                 UserName = appuser.UserName,
                 Email = appuser.Email,
                 Token = _tokenService.CreateToken(appuser, roles)

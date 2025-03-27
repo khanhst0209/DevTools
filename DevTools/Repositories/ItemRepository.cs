@@ -32,8 +32,6 @@ namespace MyWebAPI.Repositories
 
             if(querry.Name != null)
                 items = items.Where(x => x.Name.Contains(querry.Name));
-            // if(querry.CategoryId != null)
-            //     items = items.Where(x => x.CategoryId == querry.CategoryId);
 
             if(querry.Price != null)
                 items = items.Where(x => x.Price <= querry.Price);

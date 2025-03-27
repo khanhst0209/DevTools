@@ -12,7 +12,8 @@ namespace DevTools.Helper.Mapper
     {
         public UserProfile()
         {
-            CreateMap<Plugin, PluginsResponeDTO>();
+            CreateMap<Plugin, PluginsResponeDTO>()
+            .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(scr => scr.category.Name));
 
 
             CreateMap<IDevToolPlugin, CreatePluginDTO>()

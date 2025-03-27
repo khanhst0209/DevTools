@@ -22,6 +22,7 @@ namespace MyWebAPI.Services
             {
                 new Claim(JwtRegisteredClaimNames.Email, user.Email),
                 new Claim(JwtRegisteredClaimNames.GivenName, user.UserName),
+                new Claim("FullName", user.FullName),
                 new Claim("IsPremium", user.IsPremium.ToString())
             };
 

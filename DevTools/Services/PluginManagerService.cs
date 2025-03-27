@@ -1,6 +1,8 @@
 using System.Reflection;
 using AutoMapper;
+using DevTools.Dto.Category;
 using DevTools.Dto.Plugins;
+using DevTools.Dto.Querry;
 using DevTools.Exceptions.Plugins.PluginsException.cs;
 using DevTools.Repositories.Interfaces;
 using DevTools.Services.Interfaces;
@@ -104,16 +106,15 @@ namespace DevTools.Services
             }
         }
 
-        public async Task<List<PluginsResponeDTO>> FindPluginByName(string name)
-        {
-            var plugins = await _pluginRepository.FindByNameAsync(name);
-            return _mapper.Map<List<PluginsResponeDTO>>(plugins);
-        }
-
         public Task RemovePlugin(string path)
         {
             throw new NotImplementedException();
         }
 
+        public async Task<List<PluginsResponeDTO>> GetAllByQuerry(PluginQuerry querry)
+        {
+            var plugins = await _pluginRepository.GetAllByQuerryAsync(querry);
+            return _mapper.Map<List<PluginsResponeDTO>>(plugins);
+        }
     }
 }

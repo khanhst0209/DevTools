@@ -81,7 +81,7 @@ namespace MyWebAPI.controllers
                 var user = await _accountManagerService.GetAllUsers();
                 return Ok(user);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
