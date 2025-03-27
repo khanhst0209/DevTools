@@ -3,6 +3,7 @@ using DevTools.data;
 using DevTools.Dto.Category;
 using DevTools.Dto.Plugins;
 using DevTools.Dto.user;
+using DevTools.Dto.UserPlugin;
 using MyWebAPI.data;
 using Plugins.DevTool;
 
@@ -33,6 +34,10 @@ namespace DevTools.Helper.Mapper
 
             CreateMap<User, UserDTO>()
             .ForMember(dest => dest.Role, opt => opt.Ignore());
+
+
+            CreateMap<CreateUserPluginDTO, UserPlugins>();
+
         }
     }
 }

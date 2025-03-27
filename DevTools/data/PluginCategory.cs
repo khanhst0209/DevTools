@@ -11,6 +11,6 @@ namespace DevTools.data
 
         public string Name { get; set; }
 
-        public  ICollection<Plugin> Plugins { get; set; } = new List<Plugin>();
+        public ICollection<Plugin> Plugins { get; set; } = new List<Plugin>();
     }
 }

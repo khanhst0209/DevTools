@@ -93,12 +93,14 @@ builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IAccountManagerService, AccountManagerService>();
 builder.Services.AddScoped<IPluginManagerService, PluginManagerService>();
 builder.Services.AddScoped<IPluginCategoryService, PluginCategoryService>();
+builder.Services.AddScoped<IUserPluginService, UserPluginService>();
 
 //  repositories
 builder.Services.AddScoped<IPluginCategoryRepository, PluginCategoryRepository>();
 builder.Services.AddScoped<IPluginManagerRepository, PluginManagerRepository>();
 builder.Services.AddScoped<IPluginRepository, PluginRepository>();
 builder.Services.AddScoped<IRoleRepository, RoleRepository>();
+builder.Services.AddScoped<IUserPluginRepository, UserPluginRepository>();
 
 // Background Services
 builder.Services.AddHostedService<PluginWatcherService>(); // Thêm vào Hosted Services

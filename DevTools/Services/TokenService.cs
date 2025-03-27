@@ -20,6 +20,7 @@ namespace MyWebAPI.Services
         {
             var claims = new List<Claim>
             {
+                new Claim("Id", user.Id),
                 new Claim(JwtRegisteredClaimNames.Email, user.Email),
                 new Claim(JwtRegisteredClaimNames.GivenName, user.UserName),
                 new Claim("FullName", user.FullName),

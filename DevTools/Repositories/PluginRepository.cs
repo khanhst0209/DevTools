@@ -130,7 +130,7 @@ namespace DevTools.Repositories
 
         public async Task<List<Plugin>> GetAllByQuerryAsync(PluginQuerry querry)
         {
-            var plugins = _context.Plugins.Where(x => x.IsActive == true).AsQueryable().AsNoTracking();
+            var plugins = _context.Plugins.Where(x => x.IsActive == true).Include(x => x.category).AsQueryable().AsNoTracking();
 
             if (querry.CategoryId != null)
             {
