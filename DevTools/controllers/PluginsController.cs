@@ -4,6 +4,7 @@ using DevTools.Services.Interfaces;
 using MyWebAPI.Dto;
 using DevTools.Helper.Converter;
 using DevTools.Dto.Querry;
+using System.Text.RegularExpressions;
 
 
 namespace DevTools.controllers
@@ -65,7 +66,19 @@ namespace DevTools.controllers
             }
         }
 
+        [HttpGet("{id}/schema1")]
+        public async Task<IActionResult> GetSchema(int id)
+        {
+            var result = await _pluginmanagerService.GetScheme1(id);
+            return Ok(result);
+        }
 
+        [HttpGet("{id}/schema2")]
+        public async Task<IActionResult> GetSchema2(int id)
+        {
+            var result = await _pluginmanagerService.GetScheme2(id);
+            return Ok(result);
+        }
 
     }
 }

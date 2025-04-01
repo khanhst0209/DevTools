@@ -5,6 +5,7 @@ namespace Plugins.DevTool
 {
     public interface IDevToolPlugin
     {
+        public object Execute(object input);
         public int Id { get; set; }
         public string Name { get; }
         public Category Category { get; } // Encode, Generate,...
@@ -16,8 +17,9 @@ namespace Plugins.DevTool
 
         public string Icon { get; set; }
 
-        public object Execute(object input);
 
+        public string GetSheme1();
 
+        public object GetSheme2();
     }
 }

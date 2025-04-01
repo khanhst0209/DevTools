@@ -13,7 +13,7 @@ namespace DevTools.Repositories
         public async Task AddAsync(IDevToolPlugin plugin)
         {
             var item = _plugins.FirstOrDefault(x => x.Id == plugin.Id);
-            
+
 
             if (item != null)
                 return;
@@ -50,6 +50,23 @@ namespace DevTools.Repositories
 
             throw new PluginNotFound(Id);
         }
+
+        public async Task<string> GetScheme1(int id)
+        {
+            var plugin = _plugins.FirstOrDefault(x => x.Id == id);
+            if (plugin == null)
+                return "";
+            return plugin.GetSheme1();
+        }
+
+        public async Task<object> GetScheme2(int id)
+        {
+            var plugin = _plugins.FirstOrDefault(x => x.Id == id);
+            if (plugin == null)
+                return "";
+            return plugin.GetSheme2();
+        }
+
 
         public async Task RemoveAsync(int Id)
         {

@@ -52,4 +52,14 @@ public class DecodingBase64 : IDevToolPlugin
             throw new ArgumentException("Invalid Base64 format.");
         }
     }
+
+    public string GetSheme1()
+    {
+        throw new NotImplementedException();
+    }
+
+    public object GetSheme2()
+    {
+        throw new NotImplementedException();
+    }
 }

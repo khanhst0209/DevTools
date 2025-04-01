@@ -116,5 +116,16 @@ namespace DevTools.Services
             var plugins = await _pluginRepository.GetAllByQuerryAsync(querry);
             return _mapper.Map<List<PluginsResponeDTO>>(plugins);
         }
+
+        public async Task<string> GetScheme1(int id)
+        {
+            return await _pluginmanagerRepository.GetScheme1(id);
+        }
+
+        public async Task<object> GetScheme2(int id)
+        {
+            return await _pluginmanagerRepository.GetScheme2(id);
+        }
+
     }
 }

@@ -46,5 +46,124 @@ namespace Plugins.Encode
             return base64Encoded;
         }
 
+        public string GetSheme1()
+        {
+            return @"{
+  ""id"": ""1"",
+  ""name"": ""Base64 Encoder"",
+  ""description"": ""Encode text to Base64 format"",
+  ""category"": ""Encoding"",
+  ""icon"": ""<svg>...</svg>"",
+  ""isPremium"": false,
+  ""uiSchema"": {
+    ""inputs"": [
+      {
+        ""id"": ""text"",
+        ""label"": ""Text to encode"",
+        ""type"": ""textarea"",
+        ""defaultValue"": ""alo"",
+        ""placeholder"": ""Enter text to encode..."",
+        ""required"": true
+      }
+    ],
+    ""outputs"": [
+      {
+        ""id"": ""encodedText"",
+        ""label"": ""Encoded result"",
+        ""type"": ""textarea"",
+        ""readonly"": true,
+        ""rows"": 8
+      }
+    ],
+    ""controls"": [
+      {
+        ""id"": ""encode"",
+        ""label"": ""Encode"",
+        ""type"": ""button"",
+        ""primary"": true,
+        ""action"": ""encode""
+      },
+      {
+        ""id"": ""clear"",
+        ""label"": ""Clear"",
+        ""type"": ""button"",
+        ""action"": ""clear""
+      }
+    ],
+    ""options"": [
+      {
+        ""id"": ""urlSafe"",
+        ""label"": ""URL-safe encoding"",
+        ""type"": ""checkbox"",
+        ""defaultValue"": false
+      }
+    ]
+  },
+  ""api"": {
+    ""process"": ""/api/plugins/1/process""
+  }
+}";
+        }
+
+
+        public object GetSheme2()
+        {
+            return @"{
+  ""id"": ""1"",
+  ""name"": ""Base64 Encoder"",
+  ""description"": ""Encode text to Base64 format"",
+  ""category"": ""Encoding"",
+  ""icon"": ""<svg>...</svg>"",
+  ""isPremium"": false,
+  ""uiSchema"": {
+    ""inputs"": [
+      {
+        ""id"": ""text"",
+        ""label"": ""Text to encode"",
+        ""type"": ""textarea"",
+        ""defaultValue"": ""alo"",
+        ""placeholder"": ""Enter text to encode..."",
+        ""required"": true
+      }
+    ],
+    ""outputs"": [
+      {
+        ""id"": ""encodedText"",
+        ""label"": ""Encoded result"",
+        ""type"": ""textarea"",
+        ""readonly"": true,
+        ""rows"": 8
+      }
+    ],
+    ""controls"": [
+      {
+        ""id"": ""encode"",
+        ""label"": ""Encode"",
+        ""type"": ""button"",
+        ""primary"": true,
+        ""action"": ""encode""
+      },
+      {
+        ""id"": ""clear"",
+        ""label"": ""Clear"",
+        ""type"": ""button"",
+        ""action"": ""clear""
+      }
+    ],
+    ""options"": [
+      {
+        ""id"": ""urlSafe"",
+        ""label"": ""URL-safe encoding"",
+        ""type"": ""checkbox"",
+        ""defaultValue"": false
+      }
+    ]
+  },
+  ""api"": {
+    ""process"": ""/api/plugins/1/process""
+  }
+}";
+        }
+
     }
 }

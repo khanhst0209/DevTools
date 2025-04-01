@@ -15,5 +15,8 @@ namespace DevTools.Services.Interfaces
 
         Task<object> Execute(int Id, object input);
 
+        Task<string> GetScheme1(int id);
+        Task<Object> GetScheme2(int id);
+
     }
 }

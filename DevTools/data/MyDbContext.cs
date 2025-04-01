@@ -48,5 +48,12 @@ namespace MyWebAPI.data
                 .OnDelete(DeleteBehavior.Cascade);
 
         }
+
+
+        [DbFunction(name:"SOUNDEX",IsBuiltIn =true)]
+        public string FuzzySearch(string querry)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

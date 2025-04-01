@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyWebAPI.data;
 
+
 namespace DevTools.Repositories
 {
     public class PluginRepository : IPluginRepository
@@ -142,7 +143,7 @@ namespace DevTools.Repositories
             }
             if (querry.Name != null)
             {
-                plugins = plugins.Where(x => EF.Functions.Like(x.Name, $"%{querry.Name}%"));
+                plugins = plugins.Where(x => EF.Functions.FreeText(x.Name, querry.Name));
             }
 
             if (querry.SortBy != null)
