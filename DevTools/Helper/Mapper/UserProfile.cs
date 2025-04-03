@@ -18,7 +18,7 @@ namespace DevTools.Helper.Mapper
 
 
             CreateMap<IDevToolPlugin, CreatePluginDTO>()
-            .ForMember(dest => dest.Category, opt => opt.MapFrom(src => src.Category.ToString()));
+            .ForMember(dest => dest.Category, opt => opt.MapFrom(src => src.Category.GetDescription().ToString()));
 
 
             CreateMap<PluginCategory, PLuginCategoryDTO>()

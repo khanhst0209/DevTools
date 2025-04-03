@@ -1,0 +1,16 @@
+D:\Coding\TKPM\Plugins\ImageAndVideo\QRCodeGenerator\bin\Release\net8.0\QRCodeGenerator.deps.json
+D:\Coding\TKPM\Plugins\ImageAndVideo\QRCodeGenerator\bin\Release\net8.0\QRCodeGenerator.dll
+D:\Coding\TKPM\Plugins\ImageAndVideo\QRCodeGenerator\bin\Release\net8.0\QRCodeGenerator.pdb
+D:\Coding\TKPM\Plugins\ImageAndVideo\QRCodeGenerator\bin\Release\net8.0\DevTool.dll
+D:\Coding\TKPM\Plugins\ImageAndVideo\QRCodeGenerator\bin\Release\net8.0\DevTool.pdb
+D:\Coding\TKPM\Plugins\ImageAndVideo\QRCodeGenerator\obj\Release\net8.0\QRCodeGenerator.csproj.AssemblyReference.cache
+D:\Coding\TKPM\Plugins\ImageAndVideo\QRCodeGenerator\obj\Release\net8.0\QRCodeGenerator.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\TKPM\Plugins\ImageAndVideo\QRCodeGenerator\obj\Release\net8.0\QRCodeGenerator.AssemblyInfoInputs.cache
+D:\Coding\TKPM\Plugins\ImageAndVideo\QRCodeGenerator\obj\Release\net8.0\QRCodeGenerator.AssemblyInfo.cs
+D:\Coding\TKPM\Plugins\ImageAndVideo\QRCodeGenerator\obj\Release\net8.0\QRCodeGenerator.csproj.CoreCompileInputs.cache
+D:\Coding\TKPM\Plugins\ImageAndVideo\QRCodeGenerator\obj\Release\net8.0\QRCodeGenerator.sourcelink.json
+D:\Coding\TKPM\Plugins\ImageAndVideo\QRCodeGenerator\obj\Release\net8.0\QRCodeGe.C333C8C0.Up2Date
+D:\Coding\TKPM\Plugins\ImageAndVideo\QRCodeGenerator\obj\Release\net8.0\QRCodeGenerator.dll
+D:\Coding\TKPM\Plugins\ImageAndVideo\QRCodeGenerator\obj\Release\net8.0\refint\QRCodeGenerator.dll
+D:\Coding\TKPM\Plugins\ImageAndVideo\QRCodeGenerator\obj\Release\net8.0\QRCodeGenerator.pdb
+D:\Coding\TKPM\Plugins\ImageAndVideo\QRCodeGenerator\obj\Release\net8.0\ref\QRCodeGenerator.dll
