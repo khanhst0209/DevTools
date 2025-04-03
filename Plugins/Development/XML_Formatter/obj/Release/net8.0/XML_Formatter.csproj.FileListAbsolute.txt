@@ -1,0 +1,16 @@
+D:\Coding\TKPM\Plugins\Development\XML_Formatter\bin\Release\net8.0\XML_Formatter.deps.json
+D:\Coding\TKPM\Plugins\Development\XML_Formatter\bin\Release\net8.0\XML_Formatter.dll
+D:\Coding\TKPM\Plugins\Development\XML_Formatter\bin\Release\net8.0\XML_Formatter.pdb
+D:\Coding\TKPM\Plugins\Development\XML_Formatter\bin\Release\net8.0\DevTool.dll
+D:\Coding\TKPM\Plugins\Development\XML_Formatter\bin\Release\net8.0\DevTool.pdb
+D:\Coding\TKPM\Plugins\Development\XML_Formatter\obj\Release\net8.0\XML_Formatter.csproj.AssemblyReference.cache
+D:\Coding\TKPM\Plugins\Development\XML_Formatter\obj\Release\net8.0\XML_Formatter.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\TKPM\Plugins\Development\XML_Formatter\obj\Release\net8.0\XML_Formatter.AssemblyInfoInputs.cache
+D:\Coding\TKPM\Plugins\Development\XML_Formatter\obj\Release\net8.0\XML_Formatter.AssemblyInfo.cs
+D:\Coding\TKPM\Plugins\Development\XML_Formatter\obj\Release\net8.0\XML_Formatter.csproj.CoreCompileInputs.cache
+D:\Coding\TKPM\Plugins\Development\XML_Formatter\obj\Release\net8.0\XML_Formatter.sourcelink.json
+D:\Coding\TKPM\Plugins\Development\XML_Formatter\obj\Release\net8.0\XML_Form.AF68BE28.Up2Date
+D:\Coding\TKPM\Plugins\Development\XML_Formatter\obj\Release\net8.0\XML_Formatter.dll
+D:\Coding\TKPM\Plugins\Development\XML_Formatter\obj\Release\net8.0\refint\XML_Formatter.dll
+D:\Coding\TKPM\Plugins\Development\XML_Formatter\obj\Release\net8.0\XML_Formatter.pdb
+D:\Coding\TKPM\Plugins\Development\XML_Formatter\obj\Release\net8.0\ref\XML_Formatter.dll

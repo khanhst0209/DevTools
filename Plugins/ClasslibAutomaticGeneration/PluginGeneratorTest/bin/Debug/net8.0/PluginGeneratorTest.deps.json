@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "PluginGeneratorTest/1.0.0": {
+        "runtime": {
+          "PluginGeneratorTest.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PluginGeneratorTest/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -72,16 +72,14 @@ namespace DevTools.Services
                         }
                         else
                         {
-                            if (item != null)
-                            {
-                                if (item.Icon != plugin.Icon)
-                                    item.Icon = plugin.Icon;
+                            plugin.Id = item.Id;
+                            if (item.Icon != plugin.Icon)
+                                item.Icon = plugin.Icon;
 
-                                if (item.Description != plugin.Description)
-                                    item.Description = plugin.Description;
+                            if (item.Description != plugin.Description)
+                                item.Description = plugin.Description;
 
-                                await _pluginRepository.UpdateAsync(item);
-                            }
+                            await _pluginRepository.UpdateAsync(item);
                         }
 
                         await _pluginmanagerRepository.AddAsync(plugin);

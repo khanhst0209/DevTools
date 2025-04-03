@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Distance_Converter/1.0.0": {
+        "dependencies": {
+          "DevTool": "1.0.0"
+        },
+        "runtime": {
+          "Distance_Converter.dll": {}
+        }
+      },
+      "DevTool/1.0.0": {
+        "runtime": {
+          "DevTool.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Distance_Converter/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DevTool/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

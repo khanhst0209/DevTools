@@ -1,0 +1,16 @@
+D:\Coding\TKPM\Plugins\Math\Math_Evaluator\bin\Release\net8.0\Math_Evaluator.deps.json
+D:\Coding\TKPM\Plugins\Math\Math_Evaluator\bin\Release\net8.0\Math_Evaluator.dll
+D:\Coding\TKPM\Plugins\Math\Math_Evaluator\bin\Release\net8.0\Math_Evaluator.pdb
+D:\Coding\TKPM\Plugins\Math\Math_Evaluator\bin\Release\net8.0\DevTool.dll
+D:\Coding\TKPM\Plugins\Math\Math_Evaluator\bin\Release\net8.0\DevTool.pdb
+D:\Coding\TKPM\Plugins\Math\Math_Evaluator\obj\Release\net8.0\Math_Evaluator.csproj.AssemblyReference.cache
+D:\Coding\TKPM\Plugins\Math\Math_Evaluator\obj\Release\net8.0\Math_Evaluator.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\TKPM\Plugins\Math\Math_Evaluator\obj\Release\net8.0\Math_Evaluator.AssemblyInfoInputs.cache
+D:\Coding\TKPM\Plugins\Math\Math_Evaluator\obj\Release\net8.0\Math_Evaluator.AssemblyInfo.cs
+D:\Coding\TKPM\Plugins\Math\Math_Evaluator\obj\Release\net8.0\Math_Evaluator.csproj.CoreCompileInputs.cache
+D:\Coding\TKPM\Plugins\Math\Math_Evaluator\obj\Release\net8.0\Math_Evaluator.sourcelink.json
+D:\Coding\TKPM\Plugins\Math\Math_Evaluator\obj\Release\net8.0\Math_Eva.524CD186.Up2Date
+D:\Coding\TKPM\Plugins\Math\Math_Evaluator\obj\Release\net8.0\Math_Evaluator.dll
+D:\Coding\TKPM\Plugins\Math\Math_Evaluator\obj\Release\net8.0\refint\Math_Evaluator.dll
+D:\Coding\TKPM\Plugins\Math\Math_Evaluator\obj\Release\net8.0\Math_Evaluator.pdb
+D:\Coding\TKPM\Plugins\Math\Math_Evaluator\obj\Release\net8.0\ref\Math_Evaluator.dll

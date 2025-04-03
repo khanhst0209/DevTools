@@ -1,0 +1,16 @@
+D:\Coding\TKPM\Plugins\Text\Text_Statistics\bin\Release\net8.0\Text_Statistics.deps.json
+D:\Coding\TKPM\Plugins\Text\Text_Statistics\bin\Release\net8.0\Text_Statistics.dll
+D:\Coding\TKPM\Plugins\Text\Text_Statistics\bin\Release\net8.0\Text_Statistics.pdb
+D:\Coding\TKPM\Plugins\Text\Text_Statistics\bin\Release\net8.0\DevTool.dll
+D:\Coding\TKPM\Plugins\Text\Text_Statistics\bin\Release\net8.0\DevTool.pdb
+D:\Coding\TKPM\Plugins\Text\Text_Statistics\obj\Release\net8.0\Text_Statistics.csproj.AssemblyReference.cache
+D:\Coding\TKPM\Plugins\Text\Text_Statistics\obj\Release\net8.0\Text_Statistics.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\TKPM\Plugins\Text\Text_Statistics\obj\Release\net8.0\Text_Statistics.AssemblyInfoInputs.cache
+D:\Coding\TKPM\Plugins\Text\Text_Statistics\obj\Release\net8.0\Text_Statistics.AssemblyInfo.cs
+D:\Coding\TKPM\Plugins\Text\Text_Statistics\obj\Release\net8.0\Text_Statistics.csproj.CoreCompileInputs.cache
+D:\Coding\TKPM\Plugins\Text\Text_Statistics\obj\Release\net8.0\Text_Statistics.sourcelink.json
+D:\Coding\TKPM\Plugins\Text\Text_Statistics\obj\Release\net8.0\Text_Sta.B5973E61.Up2Date
+D:\Coding\TKPM\Plugins\Text\Text_Statistics\obj\Release\net8.0\Text_Statistics.dll
+D:\Coding\TKPM\Plugins\Text\Text_Statistics\obj\Release\net8.0\refint\Text_Statistics.dll
+D:\Coding\TKPM\Plugins\Text\Text_Statistics\obj\Release\net8.0\Text_Statistics.pdb
+D:\Coding\TKPM\Plugins\Text\Text_Statistics\obj\Release\net8.0\ref\Text_Statistics.dll

@@ -17,6 +17,22 @@ namespace DevTool.Categories
         ImageVideo,
 
         [Description("Development")]
-        Development
+        Development,
+
+        [Description("Network")]
+        Network,
+
+        [Description("Math")]
+        Math,
+
+        [Description("Text")]
+        Text,
+
+        [Description("Measurement")]
+        Measurement,
+
+        [Description("AI")]
+        AI,
+
     }
 }
