@@ -2,8 +2,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using MyWebAPI.data;
-using MyWebAPI.Repositories;
-using MyWebAPI.Repositories.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using MyWebAPI.Services.Interfaces;
@@ -88,7 +86,6 @@ builder.Services.AddAuthentication(options =>
 });
 
 //  services
-builder.Services.AddScoped<IItemRepository, ItemRepository>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IAccountManagerService, AccountManagerService>();
 builder.Services.AddScoped<IPluginManagerService, PluginManagerService>();

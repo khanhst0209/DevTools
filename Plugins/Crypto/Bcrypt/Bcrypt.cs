@@ -17,10 +17,14 @@ public class Bcrypt : IDevToolPlugin
     public Roles AccessiableRole { get; set; } = Roles.Anonymous;
     public bool IsActive { get; set; } = true;
     public bool IsPremium { get; set; } = false;
-    public string Icon { get; set; } = @"
-    <svg xmlns=""http://www.w3.org/2000/svg"" height=""24px"" viewBox=""0 -960 960 960"" width=""24px"" fill=""#e3e3e3"">
-        <path d=""M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm0-80h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80ZM240-160v-400 400Z""/>
-    </svg>";
+    public string Icon {get; set;} = @"<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 24 24'>
+    <g fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <rect x='8' y='11' width='8' height='5' rx='1'></rect>
+        <path d='M10 11V9a2 2 0 1 1 4 0v2'></path>
+        <rect x='4' y='4' width='16' height='16' rx='2'></rect>
+    </g>
+</svg>";
+
 
 
 

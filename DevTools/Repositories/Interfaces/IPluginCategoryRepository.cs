@@ -1,15 +1,11 @@
+using DevTool.Categories;
 using DevTools.data;
 
 namespace DevTools.Repositories.Interfaces
 {
-    public interface IPluginCategoryRepository
+    public interface IPluginCategoryRepository : IBaseRepository<PluginCategory>
     {
-         Task<List<PluginCategory>> GetAllAsync();
-         Task<PluginCategory> GetByIdAsync(int Id);
-         Task<bool> CheckExistByNameAsync(string name);
-         Task<int> GetIdByName(string name);
-         Task AddPluginCategoryAsync(string name);
+         Task<PluginCategory> GetByName(string name);
 
-         Task RemoveByIdAsync(int Id);
     }
 }

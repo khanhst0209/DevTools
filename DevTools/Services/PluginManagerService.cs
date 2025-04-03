@@ -41,7 +41,7 @@ namespace DevTools.Services
                 Console.WriteLine($"Checking {dll}...");
                 await LoadPluginFromFile(dll);
             }
-
+            Console.WriteLine("Check Tool in Database existed in folder");
             await _pluginRepository.CheckPluginExistInFoulder();
             Console.WriteLine("================================================");
         }
@@ -63,17 +63,25 @@ namespace DevTools.Services
                 {
                     if (Activator.CreateInstance(type) is IDevToolPlugin plugin)
                     {
-                        var id = await _pluginRepository.GetIdByName(plugin.Name);
-                        if (id == -1)
+                        var item = await _pluginRepository.GetByName(plugin.Name);
+                        if (item == null)
                         {
                             var temp = _mapper.Map<CreatePluginDTO>(plugin);
                             await _pluginRepository.AddPluginAsync(temp);
-                            plugin.Id = await _pluginRepository.GetIdByName(plugin.Name);
+                            plugin.Id = (await _pluginRepository.GetByName(plugin.Name)).Id;
                         }
                         else
                         {
-                            plugin.Id = id;
-                            Console.WriteLine($"Plugin already exists in database.");
+                            if (item != null)
+                            {
+                                if (item.Icon != plugin.Icon)
+                                    item.Icon = plugin.Icon;
+
+                                if (item.Description != plugin.Description)
+                                    item.Description = plugin.Description;
+
+                                await _pluginRepository.UpdateAsync(item);
+                            }
                         }
 
                         await _pluginmanagerRepository.AddAsync(plugin);
@@ -95,15 +103,9 @@ namespace DevTools.Services
 
         public async Task<object> Execute(int id, object input)
         {
-            try
-            {
-                var plugin = await _pluginmanagerRepository.GetByIdAsync(id);
-                return plugin.Execute(input);
-            }
-            catch (PluginNotFound ex)
-            {
-                throw ex;
-            }
+            var plugin = await _pluginmanagerRepository.GetByIdAsync(id);
+            return plugin.Execute(input);
+
         }
 
         public Task RemovePlugin(string path)
@@ -122,7 +124,7 @@ namespace DevTools.Services
             return await _pluginmanagerRepository.GetScheme1(id);
         }
 
-       
+
 
     }
 }

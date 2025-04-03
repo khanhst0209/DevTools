@@ -17,10 +17,13 @@ public class HashText : IDevToolPlugin
     public Roles AccessiableRole { get; set; } = Roles.Anonymous;
     public bool IsActive { get; set; } = true;
     public bool IsPremium { get; set; } = false;
-    public string Icon { get; set; } = @"
-    <svg xmlns=""http://www.w3.org/2000/svg"" height=""24px"" viewBox=""0 -960 960 960"" width=""24px"" fill=""#e3e3e3"">
-        <path d=""m644-428-58-58q9-47-27-88t-93-32l-58-58q17-8 34.5-12t37.5-4q75 0 127.5 52.5T660-500q0 20-4 37.5T644-428Zm128 126-58-56q38-29 67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-62-62q41-17 84-25.5t90-8.5q151 0 269 83.5T920-500q-23 59-60.5 109.5T772-302Zm20 246L624-222q-35 11-70.5 16.5T480-200q-151 0-269-83.5T40-500q21-53 53-98.5t73-81.5L56-792l56-56 736 736-56 56ZM222-624q-29 26-53 57t-41 67q50 101 143.5 160.5T480-280q20 0 39-2.5t39-5.5l-36-38q-11 3-21 4.5t-21 1.5q-75 0-127.5-52.5T300-500q0-11 1.5-21t4.5-21l-84-82Zm319 93Zm-151 75Z""/>
-    </svg>";
+    public string Icon { get; set; } = @"<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 24 24'>
+    <g fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M3 3l18 18'></path>
+        <path d='M10.584 10.587a2 2 0 0 0 2.828 2.83'></path>
+        <path d='M9.363 5.365A9.466 9.466 0 0 1 12 5c4 0 7.333 2.333 10 7c-.778 1.361-1.612 2.524-2.503 3.488m-2.14 1.861C15.726 18.449 13.942 19 12 19c-4 0-7.333-2.333-10-7c1.369-2.395 2.913-4.175 4.632-5.341'></path>
+    </g>
+</svg>";
 
 
 

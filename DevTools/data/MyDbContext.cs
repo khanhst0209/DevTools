@@ -15,7 +15,6 @@ namespace MyWebAPI.data
         }
 
         #region DbSet
-        public DbSet<Item> Items { get; set; }
         public DbSet<Plugin> Plugins { get; set; }
         public DbSet<PluginCategory> PluginCategories { get; set; }
         public DbSet<UserPlugins> UserPlugins { get; set; }
