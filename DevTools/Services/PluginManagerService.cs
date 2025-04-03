@@ -122,10 +122,7 @@ namespace DevTools.Services
             return await _pluginmanagerRepository.GetScheme1(id);
         }
 
-        public async Task<object> GetScheme2(int id)
-        {
-            return await _pluginmanagerRepository.GetScheme2(id);
-        }
+       
 
     }
 }

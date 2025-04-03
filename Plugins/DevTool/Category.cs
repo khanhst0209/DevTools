@@ -2,7 +2,8 @@ namespace DevTool.Categories
 {
     public enum Category
     {
-        Decode, 
-        Encode
+        Crypto,
+        Converter,
+        Web
     }
 }

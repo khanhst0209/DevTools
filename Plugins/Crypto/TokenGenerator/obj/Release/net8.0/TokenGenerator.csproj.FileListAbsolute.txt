@@ -1,0 +1,16 @@
+D:\Coding\TKPM\Plugins\Crypto\TokenGenerator\bin\Release\net8.0\TokenGenerator.deps.json
+D:\Coding\TKPM\Plugins\Crypto\TokenGenerator\bin\Release\net8.0\TokenGenerator.dll
+D:\Coding\TKPM\Plugins\Crypto\TokenGenerator\bin\Release\net8.0\TokenGenerator.pdb
+D:\Coding\TKPM\Plugins\Crypto\TokenGenerator\bin\Release\net8.0\DevTool.dll
+D:\Coding\TKPM\Plugins\Crypto\TokenGenerator\bin\Release\net8.0\DevTool.pdb
+D:\Coding\TKPM\Plugins\Crypto\TokenGenerator\obj\Release\net8.0\TokenGenerator.csproj.AssemblyReference.cache
+D:\Coding\TKPM\Plugins\Crypto\TokenGenerator\obj\Release\net8.0\TokenGenerator.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\TKPM\Plugins\Crypto\TokenGenerator\obj\Release\net8.0\TokenGenerator.AssemblyInfoInputs.cache
+D:\Coding\TKPM\Plugins\Crypto\TokenGenerator\obj\Release\net8.0\TokenGenerator.AssemblyInfo.cs
+D:\Coding\TKPM\Plugins\Crypto\TokenGenerator\obj\Release\net8.0\TokenGenerator.csproj.CoreCompileInputs.cache
+D:\Coding\TKPM\Plugins\Crypto\TokenGenerator\obj\Release\net8.0\TokenGenerator.sourcelink.json
+D:\Coding\TKPM\Plugins\Crypto\TokenGenerator\obj\Release\net8.0\TokenGen.FBDAAB5A.Up2Date
+D:\Coding\TKPM\Plugins\Crypto\TokenGenerator\obj\Release\net8.0\TokenGenerator.dll
+D:\Coding\TKPM\Plugins\Crypto\TokenGenerator\obj\Release\net8.0\refint\TokenGenerator.dll
+D:\Coding\TKPM\Plugins\Crypto\TokenGenerator\obj\Release\net8.0\TokenGenerator.pdb
+D:\Coding\TKPM\Plugins\Crypto\TokenGenerator\obj\Release\net8.0\ref\TokenGenerator.dll

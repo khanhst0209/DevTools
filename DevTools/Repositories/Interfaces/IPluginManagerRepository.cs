@@ -14,6 +14,5 @@ namespace DevTools.Repositories.Interfaces
 
 
         Task<string> GetScheme1(int id);
-        Task<Object> GetScheme2(int id);
     }
 }

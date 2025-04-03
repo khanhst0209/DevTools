@@ -73,12 +73,6 @@ namespace DevTools.controllers
             return Ok(result);
         }
 
-        [HttpGet("{id}/schema2")]
-        public async Task<IActionResult> GetSchema2(int id)
-        {
-            var result = await _pluginmanagerService.GetScheme2(id);
-            return Ok(result);
-        }
 
     }
 }

@@ -34,7 +34,7 @@ namespace DevTools.Repositories
 
         public async Task<List<PluginCategory>> GetAllAsync()
         {
-            return await _context.PluginCategories.AsNoTracking().Include(p => p.Plugins).ToListAsync();
+            return await _context.PluginCategories.AsNoTracking().Include(p => p.Plugins).Where(x => x.Plugins.Count() > 0).ToListAsync();
         }
 
         public async Task<PluginCategory> GetByIdAsync(int Id)

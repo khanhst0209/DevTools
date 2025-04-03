@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Coding\\TKPM\\PLugins\\Builder\\Builder.csproj": {}
+    "D:\\Coding\\TKPM\\Plugins\\Builder\\Builder.csproj": {}
   },
   "projects": {
-    "D:\\Coding\\TKPM\\PLugins\\Builder\\Builder.csproj": {
+    "D:\\Coding\\TKPM\\Plugins\\Builder\\Builder.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Coding\\TKPM\\PLugins\\Builder\\Builder.csproj",
+        "projectUniqueName": "D:\\Coding\\TKPM\\Plugins\\Builder\\Builder.csproj",
         "projectName": "Builder",
-        "projectPath": "D:\\Coding\\TKPM\\PLugins\\Builder\\Builder.csproj",
+        "projectPath": "D:\\Coding\\TKPM\\Plugins\\Builder\\Builder.csproj",
         "packagesPath": "C:\\Users\\phamn\\.nuget\\packages\\",
-        "outputPath": "D:\\Coding\\TKPM\\PLugins\\Builder\\obj\\",
+        "outputPath": "D:\\Coding\\TKPM\\Plugins\\Builder\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\phamn\\AppData\\Roaming\\NuGet\\NuGet.Config",

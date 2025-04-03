@@ -31,6 +31,10 @@ namespace MyWebAPI.data
                 .HasOne(p => p.Role)
                 .WithMany()
                 .HasForeignKey(p => p.AccessiableRoleId);
+            
+            modelBuilder.Entity<Plugin>()
+                .HasIndex(p => p.Name)
+                .IsUnique();
 
             modelBuilder.Entity<UserPlugins>()
             .HasKey(x => new { x.UserId, x.PluginId });
@@ -46,6 +50,8 @@ namespace MyWebAPI.data
                 .WithMany()
                 .HasForeignKey(up => up.PluginId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+
 
         }
 

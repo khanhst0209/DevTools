@@ -19,7 +19,5 @@ namespace Plugins.DevTool
 
 
         public string GetSheme1();
-
-        public object GetSheme2();
     }
 }
