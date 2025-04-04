@@ -12,6 +12,7 @@ namespace DevTools.Services.Interfaces
         Task RemovePlugin(string path);
         Task<List<PluginsResponeDTO>> GetAllActivePlugin();
         Task<List<PluginsResponeDTO>> GetAllByQuerry(PluginQuerry querry);
+        Task SetPremiumStatus(int pluginId, bool status);
 
         Task<object> Execute(int Id, object input);
 

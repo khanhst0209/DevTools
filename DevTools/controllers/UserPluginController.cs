@@ -9,7 +9,7 @@ using MyWebAPI.Dto;
 
 namespace DevTools.controllers
 {
-    [Route("UserPLugin")]
+    [Route("api/UserPLugin")]
     [ApiController]
     public class UserPluginController : ControllerBase
     {

@@ -122,7 +122,23 @@ namespace DevTools.Services
             return await _pluginmanagerRepository.GetScheme1(id);
         }
 
+        public async Task SetPremiumStatus(int pluginId, bool status)
+        {
+            var plugin = await _pluginRepository.GetByIdAsync(pluginId);
+            if(plugin != null)
+            {
+                if(plugin.IsPremium != status)
+                {
+                    plugin.IsPremium = status;
+                   await _pluginRepository.UpdateAsync(plugin);
+                }
 
+            }
+            else
+            {
+                throw new PluginNotFound(pluginId);
+            }
+        }
 
     }
 }
