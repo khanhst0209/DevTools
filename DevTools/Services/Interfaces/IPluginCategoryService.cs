@@ -5,6 +5,8 @@ namespace DevTools.Services.Interfaces
 {
     public interface IPluginCategoryService
     {
-         Task<List<PLuginCategoryDTO>> GetAllCategoryWithplugin();
+        Task<List<PLuginCategoryDTO>> GetAllCategoryWithplugin();
+
+        Task<PLuginCategoryDTO> GetCategoryById(int id);
     }
 }

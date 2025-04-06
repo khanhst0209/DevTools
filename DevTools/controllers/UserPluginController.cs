@@ -9,7 +9,7 @@ using MyWebAPI.Dto;
 
 namespace DevTools.controllers
 {
-    [Route("api/UserPLugin")]
+    [Route("favorite")]
     [ApiController]
     public class UserPluginController : ControllerBase
     {
@@ -34,7 +34,7 @@ namespace DevTools.controllers
             }
         }
 
-        [HttpPost("Add")]
+        [HttpPost()]
         [Authorize]
         public async Task<IActionResult> AddFavoritePlugins(CreateUserPluginDTO createUserPlugin)
         {

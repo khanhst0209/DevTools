@@ -1,3 +1,4 @@
+using DevTools.Exceptions.Plugins.PluginCategoryException.cs;
 using DevTools.Services;
 using DevTools.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -23,6 +24,25 @@ namespace DevTools.controllers
             {
                 var categories = await _plugincategoryservice.GetAllCategoryWithplugin();
                 return Ok(categories);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ErrorRespones(ex.Message));
+            }
+        }
+
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetCategoryById(int id)
+        {
+            try
+            {
+                var category = await _plugincategoryservice.GetCategoryById(id);
+                return Ok(category);
+            }
+            catch(PluginCategoryNotFound ex)
+            {
+                return NotFound(ex.Message);
             }
             catch (Exception ex)
             {

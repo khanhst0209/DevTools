@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Builder
-build_property.ProjectDir = D:\Coding\TKPM\Plugins\builder\
+build_property.ProjectDir = D:\Coding\TKPM\Plugins\Builder\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

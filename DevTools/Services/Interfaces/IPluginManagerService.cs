@@ -10,14 +10,18 @@ namespace DevTools.Services.Interfaces
         Task LoadPlugins();
         Task AddPlugin(string path);
         Task RemovePlugin(string path);
+
+        Task<PluginsResponeDTO> GetPLuginById(int id);
         Task<List<PluginsResponeDTO>> GetAllActivePlugin();
         Task<List<PluginsResponeDTO>> GetAllByQuerry(PluginQuerry querry);
         Task SetPremiumStatus(int pluginId, bool status);
+        Task SetActiveStatus(int pluginId, bool status);
 
         Task<object> Execute(int Id, object input);
 
-        Task<string> GetScheme1(int id);
+        Task<PluginUI> GetScheme(int id);
 
+        Task<string> GetScheme1(int id);
 
     }
 }

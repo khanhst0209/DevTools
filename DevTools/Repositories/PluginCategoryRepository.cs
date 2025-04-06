@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using DevTool.Categories;
 using DevTools.data;
 using DevTools.Exceptions.Plugins.PluginCategoryException.cs;
 using DevTools.Repositories.Interfaces;
@@ -25,7 +26,7 @@ namespace DevTools.Repositories
 
         public override async Task<List<PluginCategory>> GetAllAsync()
         {
-            return await _context.PluginCategories.AsNoTracking().Include(p => p.Plugins).Where(x => x.Plugins.Count() > 0).ToListAsync();
+            return await _context.PluginCategories.AsNoTracking().Include(p => p.Plugins.Where(x => x.IsActive == true)).Where(x => x.Plugins.Count() > 0).ToListAsync();
         }
 
 
@@ -38,6 +39,12 @@ namespace DevTools.Repositories
             throw new PluginCategoryNotFound(name);
         }
 
+        public override async Task<PluginCategory> GetByIdAsync(int Id)
+        {
+            return await (_context.PluginCategories
+                                 .Include(p => p.Plugins)
+                                 .FirstOrDefaultAsync(x => x.Id == Id));
+        }
 
     }
 }

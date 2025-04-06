@@ -39,5 +39,26 @@ namespace DevTools.controllers
             }
         }
 
+        [HttpPost("{pluginId}/activation")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> SetActiveStatus(int pluginId, [FromQuery] bool IsActive)
+        {
+            try
+            {
+                await _pluginManagerService.SetActiveStatus(pluginId, IsActive);
+                return Ok($"Pluing with id: {pluginId} has been change Activation to : {IsActive}");
+            }
+            catch (Exception ex)
+            {
+                if(ex is PluginNotFound)
+                {
+                    return NotFound(ex.Message);
+                }
+                else{
+                    return BadRequest(ex.Message);
+                }
+            }
+        }
+
     }
 }

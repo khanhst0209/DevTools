@@ -13,6 +13,7 @@ namespace DevTools.Services
     public class PluginManagerService : IPluginManagerService
     {
         private readonly IPluginManagerRepository _pluginmanagerRepository;
+        private readonly IWebHostEnvironment _env;
         private readonly IPluginRepository _pluginRepository;
         private readonly IMapper _mapper;
         private readonly string _pluginFolder = "./Plugins/DevTool_Plugins";
@@ -20,7 +21,8 @@ namespace DevTools.Services
         public PluginManagerService(
             IPluginManagerRepository pluginmanagerRepository,
             IPluginRepository pluginRepository,
-            IMapper mapper)
+            IMapper mapper,
+            IWebHostEnvironment env)
         {
             if (!Directory.Exists(_pluginFolder))
                 Directory.CreateDirectory(_pluginFolder);
@@ -28,6 +30,7 @@ namespace DevTools.Services
             _pluginmanagerRepository = pluginmanagerRepository;
             _pluginRepository = pluginRepository;
             _mapper = mapper;
+            _env = env;
         }
 
         public async Task LoadPlugins()
@@ -117,20 +120,57 @@ namespace DevTools.Services
             return _mapper.Map<List<PluginsResponeDTO>>(plugins);
         }
 
-        public async Task<string> GetScheme1(int id)
+        public async Task<PluginUI> GetScheme(int id)
         {
-            return await _pluginmanagerRepository.GetScheme1(id);
+            var plugin = await _pluginmanagerRepository.GetByIdAsync(id);
+            if (plugin == null)
+            {
+                throw new PluginNotFound(id);
+            }
+
+            string className = plugin.GetType().Name;
+            string directoryPath = Path.Combine(_env.WebRootPath, "Sources", className);
+
+            if (Directory.Exists(directoryPath))
+            {
+                var files = Directory.GetFiles(directoryPath, "*.*", SearchOption.AllDirectories);
+                var fileUrls = new PluginUI();
+
+                foreach (var file in files)
+                {
+                    // Convert absolute file path to relative URL path
+                    string relativePath = file.Replace(_env.WebRootPath, "").Replace("\\", "/");
+
+                    if (file.EndsWith(".html", StringComparison.OrdinalIgnoreCase))
+                    {
+                        fileUrls.html = relativePath;
+                    }
+                    if (file.EndsWith(".css", StringComparison.OrdinalIgnoreCase))
+                    {
+                        fileUrls.css = relativePath;
+                    }
+                    if (file.EndsWith(".js", StringComparison.OrdinalIgnoreCase))
+                    {
+                        fileUrls.js = relativePath;
+                    }
+                }
+
+                return fileUrls;
+            }
+
+            return null;
         }
+
 
         public async Task SetPremiumStatus(int pluginId, bool status)
         {
             var plugin = await _pluginRepository.GetByIdAsync(pluginId);
-            if(plugin != null)
+            if (plugin != null)
             {
-                if(plugin.IsPremium != status)
+                if (plugin.IsPremium != status)
                 {
                     plugin.IsPremium = status;
-                   await _pluginRepository.UpdateAsync(plugin);
+                    await _pluginRepository.UpdateAsync(plugin);
                 }
 
             }
@@ -139,6 +179,42 @@ namespace DevTools.Services
                 throw new PluginNotFound(pluginId);
             }
         }
+
+        public async Task SetActiveStatus(int pluginId, bool status)
+        {
+            var plugin = await _pluginRepository.GetByIdAsync(pluginId);
+            if (plugin != null)
+            {
+                if (plugin.IsActive != status)
+                {
+                    plugin.IsActive = status;
+                    await _pluginRepository.UpdateAsync(plugin);
+                }
+
+            }
+            else
+            {
+                throw new PluginNotFound(pluginId);
+            }
+        }
+
+        public async Task<string> GetScheme1(int id)
+        {
+            var plugin = await _pluginmanagerRepository.GetByIdAsync(id);
+            var scheme = plugin.GetSheme1();
+
+            return scheme;
+        }
+
+        public async Task<PluginsResponeDTO> GetPLuginById(int id)
+        {
+            var plugin = await _pluginRepository.GetByIdAsync(id);
+            if (plugin == null)
+                throw new PluginNotFound(id);
+
+            return _mapper.Map<PluginsResponeDTO>(plugin);
+        }
+
 
     }
 }

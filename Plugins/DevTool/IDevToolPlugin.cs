@@ -18,6 +18,7 @@ namespace Plugins.DevTool
         public string Icon { get; set; }
 
 
+
         public string GetSheme1();
     }
 }

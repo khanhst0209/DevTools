@@ -1,11 +1,77 @@
 {
   "Version": 1,
-  "Hash": "IfT6bnzdobL3y4/SwTztY2775GbYodHUQQz8zUw5z+U=",
+  "Hash": "nbCSSe8BHZd8oeX+Y4ZwEHKjk870NSqyOcW1K9bPM5k=",
   "Source": "MyWebAPI",
   "BasePath": "_content/MyWebAPI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "MyWebAPI\\wwwroot",
+      "Source": "MyWebAPI",
+      "ContentRoot": "D:\\Coding\\TKPM\\DevTools\\wwwroot\\",
+      "BasePath": "_content/MyWebAPI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\Coding\\TKPM\\DevTools\\wwwroot\\Sources\\Base64EncoderDecoder\\assets\\index-BDBwt6y-.js",
+      "SourceId": "MyWebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Coding\\TKPM\\DevTools\\wwwroot\\",
+      "BasePath": "_content/MyWebAPI",
+      "RelativePath": "Sources/Base64EncoderDecoder/assets/index-BDBwt6y-.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Sources\\Base64EncoderDecoder\\assets\\index-BDBwt6y-.js"
+    },
+    {
+      "Identity": "D:\\Coding\\TKPM\\DevTools\\wwwroot\\Sources\\Base64EncoderDecoder\\assets\\index-vRU7Uekz.css",
+      "SourceId": "MyWebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Coding\\TKPM\\DevTools\\wwwroot\\",
+      "BasePath": "_content/MyWebAPI",
+      "RelativePath": "Sources/Base64EncoderDecoder/assets/index-vRU7Uekz.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Sources\\Base64EncoderDecoder\\assets\\index-vRU7Uekz.css"
+    },
+    {
+      "Identity": "D:\\Coding\\TKPM\\DevTools\\wwwroot\\Sources\\Base64EncoderDecoder\\index.html",
+      "SourceId": "MyWebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Coding\\TKPM\\DevTools\\wwwroot\\",
+      "BasePath": "_content/MyWebAPI",
+      "RelativePath": "Sources/Base64EncoderDecoder/index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Sources\\Base64EncoderDecoder\\index.html"
+    }
+  ]
 }
