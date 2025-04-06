@@ -8,5 +8,7 @@ namespace MyWebAPI.Services.Interfaces
         Task<NewUserDTO> Login(LoginDTO logindto);
         Task<NewUserDTO> Register(RegisterDTO registerDto);
         Task<List<UserDTO>> GetAllUsers();
+
+        Task<UserDTO> GetUserById(string Id);
     }
 } 

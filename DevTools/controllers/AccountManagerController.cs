@@ -1,6 +1,8 @@
+using System.Security.Claims;
 using DevTools.Dto.user;
 using DevTools.Exceptions.AccountManager.LoginException;
 using DevTools.Exceptions.AccountManager.RegisterException;
+using DevTools.Exceptions.AccountManager.UserException;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -69,6 +71,32 @@ namespace MyWebAPI.controllers
             catch (Exception ex)
             {
                 return StatusCode(500, new ErrorRespones("An unexpected error occurred: " + ex.Message));
+            }
+        }
+
+        [HttpGet("me")]
+        [Authorize()]
+        public async Task<IActionResult> GetCurrentUserInfo()
+        {
+            try
+            {
+                var userIdClaim = User.FindFirst("Id");
+                if (userIdClaim == null)
+                    return Unauthorized("Invalid token");
+
+                var userId = userIdClaim.Value;
+
+                var user = await _accountManagerService.GetUserById(userId);
+
+                return Ok(user); 
+            }
+            catch(UserNotFound ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ErrorRespones(ex.Message));
             }
         }
 

@@ -7,6 +7,7 @@ using MyWebAPI.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using DevTools.Exceptions.AccountManager.LoginException;
 using AutoMapper;
+using DevTools.Exceptions.AccountManager.UserException;
 
 
 namespace DevTools.Services
@@ -47,6 +48,18 @@ namespace DevTools.Services
             return userDtos;
         }
 
+        public async Task<UserDTO> GetUserById(string Id)
+        {
+            var user = await _userManager.Users.FirstOrDefaultAsync(x => x.Id == Id);
+
+            if(user == null)
+                throw new UserNotFound(Id);
+            
+            var userDTO = _mapper.Map<UserDTO>(user);
+            userDTO.Role = (await _userManager.GetRolesAsync(user))[0];
+
+            return userDTO;
+        }
 
         public async Task<NewUserDTO> Login(LoginDTO logindto)
         {
