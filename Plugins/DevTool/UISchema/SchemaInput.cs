@@ -6,7 +6,7 @@ namespace DevTool.UISchema
     public class SchemaInput
     {
         public string id { get; set; }
-        public string? lable { get; set; } = null;
+        public string? label { get; set; } = null;
         public string? description { get; set; } = null;
         public bool? required { get; set; } = null;
 

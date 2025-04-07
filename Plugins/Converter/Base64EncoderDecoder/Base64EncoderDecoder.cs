@@ -1,5 +1,6 @@
 ﻿using DevTool.Categories;
 using DevTool.Roles;
+using DevTool.UISchema;
 using Plugins.DevTool;
 
 namespace Base64EncoderDecoder;
@@ -26,8 +27,6 @@ public class Base64EncoderDecoder : IDevToolPlugin
               <path d=""M15 12v5""></path>
           </g>
       </svg>";
-
-
 
 
   private string ToNumeronym(string word)

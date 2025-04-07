@@ -13,6 +13,5 @@ namespace DevTool.UISchema
         checkbox,
         radio,
         toggle,
-
     }
 }

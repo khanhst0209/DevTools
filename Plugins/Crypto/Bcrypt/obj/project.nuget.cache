@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "i1bqgTq0MZ4=",
+  "dgSpecHash": "W3+SbjSRdXE=",
   "success": true,
   "projectFilePath": "D:\\Coding\\TKPM\\Plugins\\Crypto\\Bcrypt\\Bcrypt.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\phamn\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

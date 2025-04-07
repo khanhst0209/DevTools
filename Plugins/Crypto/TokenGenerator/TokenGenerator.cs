@@ -60,7 +60,7 @@ public class TokenGenerator : IDevToolPlugin
                     },
                     new SchemaInput{
                         id = "slider",
-                        lable = "Length",
+                        label = "Length",
                         type = ComponentType.slider.ToString(),
                         min = 1,
                         max = 512,
@@ -80,8 +80,6 @@ public class TokenGenerator : IDevToolPlugin
 
     public object Execute(object input)
     {
-        Console.WriteLine("Received Input: " + input.ToString());
-
         var dict = JsonSerializer.Deserialize<Dictionary<string, object>>(input.ToString());
         var json = JsonSerializer.Serialize(dict);
         var myInput = JsonSerializer.Deserialize<TokenGeneratorInput>(json);
