@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JSON2XML")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+baaf4e9a012d52363896141ad6fe92a1b7e12380")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+06dd9470e30ddc5322014fe9ec7e6a517f2f21fa")]
 [assembly: System.Reflection.AssemblyProductAttribute("JSON2XML")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JSON2XML")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

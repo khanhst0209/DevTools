@@ -1,0 +1,5 @@
+D:\Coding\TKPM\Plugins\publish\Random_Port_Generator.dll
+D:\Coding\TKPM\Plugins\publish\Random_Port_Generator.deps.json
+D:\Coding\TKPM\Plugins\publish\Random_Port_Generator.pdb
+D:\Coding\TKPM\Plugins\publish\DevTool.dll
+D:\Coding\TKPM\Plugins\publish\DevTool.pdb

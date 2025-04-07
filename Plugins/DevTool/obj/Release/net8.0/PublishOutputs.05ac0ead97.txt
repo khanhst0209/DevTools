@@ -1,0 +1,3 @@
+D:\Coding\TKPM\Plugins\publish\DevTool.dll
+D:\Coding\TKPM\Plugins\publish\DevTool.deps.json
+D:\Coding\TKPM\Plugins\publish\DevTool.pdb

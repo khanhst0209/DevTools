@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Ipv4_Subnet_Calculator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ca25539877a5f6542b35fe736e535fd288b420ee")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+06dd9470e30ddc5322014fe9ec7e6a517f2f21fa")]
 [assembly: System.Reflection.AssemblyProductAttribute("Ipv4_Subnet_Calculator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Ipv4_Subnet_Calculator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

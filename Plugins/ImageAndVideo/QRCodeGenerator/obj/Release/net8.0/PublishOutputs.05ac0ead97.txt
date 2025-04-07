@@ -1,0 +1,5 @@
+D:\Coding\TKPM\Plugins\publish\QRCodeGenerator.dll
+D:\Coding\TKPM\Plugins\publish\QRCodeGenerator.deps.json
+D:\Coding\TKPM\Plugins\publish\QRCodeGenerator.pdb
+D:\Coding\TKPM\Plugins\publish\DevTool.dll
+D:\Coding\TKPM\Plugins\publish\DevTool.pdb

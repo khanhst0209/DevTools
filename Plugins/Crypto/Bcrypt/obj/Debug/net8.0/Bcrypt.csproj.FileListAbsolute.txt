@@ -1,0 +1,16 @@
+D:\Coding\TKPM\Plugins\Crypto\Bcrypt\bin\Debug\net8.0\Bcrypt.deps.json
+D:\Coding\TKPM\Plugins\Crypto\Bcrypt\bin\Debug\net8.0\Bcrypt.dll
+D:\Coding\TKPM\Plugins\Crypto\Bcrypt\bin\Debug\net8.0\Bcrypt.pdb
+D:\Coding\TKPM\Plugins\Crypto\Bcrypt\bin\Debug\net8.0\DevTool.dll
+D:\Coding\TKPM\Plugins\Crypto\Bcrypt\bin\Debug\net8.0\DevTool.pdb
+D:\Coding\TKPM\Plugins\Crypto\Bcrypt\obj\Debug\net8.0\Bcrypt.csproj.AssemblyReference.cache
+D:\Coding\TKPM\Plugins\Crypto\Bcrypt\obj\Debug\net8.0\Bcrypt.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\TKPM\Plugins\Crypto\Bcrypt\obj\Debug\net8.0\Bcrypt.AssemblyInfoInputs.cache
+D:\Coding\TKPM\Plugins\Crypto\Bcrypt\obj\Debug\net8.0\Bcrypt.AssemblyInfo.cs
+D:\Coding\TKPM\Plugins\Crypto\Bcrypt\obj\Debug\net8.0\Bcrypt.csproj.CoreCompileInputs.cache
+D:\Coding\TKPM\Plugins\Crypto\Bcrypt\obj\Debug\net8.0\Bcrypt.sourcelink.json
+D:\Coding\TKPM\Plugins\Crypto\Bcrypt\obj\Debug\net8.0\Bcrypt.csproj.Up2Date
+D:\Coding\TKPM\Plugins\Crypto\Bcrypt\obj\Debug\net8.0\Bcrypt.dll
+D:\Coding\TKPM\Plugins\Crypto\Bcrypt\obj\Debug\net8.0\refint\Bcrypt.dll
+D:\Coding\TKPM\Plugins\Crypto\Bcrypt\obj\Debug\net8.0\Bcrypt.pdb
+D:\Coding\TKPM\Plugins\Crypto\Bcrypt\obj\Debug\net8.0\ref\Bcrypt.dll

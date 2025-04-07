@@ -1,0 +1,5 @@
+D:\Coding\TKPM\Plugins\publish\Percentage_Calculator.dll
+D:\Coding\TKPM\Plugins\publish\Percentage_Calculator.deps.json
+D:\Coding\TKPM\Plugins\publish\Percentage_Calculator.pdb
+D:\Coding\TKPM\Plugins\publish\DevTool.dll
+D:\Coding\TKPM\Plugins\publish\DevTool.pdb

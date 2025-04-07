@@ -1,0 +1,6 @@
+D:\Coding\TKPM\Plugins\Crypto\Bcrypt\publish\Bcrypt.dll
+D:\Coding\TKPM\Plugins\Crypto\Bcrypt\publish\Bcrypt.deps.json
+D:\Coding\TKPM\Plugins\Crypto\Bcrypt\publish\Bcrypt.pdb
+D:\Coding\TKPM\Plugins\Crypto\Bcrypt\publish\BCrypt.Net-Next.dll
+D:\Coding\TKPM\Plugins\Crypto\Bcrypt\publish\DevTool.dll
+D:\Coding\TKPM\Plugins\Crypto\Bcrypt\publish\DevTool.pdb

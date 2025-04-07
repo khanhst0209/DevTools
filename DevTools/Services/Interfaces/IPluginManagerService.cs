@@ -7,10 +7,6 @@ namespace DevTools.Services.Interfaces
 {
     public interface IPluginManagerService
     {
-        Task LoadPlugins();
-        Task AddPlugin(string path);
-        Task RemovePlugin(string path);
-
         Task<PluginsResponeDTO> GetPLuginById(int id);
         Task<List<PluginsResponeDTO>> GetAllActivePlugin();
         Task<List<PluginsResponeDTO>> GetAllByQuerry(PluginQuerry querry);

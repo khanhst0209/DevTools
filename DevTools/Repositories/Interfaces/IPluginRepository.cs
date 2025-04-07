@@ -12,5 +12,6 @@ namespace DevTools.Repositories.Interfaces
          Task<Plugin> GetByName(string name);
 
          Task CheckPluginExistInFoulder();
+
     }
 }

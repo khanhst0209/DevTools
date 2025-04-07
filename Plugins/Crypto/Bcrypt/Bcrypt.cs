@@ -1,12 +1,10 @@
 ﻿using DevTool.Categories;
 using DevTool.Roles;
 using Plugins.DevTool;
-using DevTool.Input2Execute;
 using DevTool.UISchema;
 using System.Text.Json;
 using System.ComponentModel.DataAnnotations;
 using DevTool.Input2Execute.Bcrypt;
-using BCrypt.Net;
 
 namespace Bcrypt;
 public class Bcrypt : IDevToolPlugin

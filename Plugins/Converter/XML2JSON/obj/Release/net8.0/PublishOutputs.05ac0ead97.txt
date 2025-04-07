@@ -1,0 +1,5 @@
+D:\Coding\TKPM\Plugins\publish\XML2JSON.dll
+D:\Coding\TKPM\Plugins\publish\XML2JSON.deps.json
+D:\Coding\TKPM\Plugins\publish\XML2JSON.pdb
+D:\Coding\TKPM\Plugins\publish\DevTool.dll
+D:\Coding\TKPM\Plugins\publish\DevTool.pdb

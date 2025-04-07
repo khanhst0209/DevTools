@@ -13,6 +13,7 @@ using DevTools.Repositories.Interfaces;
 using DevTools.Repositories;
 using DevTools.Helper.Mapper;
 using DevTools.data.Seed;
+using Services.AssemblyManager;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -103,6 +104,9 @@ builder.Services.AddScoped<IAccountManagerService, AccountManagerService>();
 builder.Services.AddScoped<IPluginManagerService, PluginManagerService>();
 builder.Services.AddScoped<IPluginCategoryService, PluginCategoryService>();
 builder.Services.AddScoped<IUserPluginService, UserPluginService>();
+builder.Services.AddScoped<IPluginLoader, PluginLoader>();
+builder.Services.AddScoped<ISharedLibraryLoader, SharedLibraryLoader>();
+builder.Services.AddScoped<IAssemblyManager, AssemblyManager>();
 
 //  repositories
 builder.Services.AddScoped<IPluginCategoryRepository, PluginCategoryRepository>();
@@ -113,6 +117,7 @@ builder.Services.AddScoped<IUserPluginRepository, UserPluginRepository>();
 
 // Background Services
 builder.Services.AddHostedService<PluginWatcherService>(); // Thêm vào Hosted Services
+builder.Services.AddHostedService<LibraryWatcherService>(); // Thêm vào Hosted Services
 
 
 
@@ -146,8 +151,11 @@ app.MapControllers();
 
 using (var scope = app.Services.CreateScope())
 {
-    var pluginManagerService = scope.ServiceProvider.GetRequiredService<IPluginManagerService>();
-    await pluginManagerService.LoadPlugins();
+    var pluginLoaderService = scope.ServiceProvider.GetRequiredService<IPluginLoader>();
+    await pluginLoaderService.LoadPluginsAsync();
+
+    var libraryLoaderService = scope.ServiceProvider.GetRequiredService<ISharedLibraryLoader>();
+    await libraryLoaderService.LoadLibraryAsync();
 }
 
 
