@@ -4,7 +4,7 @@ using Services.AssemblyManager;
 public class SharedLibraryLoader : ISharedLibraryLoader
 {
     private readonly IAssemblyManager _assemblymanager;
-    private readonly string _pluginFolder = "./Plugins/SharedLibrary";
+    private readonly string _pluginFolder = "./Domain/Plugins/SharedLibrary";
 
     public SharedLibraryLoader(IAssemblyManager _assemblymanager)
     {

@@ -14,7 +14,7 @@ namespace DevTools.Services
         private readonly IPluginRepository _pluginRepository;
         private readonly IMapper _mapper;
         private readonly IAssemblyManager _assembleManager;
-        private readonly string _pluginFolder = "./Plugins/DevTool_Plugins";
+        private readonly string _pluginFolder = "./Domain/Plugins/DevTool_Plugins";
 
         public PluginLoader(IPluginManagerRepository _pluginmanagerRepository
                             , IPluginRepository _pluginRepository,

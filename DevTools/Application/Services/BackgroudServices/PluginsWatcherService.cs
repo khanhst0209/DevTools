@@ -17,7 +17,7 @@ public class PluginWatcherService : BackgroundService
 
     protected override Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        _watcher = new FileSystemWatcher("Plugins/DevTool_Plugins", "*.dll")
+        _watcher = new FileSystemWatcher("./Domain/Plugins/DevTool_Plugins", "*.dll")
         {
             NotifyFilter = NotifyFilters.FileName | NotifyFilters.LastWrite
         };

@@ -15,7 +15,7 @@ public class LibraryWatcherService : BackgroundService
 
     protected override Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        _watcher = new FileSystemWatcher("Plugins/SharedLibrary", "*.dll")
+        _watcher = new FileSystemWatcher("./Domain/Plugins/SharedLibrary", "*.dll")
         {
             NotifyFilter = NotifyFilters.FileName | NotifyFilters.LastWrite
         };
