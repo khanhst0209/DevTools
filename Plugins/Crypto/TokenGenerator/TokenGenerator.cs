@@ -1,6 +1,10 @@
 ﻿using DevTool.Categories;
 using DevTool.Roles;
+using DevTool.UISchema;
 using Plugins.DevTool;
+using DevTool.Input2Execute.TokenGenerator;
+using System.Text.Json;
+using System.ComponentModel.DataAnnotations;
 
 namespace TokenGenerator;
 
@@ -26,16 +30,107 @@ public class TokenGenerator : IDevToolPlugin
     </g>
 </svg>";
 
-
-
+    public Schema schema => new Schema
+    {
+        id = Id,
+        uiSchemas = new List<UISchema>{
+            new UISchema {
+                inputs = new List<SchemaInput>{
+                    new SchemaInput{
+                        id = "toggle",
+                        type = ComponentType.toggle.ToString(),
+                        options = new List<ComponentOption>{
+                            new ComponentOption{
+                                value = "nut1",
+                                label = "Uppercase (ABC...)"
+                            },
+                            new ComponentOption{
+                                value = "nut2",
+                                label = "Numbers (123...)"
+                            },
+                            new ComponentOption{
+                                value = "nut3",
+                                label = "Lowercase (abc...)"
+                            },
+                            new ComponentOption{
+                                value = "nut4",
+                                label = "Symbols (!-;...)"
+                            }
+                        },
+                    },
+                    new SchemaInput{
+                        id = "slider",
+                        lable = "Length",
+                        type = ComponentType.slider.ToString(),
+                        min = 1,
+                        max = 512,
+                        step = 1
+                    }
+                },
+                outputs = new List<SchemaOutput>{
+                    new SchemaOutput{
+                        id = "textoutput",
+                        label = "Result token:",
+                        type = ComponentType.text.ToString()
+                    }
+                }
+            },
+        }
+    };
 
     public object Execute(object input)
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Received Input: " + input.ToString());
+
+        var dict = JsonSerializer.Deserialize<Dictionary<string, object>>(input.ToString());
+        var json = JsonSerializer.Serialize(dict);
+        var myInput = JsonSerializer.Deserialize<TokenGeneratorInput>(json);
+        Console.WriteLine("Mapped Input: " + JsonSerializer.Serialize(myInput));
+
+        Validator.ValidateObject(myInput, new ValidationContext(myInput), validateAllProperties: true);
+        Console.WriteLine("Validated Input");
+
+        var result = GenerateToken(myInput);
+        return new { textoutput = result };
     }
+
+
+    private string GenerateToken(TokenGeneratorInput input)
+    {
+        var charPool = "";
+
+        if (input.toggle.TryGetValue("nut1", out bool useUpper) && useUpper)
+            charPool += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        Console.WriteLine("==========================3");
+        if (input.toggle.TryGetValue("nut3", out bool useLower) && useLower)
+            charPool += "abcdefghijklmnopqrstuvwxyz";
+
+        if (input.toggle.TryGetValue("nut2", out bool useNumber) && useNumber)
+            charPool += "0123456789";
+        Console.WriteLine("==========================4");
+
+        if (input.toggle.TryGetValue("nut4", out bool useSymbol) && useSymbol)
+            charPool += "!@#$%^&*()-_=+[]{}|;:,.<>?";
+
+        if (string.IsNullOrEmpty(charPool))
+            return "";
+
+        var random = new Random();
+        var chars = new char[input.slider];
+
+        for (int i = 0; i < input.slider; i++)
+        {
+            chars[i] = charPool[random.Next(charPool.Length)];
+        }
+
+        return new string(chars);
+    }
+
 
     public string GetSheme1()
     {
         throw new NotImplementedException();
     }
+
+
 }

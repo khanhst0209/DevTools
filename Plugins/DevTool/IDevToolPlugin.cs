@@ -1,5 +1,6 @@
 ﻿using DevTool.Categories;
 using DevTool.Roles;
+using DevTool.UISchema;
 
 namespace Plugins.DevTool
 {
@@ -14,11 +15,9 @@ namespace Plugins.DevTool
         public Roles AccessiableRole { get; set; }
         public bool IsActive { get; set; }
         public bool IsPremium { get; set; }
-
         public string Icon { get; set; }
 
-
-
+        public Schema schema => null;
         public string GetSheme1();
     }
 }
