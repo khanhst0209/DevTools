@@ -2,6 +2,7 @@ using DevTools.Exceptions.Plugins.PluginsException.cs;
 using DevTools.Repositories.Interfaces;
 using DevTools.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DevTools.controllers
@@ -58,6 +59,12 @@ namespace DevTools.controllers
                     return BadRequest(ex.Message);
                 }
             }
+        }
+        [HttpDelete("{pluginId}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> RemovePlugin(int pluginId)
+        {
+            return NotFound("Cai nay chua lam, hoi bi luoi");
         }
 
     }
