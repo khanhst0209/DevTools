@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MAC_address_generator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3c7fc94c3be85021769e500fb9084a40a7a102f0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+24a2e43ed106d8b8fd513296c80b95f8265c239e")]
 [assembly: System.Reflection.AssemblyProductAttribute("MAC_address_generator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MAC_address_generator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
