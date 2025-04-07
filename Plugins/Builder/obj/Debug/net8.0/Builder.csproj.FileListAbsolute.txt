@@ -1,0 +1,15 @@
+D:\Coding\TKPM\Plugins\Builder\bin\Debug\net8.0\Builder.exe
+D:\Coding\TKPM\Plugins\Builder\bin\Debug\net8.0\Builder.deps.json
+D:\Coding\TKPM\Plugins\Builder\bin\Debug\net8.0\Builder.runtimeconfig.json
+D:\Coding\TKPM\Plugins\Builder\bin\Debug\net8.0\Builder.dll
+D:\Coding\TKPM\Plugins\Builder\bin\Debug\net8.0\Builder.pdb
+D:\Coding\TKPM\Plugins\Builder\obj\Debug\net8.0\Builder.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\TKPM\Plugins\Builder\obj\Debug\net8.0\Builder.AssemblyInfoInputs.cache
+D:\Coding\TKPM\Plugins\Builder\obj\Debug\net8.0\Builder.AssemblyInfo.cs
+D:\Coding\TKPM\Plugins\Builder\obj\Debug\net8.0\Builder.csproj.CoreCompileInputs.cache
+D:\Coding\TKPM\Plugins\Builder\obj\Debug\net8.0\Builder.sourcelink.json
+D:\Coding\TKPM\Plugins\Builder\obj\Debug\net8.0\Builder.dll
+D:\Coding\TKPM\Plugins\Builder\obj\Debug\net8.0\refint\Builder.dll
+D:\Coding\TKPM\Plugins\Builder\obj\Debug\net8.0\Builder.pdb
+D:\Coding\TKPM\Plugins\Builder\obj\Debug\net8.0\Builder.genruntimeconfig.cache
+D:\Coding\TKPM\Plugins\Builder\obj\Debug\net8.0\ref\Builder.dll

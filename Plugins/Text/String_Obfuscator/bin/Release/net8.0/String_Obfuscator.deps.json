@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "String_Obfuscator/1.0.0": {
+        "dependencies": {
+          "DevTool": "1.0.0"
+        },
+        "runtime": {
+          "String_Obfuscator.dll": {}
+        }
+      },
+      "DevTool/1.0.0": {
+        "runtime": {
+          "DevTool.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "String_Obfuscator/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DevTool/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

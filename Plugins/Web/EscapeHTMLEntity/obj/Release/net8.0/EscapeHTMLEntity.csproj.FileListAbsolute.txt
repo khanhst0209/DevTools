@@ -1,0 +1,16 @@
+D:\Coding\TKPM\Plugins\Web\EscapeHTMLEntity\bin\Release\net8.0\EscapeHTMLEntity.deps.json
+D:\Coding\TKPM\Plugins\Web\EscapeHTMLEntity\bin\Release\net8.0\EscapeHTMLEntity.dll
+D:\Coding\TKPM\Plugins\Web\EscapeHTMLEntity\bin\Release\net8.0\EscapeHTMLEntity.pdb
+D:\Coding\TKPM\Plugins\Web\EscapeHTMLEntity\bin\Release\net8.0\DevTool.dll
+D:\Coding\TKPM\Plugins\Web\EscapeHTMLEntity\bin\Release\net8.0\DevTool.pdb
+D:\Coding\TKPM\Plugins\Web\EscapeHTMLEntity\obj\Release\net8.0\EscapeHTMLEntity.csproj.AssemblyReference.cache
+D:\Coding\TKPM\Plugins\Web\EscapeHTMLEntity\obj\Release\net8.0\EscapeHTMLEntity.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\TKPM\Plugins\Web\EscapeHTMLEntity\obj\Release\net8.0\EscapeHTMLEntity.AssemblyInfoInputs.cache
+D:\Coding\TKPM\Plugins\Web\EscapeHTMLEntity\obj\Release\net8.0\EscapeHTMLEntity.AssemblyInfo.cs
+D:\Coding\TKPM\Plugins\Web\EscapeHTMLEntity\obj\Release\net8.0\EscapeHTMLEntity.csproj.CoreCompileInputs.cache
+D:\Coding\TKPM\Plugins\Web\EscapeHTMLEntity\obj\Release\net8.0\EscapeHTMLEntity.sourcelink.json
+D:\Coding\TKPM\Plugins\Web\EscapeHTMLEntity\obj\Release\net8.0\EscapeHT.5909B0C2.Up2Date
+D:\Coding\TKPM\Plugins\Web\EscapeHTMLEntity\obj\Release\net8.0\EscapeHTMLEntity.dll
+D:\Coding\TKPM\Plugins\Web\EscapeHTMLEntity\obj\Release\net8.0\refint\EscapeHTMLEntity.dll
+D:\Coding\TKPM\Plugins\Web\EscapeHTMLEntity\obj\Release\net8.0\EscapeHTMLEntity.pdb
+D:\Coding\TKPM\Plugins\Web\EscapeHTMLEntity\obj\Release\net8.0\ref\EscapeHTMLEntity.dll

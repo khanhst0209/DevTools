@@ -1,0 +1,12 @@
+using System.ComponentModel.DataAnnotations;
+
+namespace DevTools.Dto.UserPlugin
+{
+    public class CreateUserPluginDTO
+    {
+        [Required]
+        public string UserId { get; set; }
+        [Required]
+        public int PluginId { get; set; }
+    }
+}

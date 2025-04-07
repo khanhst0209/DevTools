@@ -5,6 +5,9 @@ using MyWebAPI.data;
 using MyWebAPI.Dto.user;
 using MyWebAPI.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using DevTools.Exceptions.AccountManager.LoginException;
+using AutoMapper;
+using DevTools.Exceptions.AccountManager.UserException;
 
 
 namespace DevTools.Services
@@ -15,32 +18,66 @@ namespace DevTools.Services
         private readonly UserManager<User> _userManager;
         private readonly ITokenService _tokenService;
         private readonly SignInManager<User> _signinManager;
+        private readonly IMapper _mapper;
 
-        public AccountManagerService(UserManager<User> userManager, ITokenService tokenService, SignInManager<User> _signinManager)
+        public AccountManagerService(UserManager<User> userManager,
+         ITokenService tokenService,
+         SignInManager<User> _signinManager,
+         IMapper _mapper)
         {
             this._userManager = userManager;
             this._tokenService = tokenService;
             this._signinManager = _signinManager;
+            this._mapper = _mapper;
         }
+
+        public async Task<List<UserDTO>> GetAllUsers()
+        {
+            var users = await _userManager.Users.ToListAsync();
+            var userDtos = _mapper.Map<List<UserDTO>>(users);
+
+            foreach (var userDto in userDtos)
+            {
+                var user = users.FirstOrDefault(u => u.Id == userDto.Id);
+                if (user != null)
+                {
+                    userDto.Role = (await _userManager.GetRolesAsync(user))[0];
+                }
+            }
+
+            return userDtos;
+        }
+
+        public async Task<UserDTO> GetUserById(string Id)
+        {
+            var user = await _userManager.Users.FirstOrDefaultAsync(x => x.Id == Id);
+
+            if(user == null)
+                throw new UserNotFound(Id);
+            
+            var userDTO = _mapper.Map<UserDTO>(user);
+            userDTO.Role = (await _userManager.GetRolesAsync(user))[0];
+
+            return userDTO;
+        }
+
         public async Task<NewUserDTO> Login(LoginDTO logindto)
         {
-            var user = await _userManager.Users.FirstOrDefaultAsync(x => x.UserName == logindto.username);
-            Console.WriteLine("check 1");
+            var user = await _userManager.Users.FirstOrDefaultAsync(x => x.UserName == logindto.UserName);
             if (user == null)
             {
-                return null;
+                throw new InvalidUsernameOrPassword(logindto.UserName, logindto.password);
             }
-            Console.WriteLine("check 1");
 
             var result = await _signinManager.CheckPasswordSignInAsync(user, logindto.password, false);
 
             if (!result.Succeeded)
-                return null;
-            Console.WriteLine("check 2");
+                throw new InvalidUsernameOrPassword(logindto.UserName, logindto.password);
             var roles = await _userManager.GetRolesAsync(user);
-            Console.WriteLine("check 3");
+
             return new NewUserDTO
             {
+                FullName = user.FullName,
                 UserName = user.UserName,
                 Email = user.Email,
                 Token = _tokenService.CreateToken(user, roles)
@@ -52,8 +89,10 @@ namespace DevTools.Services
         {
             var appuser = new User
             {
-                UserName = registerDto.Username,
-                Email = registerDto.Email
+                FullName = registerDto.FullName,
+                UserName = registerDto.UserName,
+                Email = registerDto.Email,
+                IsPremium = false
             };
 
             var createdUser = await _userManager.CreateAsync(appuser, registerDto.Password);
@@ -73,6 +112,7 @@ namespace DevTools.Services
             var roles = await _userManager.GetRolesAsync(appuser);
             return new NewUserDTO
             {
+                FullName = appuser.FullName,
                 UserName = appuser.UserName,
                 Email = appuser.Email,
                 Token = _tokenService.CreateToken(appuser, roles)

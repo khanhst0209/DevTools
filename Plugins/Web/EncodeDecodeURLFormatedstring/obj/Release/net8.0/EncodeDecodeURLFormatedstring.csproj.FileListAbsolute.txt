@@ -1,0 +1,16 @@
+D:\Coding\TKPM\Plugins\Web\EncodeDecodeURLFormatedstring\bin\Release\net8.0\EncodeDecodeURLFormatedstring.deps.json
+D:\Coding\TKPM\Plugins\Web\EncodeDecodeURLFormatedstring\bin\Release\net8.0\EncodeDecodeURLFormatedstring.dll
+D:\Coding\TKPM\Plugins\Web\EncodeDecodeURLFormatedstring\bin\Release\net8.0\EncodeDecodeURLFormatedstring.pdb
+D:\Coding\TKPM\Plugins\Web\EncodeDecodeURLFormatedstring\bin\Release\net8.0\DevTool.dll
+D:\Coding\TKPM\Plugins\Web\EncodeDecodeURLFormatedstring\bin\Release\net8.0\DevTool.pdb
+D:\Coding\TKPM\Plugins\Web\EncodeDecodeURLFormatedstring\obj\Release\net8.0\EncodeDecodeURLFormatedstring.csproj.AssemblyReference.cache
+D:\Coding\TKPM\Plugins\Web\EncodeDecodeURLFormatedstring\obj\Release\net8.0\EncodeDecodeURLFormatedstring.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\TKPM\Plugins\Web\EncodeDecodeURLFormatedstring\obj\Release\net8.0\EncodeDecodeURLFormatedstring.AssemblyInfoInputs.cache
+D:\Coding\TKPM\Plugins\Web\EncodeDecodeURLFormatedstring\obj\Release\net8.0\EncodeDecodeURLFormatedstring.AssemblyInfo.cs
+D:\Coding\TKPM\Plugins\Web\EncodeDecodeURLFormatedstring\obj\Release\net8.0\EncodeDecodeURLFormatedstring.csproj.CoreCompileInputs.cache
+D:\Coding\TKPM\Plugins\Web\EncodeDecodeURLFormatedstring\obj\Release\net8.0\EncodeDecodeURLFormatedstring.sourcelink.json
+D:\Coding\TKPM\Plugins\Web\EncodeDecodeURLFormatedstring\obj\Release\net8.0\EncodeDe.2FB1A89F.Up2Date
+D:\Coding\TKPM\Plugins\Web\EncodeDecodeURLFormatedstring\obj\Release\net8.0\EncodeDecodeURLFormatedstring.dll
+D:\Coding\TKPM\Plugins\Web\EncodeDecodeURLFormatedstring\obj\Release\net8.0\refint\EncodeDecodeURLFormatedstring.dll
+D:\Coding\TKPM\Plugins\Web\EncodeDecodeURLFormatedstring\obj\Release\net8.0\EncodeDecodeURLFormatedstring.pdb
+D:\Coding\TKPM\Plugins\Web\EncodeDecodeURLFormatedstring\obj\Release\net8.0\ref\EncodeDecodeURLFormatedstring.dll

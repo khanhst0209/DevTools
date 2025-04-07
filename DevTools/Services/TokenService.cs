@@ -20,13 +20,15 @@ namespace MyWebAPI.Services
         {
             var claims = new List<Claim>
             {
+                new Claim("Id", user.Id),
                 new Claim(JwtRegisteredClaimNames.Email, user.Email),
                 new Claim(JwtRegisteredClaimNames.GivenName, user.UserName),
+                new Claim("FullName", user.FullName),
             };
 
             foreach (var role in roles)
             {
-                claims.Add(new Claim(ClaimTypes.Role, role)); 
+                claims.Add(new Claim(ClaimTypes.Role, role));
             }
 
             var creds = new SigningCredentials(_key, SecurityAlgorithms.HmacSha256Signature);
@@ -34,7 +36,7 @@ namespace MyWebAPI.Services
             var TokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.Now.AddDays(7),
+                Expires = DateTime.Now.AddHours(2),
                 SigningCredentials = creds,
                 Issuer = _configuration["JWT:Issuer"],
                 Audience = _configuration["JWT:Audience"]

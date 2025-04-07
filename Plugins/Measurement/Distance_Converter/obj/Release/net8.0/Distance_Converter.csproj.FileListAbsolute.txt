@@ -1,0 +1,16 @@
+D:\Coding\TKPM\Plugins\Measurement\Distance_Converter\bin\Release\net8.0\Distance_Converter.deps.json
+D:\Coding\TKPM\Plugins\Measurement\Distance_Converter\bin\Release\net8.0\Distance_Converter.dll
+D:\Coding\TKPM\Plugins\Measurement\Distance_Converter\bin\Release\net8.0\Distance_Converter.pdb
+D:\Coding\TKPM\Plugins\Measurement\Distance_Converter\bin\Release\net8.0\DevTool.dll
+D:\Coding\TKPM\Plugins\Measurement\Distance_Converter\bin\Release\net8.0\DevTool.pdb
+D:\Coding\TKPM\Plugins\Measurement\Distance_Converter\obj\Release\net8.0\Distance_Converter.csproj.AssemblyReference.cache
+D:\Coding\TKPM\Plugins\Measurement\Distance_Converter\obj\Release\net8.0\Distance_Converter.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\TKPM\Plugins\Measurement\Distance_Converter\obj\Release\net8.0\Distance_Converter.AssemblyInfoInputs.cache
+D:\Coding\TKPM\Plugins\Measurement\Distance_Converter\obj\Release\net8.0\Distance_Converter.AssemblyInfo.cs
+D:\Coding\TKPM\Plugins\Measurement\Distance_Converter\obj\Release\net8.0\Distance_Converter.csproj.CoreCompileInputs.cache
+D:\Coding\TKPM\Plugins\Measurement\Distance_Converter\obj\Release\net8.0\Distance_Converter.sourcelink.json
+D:\Coding\TKPM\Plugins\Measurement\Distance_Converter\obj\Release\net8.0\Distance.2E0D08E6.Up2Date
+D:\Coding\TKPM\Plugins\Measurement\Distance_Converter\obj\Release\net8.0\Distance_Converter.dll
+D:\Coding\TKPM\Plugins\Measurement\Distance_Converter\obj\Release\net8.0\refint\Distance_Converter.dll
+D:\Coding\TKPM\Plugins\Measurement\Distance_Converter\obj\Release\net8.0\Distance_Converter.pdb
+D:\Coding\TKPM\Plugins\Measurement\Distance_Converter\obj\Release\net8.0\ref\Distance_Converter.dll

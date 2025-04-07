@@ -1,0 +1,16 @@
+D:\Coding\TKPM\Plugins\Network\MAC_address_generator\bin\Release\net8.0\MAC_address_generator.deps.json
+D:\Coding\TKPM\Plugins\Network\MAC_address_generator\bin\Release\net8.0\MAC_address_generator.dll
+D:\Coding\TKPM\Plugins\Network\MAC_address_generator\bin\Release\net8.0\MAC_address_generator.pdb
+D:\Coding\TKPM\Plugins\Network\MAC_address_generator\bin\Release\net8.0\DevTool.dll
+D:\Coding\TKPM\Plugins\Network\MAC_address_generator\bin\Release\net8.0\DevTool.pdb
+D:\Coding\TKPM\Plugins\Network\MAC_address_generator\obj\Release\net8.0\MAC_address_generator.csproj.AssemblyReference.cache
+D:\Coding\TKPM\Plugins\Network\MAC_address_generator\obj\Release\net8.0\MAC_address_generator.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\TKPM\Plugins\Network\MAC_address_generator\obj\Release\net8.0\MAC_address_generator.AssemblyInfoInputs.cache
+D:\Coding\TKPM\Plugins\Network\MAC_address_generator\obj\Release\net8.0\MAC_address_generator.AssemblyInfo.cs
+D:\Coding\TKPM\Plugins\Network\MAC_address_generator\obj\Release\net8.0\MAC_address_generator.csproj.CoreCompileInputs.cache
+D:\Coding\TKPM\Plugins\Network\MAC_address_generator\obj\Release\net8.0\MAC_address_generator.sourcelink.json
+D:\Coding\TKPM\Plugins\Network\MAC_address_generator\obj\Release\net8.0\MAC_addr.5EFCF127.Up2Date
+D:\Coding\TKPM\Plugins\Network\MAC_address_generator\obj\Release\net8.0\MAC_address_generator.dll
+D:\Coding\TKPM\Plugins\Network\MAC_address_generator\obj\Release\net8.0\refint\MAC_address_generator.dll
+D:\Coding\TKPM\Plugins\Network\MAC_address_generator\obj\Release\net8.0\MAC_address_generator.pdb
+D:\Coding\TKPM\Plugins\Network\MAC_address_generator\obj\Release\net8.0\ref\MAC_address_generator.dll

@@ -1,0 +1,16 @@
+D:\Coding\TKPM\Plugins\Converter\Base64EncoderDecoder\bin\Release\net8.0\Base64EncoderDecoder.deps.json
+D:\Coding\TKPM\Plugins\Converter\Base64EncoderDecoder\bin\Release\net8.0\Base64EncoderDecoder.dll
+D:\Coding\TKPM\Plugins\Converter\Base64EncoderDecoder\bin\Release\net8.0\Base64EncoderDecoder.pdb
+D:\Coding\TKPM\Plugins\Converter\Base64EncoderDecoder\bin\Release\net8.0\DevTool.dll
+D:\Coding\TKPM\Plugins\Converter\Base64EncoderDecoder\bin\Release\net8.0\DevTool.pdb
+D:\Coding\TKPM\Plugins\Converter\Base64EncoderDecoder\obj\Release\net8.0\Base64EncoderDecoder.csproj.AssemblyReference.cache
+D:\Coding\TKPM\Plugins\Converter\Base64EncoderDecoder\obj\Release\net8.0\Base64EncoderDecoder.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\TKPM\Plugins\Converter\Base64EncoderDecoder\obj\Release\net8.0\Base64EncoderDecoder.AssemblyInfoInputs.cache
+D:\Coding\TKPM\Plugins\Converter\Base64EncoderDecoder\obj\Release\net8.0\Base64EncoderDecoder.AssemblyInfo.cs
+D:\Coding\TKPM\Plugins\Converter\Base64EncoderDecoder\obj\Release\net8.0\Base64EncoderDecoder.csproj.CoreCompileInputs.cache
+D:\Coding\TKPM\Plugins\Converter\Base64EncoderDecoder\obj\Release\net8.0\Base64EncoderDecoder.sourcelink.json
+D:\Coding\TKPM\Plugins\Converter\Base64EncoderDecoder\obj\Release\net8.0\Base64En.C71B83AF.Up2Date
+D:\Coding\TKPM\Plugins\Converter\Base64EncoderDecoder\obj\Release\net8.0\Base64EncoderDecoder.dll
+D:\Coding\TKPM\Plugins\Converter\Base64EncoderDecoder\obj\Release\net8.0\refint\Base64EncoderDecoder.dll
+D:\Coding\TKPM\Plugins\Converter\Base64EncoderDecoder\obj\Release\net8.0\Base64EncoderDecoder.pdb
+D:\Coding\TKPM\Plugins\Converter\Base64EncoderDecoder\obj\Release\net8.0\ref\Base64EncoderDecoder.dll

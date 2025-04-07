@@ -1,43 +1,51 @@
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using System.IO;
-using System;
-using System.IO;
-using Plugins.Manager;
-namespace Services.BackgroundServices.PluginsWatchers;
+using System.Threading;
+using System.Threading.Tasks;
+using DevTools.Services.Interfaces;
 
-
-public static class PluginWatcher
+public class PluginWatcherService : BackgroundService
 {
-    private static FileSystemWatcher _watcher;
+    private readonly IServiceProvider _serviceProvider;
+    private FileSystemWatcher _watcher;
 
-    public static void StartWatching()
+    public PluginWatcherService(IServiceProvider serviceProvider)
+    {
+        _serviceProvider = serviceProvider;
+    }
+
+    protected override Task ExecuteAsync(CancellationToken stoppingToken)
     {
         _watcher = new FileSystemWatcher("Plugins/DevTool_Plugins", "*.dll")
         {
             NotifyFilter = NotifyFilters.FileName | NotifyFilters.LastWrite
         };
 
-        _watcher.Created += OnCreated;
-        _watcher.Changed += (s, e) => ReloadPlugins();
-        _watcher.Deleted += OnDeleted;
-
+        _watcher.Created += async (s, e) => await OnPluginCreated(e.FullPath);
+        _watcher.Deleted += async (s, e) => await OnPluginDeleted(e.FullPath);
         _watcher.EnableRaisingEvents = true;
+
+        return Task.CompletedTask; 
     }
 
-    private static void ReloadPlugins()
+    private async Task OnPluginCreated(string path)
     {
-        Console.WriteLine("🔄 Plugin folder changed. Reloading plugins...");
-        PluginManager.LoadPlugins();
+        using var scope = _serviceProvider.CreateScope();
+        var pluginService = scope.ServiceProvider.GetRequiredService<IPluginManagerService>();
+        await pluginService.AddPlugin(path);
     }
 
-    private static void OnCreated(object sender, FileSystemEventArgs e)
+    private async Task OnPluginDeleted(string path)
     {
-        Console.WriteLine("🔄 Plugin folder Created. Adding New Plugin");
-        PluginManager.AddPlugin(e.FullPath);
+        using var scope = _serviceProvider.CreateScope();
+        var pluginService = scope.ServiceProvider.GetRequiredService<IPluginManagerService>();
+        await pluginService.RemovePlugin(path);
     }
 
-    private static void OnDeleted(object sender, FileSystemEventArgs e)
+    public override void Dispose()
     {
-        Console.WriteLine($"🗑️ Plugin bị xóa: {e.FullPath}");
-        PluginManager.RemovePlugin(e.FullPath);
+        _watcher?.Dispose();
+        base.Dispose();
     }
 }

@@ -5,7 +5,7 @@ namespace MyWebAPI.data
 {
     public class User : IdentityUser
     {
-        public string Name {get; set;} = "Unknown";
+        public string FullName {get; set;} = "Unknown";
         public bool IsPremium {get; set;} = false;
     }
 }

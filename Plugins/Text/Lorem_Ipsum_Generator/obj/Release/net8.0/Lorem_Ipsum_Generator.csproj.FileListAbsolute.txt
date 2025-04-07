@@ -1,0 +1,16 @@
+D:\Coding\TKPM\Plugins\Text\Lorem_Ipsum_Generator\bin\Release\net8.0\Lorem_Ipsum_Generator.deps.json
+D:\Coding\TKPM\Plugins\Text\Lorem_Ipsum_Generator\bin\Release\net8.0\Lorem_Ipsum_Generator.dll
+D:\Coding\TKPM\Plugins\Text\Lorem_Ipsum_Generator\bin\Release\net8.0\Lorem_Ipsum_Generator.pdb
+D:\Coding\TKPM\Plugins\Text\Lorem_Ipsum_Generator\bin\Release\net8.0\DevTool.dll
+D:\Coding\TKPM\Plugins\Text\Lorem_Ipsum_Generator\bin\Release\net8.0\DevTool.pdb
+D:\Coding\TKPM\Plugins\Text\Lorem_Ipsum_Generator\obj\Release\net8.0\Lorem_Ipsum_Generator.csproj.AssemblyReference.cache
+D:\Coding\TKPM\Plugins\Text\Lorem_Ipsum_Generator\obj\Release\net8.0\Lorem_Ipsum_Generator.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\TKPM\Plugins\Text\Lorem_Ipsum_Generator\obj\Release\net8.0\Lorem_Ipsum_Generator.AssemblyInfoInputs.cache
+D:\Coding\TKPM\Plugins\Text\Lorem_Ipsum_Generator\obj\Release\net8.0\Lorem_Ipsum_Generator.AssemblyInfo.cs
+D:\Coding\TKPM\Plugins\Text\Lorem_Ipsum_Generator\obj\Release\net8.0\Lorem_Ipsum_Generator.csproj.CoreCompileInputs.cache
+D:\Coding\TKPM\Plugins\Text\Lorem_Ipsum_Generator\obj\Release\net8.0\Lorem_Ipsum_Generator.sourcelink.json
+D:\Coding\TKPM\Plugins\Text\Lorem_Ipsum_Generator\obj\Release\net8.0\Lorem_Ip.02DA3DCC.Up2Date
+D:\Coding\TKPM\Plugins\Text\Lorem_Ipsum_Generator\obj\Release\net8.0\Lorem_Ipsum_Generator.dll
+D:\Coding\TKPM\Plugins\Text\Lorem_Ipsum_Generator\obj\Release\net8.0\refint\Lorem_Ipsum_Generator.dll
+D:\Coding\TKPM\Plugins\Text\Lorem_Ipsum_Generator\obj\Release\net8.0\Lorem_Ipsum_Generator.pdb
+D:\Coding\TKPM\Plugins\Text\Lorem_Ipsum_Generator\obj\Release\net8.0\ref\Lorem_Ipsum_Generator.dll

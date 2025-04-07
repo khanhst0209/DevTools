@@ -1,0 +1,15 @@
+D:\Coding\TKPM\Plugins\hehe\PluginGeneratorTest\bin\Debug\net8.0\PluginGeneratorTest.exe
+D:\Coding\TKPM\Plugins\hehe\PluginGeneratorTest\bin\Debug\net8.0\PluginGeneratorTest.deps.json
+D:\Coding\TKPM\Plugins\hehe\PluginGeneratorTest\bin\Debug\net8.0\PluginGeneratorTest.runtimeconfig.json
+D:\Coding\TKPM\Plugins\hehe\PluginGeneratorTest\bin\Debug\net8.0\PluginGeneratorTest.dll
+D:\Coding\TKPM\Plugins\hehe\PluginGeneratorTest\bin\Debug\net8.0\PluginGeneratorTest.pdb
+D:\Coding\TKPM\Plugins\hehe\PluginGeneratorTest\obj\Debug\net8.0\PluginGeneratorTest.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\TKPM\Plugins\hehe\PluginGeneratorTest\obj\Debug\net8.0\PluginGeneratorTest.AssemblyInfoInputs.cache
+D:\Coding\TKPM\Plugins\hehe\PluginGeneratorTest\obj\Debug\net8.0\PluginGeneratorTest.AssemblyInfo.cs
+D:\Coding\TKPM\Plugins\hehe\PluginGeneratorTest\obj\Debug\net8.0\PluginGeneratorTest.csproj.CoreCompileInputs.cache
+D:\Coding\TKPM\Plugins\hehe\PluginGeneratorTest\obj\Debug\net8.0\PluginGeneratorTest.sourcelink.json
+D:\Coding\TKPM\Plugins\hehe\PluginGeneratorTest\obj\Debug\net8.0\PluginGeneratorTest.dll
+D:\Coding\TKPM\Plugins\hehe\PluginGeneratorTest\obj\Debug\net8.0\refint\PluginGeneratorTest.dll
+D:\Coding\TKPM\Plugins\hehe\PluginGeneratorTest\obj\Debug\net8.0\PluginGeneratorTest.pdb
+D:\Coding\TKPM\Plugins\hehe\PluginGeneratorTest\obj\Debug\net8.0\PluginGeneratorTest.genruntimeconfig.cache
+D:\Coding\TKPM\Plugins\hehe\PluginGeneratorTest\obj\Debug\net8.0\ref\PluginGeneratorTest.dll

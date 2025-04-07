@@ -1,0 +1,3 @@
+D:\Coding\TKPM\Plugins\Decoder\DecodingBase64
+D:\Coding\TKPM\Plugins\DevTool
+D:\Coding\TKPM\Plugins\Encode\EncodingBase64

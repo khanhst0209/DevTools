@@ -1,4 +1,5 @@
 
+using DevTools.data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -14,61 +15,50 @@ namespace MyWebAPI.data
         }
 
         #region DbSet
-        public DbSet<Item> Items { get; set; }
+        public DbSet<Plugin> Plugins { get; set; }
+        public DbSet<PluginCategory> PluginCategories { get; set; }
+        public DbSet<UserPlugins> UserPlugins { get; set; }
         #endregion
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            // modelBuilder.Entity<Receipt>(e =>
-            // {
-            //     e.ToTable("Receipt");
-            //     e.Property(p => p.Address).HasDefaultValue("227 Nguyen Van Cu");
-            //     e.Property(p => p.OrderDate).HasDefaultValue(new DateTime(2024, 1, 1));
-            // });
 
-            // modelBuilder.Entity<ReceiptDetail>(e =>
-            // {
-            //     e.ToTable("ReceiptDetail");
-            //     e.HasKey(e => new { e.ItemId, e.ReceiptId });
-            //     e.Property(p => p.Quantity).HasDefaultValue(0);
+            // Add foreign key 1 - n 
+            modelBuilder.Entity<Plugin>()
+                .HasOne(p => p.Role)
+                .WithMany()
+                .HasForeignKey(p => p.AccessiableRoleId);
+            
+            modelBuilder.Entity<Plugin>()
+                .HasIndex(p => p.Name)
+                .IsUnique();
 
-            //     e.HasOne(e => e.item)
-            //     .WithMany(e => e.receiptDetails)
-            //     .HasForeignKey(e => e.ItemId).
-            //     HasConstraintName("FK_ReceiptDetails_Item");
+            modelBuilder.Entity<UserPlugins>()
+            .HasKey(x => new { x.UserId, x.PluginId });
 
-            //     e.HasOne(e => e.receipt)
-            //     .WithMany(e => e.receiptDetails)
-            //     .HasForeignKey(e => e.ReceiptId).
-            //     HasConstraintName("FK_ReceiptDetails_Receipt");
+            modelBuilder.Entity<UserPlugins>()
+            .HasOne(up => up.user)
+            .WithMany()
+            .HasForeignKey(up => up.UserId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<UserPlugins>()
+                .HasOne(up => up.plugin)
+                .WithMany()
+                .HasForeignKey(up => up.PluginId)
+                .OnDelete(DeleteBehavior.Cascade);
 
 
-            // });
 
-            List<IdentityRole> roles = new List<IdentityRole>
-            {
-                new IdentityRole()
-                {
-                    Id = "c1e2bcd1-5f2b-4ad8-b8d5-08d3b2f8e63b", // 👈 Đặt GUID cố định
-                    Name = "Admin",
-                    NormalizedName = "ADMIN"
-                },
-                new IdentityRole()
-                {
-                    Id = "aa24b563-3c1d-41f2-91ad-08d3b2f8e63c", // 👈 Đặt GUID cố định
-                    Name = "User",
-                    NormalizedName = "USER"
-                },
-                new IdentityRole()
-                {
-                    Id = "f3b87c41-1f6d-4a2f-8d1a-08d3b2f8e63d", // 👈 Đặt GUID cố định
-                    Name = "Premium",
-                    NormalizedName = "PREMIUM"
-                }
-            };
-            modelBuilder.Entity<IdentityRole>().HasData(roles);
+        }
+
+
+        [DbFunction(name:"SOUNDEX",IsBuiltIn =true)]
+        public string FuzzySearch(string querry)
+        {
+            throw new NotImplementedException();
         }
     }
 }

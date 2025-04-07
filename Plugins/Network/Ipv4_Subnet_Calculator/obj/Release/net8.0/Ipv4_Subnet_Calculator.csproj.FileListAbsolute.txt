@@ -1,0 +1,16 @@
+D:\Coding\TKPM\Plugins\Network\Ipv4_Subnet_Calculator\bin\Release\net8.0\Ipv4_Subnet_Calculator.deps.json
+D:\Coding\TKPM\Plugins\Network\Ipv4_Subnet_Calculator\bin\Release\net8.0\Ipv4_Subnet_Calculator.dll
+D:\Coding\TKPM\Plugins\Network\Ipv4_Subnet_Calculator\bin\Release\net8.0\Ipv4_Subnet_Calculator.pdb
+D:\Coding\TKPM\Plugins\Network\Ipv4_Subnet_Calculator\bin\Release\net8.0\DevTool.dll
+D:\Coding\TKPM\Plugins\Network\Ipv4_Subnet_Calculator\bin\Release\net8.0\DevTool.pdb
+D:\Coding\TKPM\Plugins\Network\Ipv4_Subnet_Calculator\obj\Release\net8.0\Ipv4_Subnet_Calculator.csproj.AssemblyReference.cache
+D:\Coding\TKPM\Plugins\Network\Ipv4_Subnet_Calculator\obj\Release\net8.0\Ipv4_Subnet_Calculator.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\TKPM\Plugins\Network\Ipv4_Subnet_Calculator\obj\Release\net8.0\Ipv4_Subnet_Calculator.AssemblyInfoInputs.cache
+D:\Coding\TKPM\Plugins\Network\Ipv4_Subnet_Calculator\obj\Release\net8.0\Ipv4_Subnet_Calculator.AssemblyInfo.cs
+D:\Coding\TKPM\Plugins\Network\Ipv4_Subnet_Calculator\obj\Release\net8.0\Ipv4_Subnet_Calculator.csproj.CoreCompileInputs.cache
+D:\Coding\TKPM\Plugins\Network\Ipv4_Subnet_Calculator\obj\Release\net8.0\Ipv4_Subnet_Calculator.sourcelink.json
+D:\Coding\TKPM\Plugins\Network\Ipv4_Subnet_Calculator\obj\Release\net8.0\Ipv4_Sub.709CD625.Up2Date
+D:\Coding\TKPM\Plugins\Network\Ipv4_Subnet_Calculator\obj\Release\net8.0\Ipv4_Subnet_Calculator.dll
+D:\Coding\TKPM\Plugins\Network\Ipv4_Subnet_Calculator\obj\Release\net8.0\refint\Ipv4_Subnet_Calculator.dll
+D:\Coding\TKPM\Plugins\Network\Ipv4_Subnet_Calculator\obj\Release\net8.0\Ipv4_Subnet_Calculator.pdb
+D:\Coding\TKPM\Plugins\Network\Ipv4_Subnet_Calculator\obj\Release\net8.0\ref\Ipv4_Subnet_Calculator.dll
