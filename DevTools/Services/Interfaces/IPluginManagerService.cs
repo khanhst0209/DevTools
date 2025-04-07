@@ -1,7 +1,7 @@
 using DevTools.Dto.Category;
 using DevTools.Dto.Plugins;
 using DevTools.Dto.Querry;
-using Plugins.DevTool;
+using DevTool.UISchema;
 
 namespace DevTools.Services.Interfaces
 {
@@ -19,9 +19,9 @@ namespace DevTools.Services.Interfaces
 
         Task<object> Execute(int Id, object input);
 
-        Task<PluginUI> GetScheme(int id);
+        Task<PluginUI> GetScheme1(int id);
 
-        Task<string> GetScheme1(int id);
+        Task<Schema> GetScheme(int id);
 
     }
 }

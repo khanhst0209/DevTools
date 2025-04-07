@@ -6,6 +6,8 @@ using DevTools.Helper.Converter;
 using DevTools.Dto.Querry;
 using System.Text.RegularExpressions;
 using DevTools.Exceptions.Plugins.PluginsException.cs;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 
 namespace DevTools.controllers
@@ -69,39 +71,12 @@ namespace DevTools.controllers
         }
 
 
-        [HttpPost("execute")]
-        public async Task<IActionResult> ExecutePlugin([FromBody] PluginRequest request)
+        [HttpPost("{id}/execute")]
+        public async Task<IActionResult> ExecutePlugin(int id, [FromBody] object request)
         {
             try
             {
-                object inputData = Converter.ConvertJsonElement(request.Input);
-
-                if (inputData == null)
-                {
-                    Console.WriteLine("Input is null.");
-                }
-                else if (inputData is Dictionary<string, object> dict)
-                {
-                    Console.WriteLine("Input is an object with key-value pairs:");
-                    foreach (var kvp in dict)
-                    {
-                        Console.WriteLine($"Key: {kvp.Key}, Value: {kvp.Value}, Type: {kvp.Value?.GetType().Name ?? "null"}");
-                    }
-                }
-                else if (inputData is List<object> list)
-                {
-                    Console.WriteLine("Input is an array:");
-                    for (int i = 0; i < list.Count; i++)
-                    {
-                        Console.WriteLine($"Index: {i}, Value: {list[i]}, Type: {list[i]?.GetType().Name ?? "null"}");
-                    }
-                }
-                else
-                {
-                    Console.WriteLine($"Input is a single value: {inputData}, Type: {inputData.GetType().Name}");
-                }
-
-                var result = await _pluginmanagerService.Execute(request.Id, inputData);
+                var result = await _pluginmanagerService.Execute(id, request);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -111,8 +86,8 @@ namespace DevTools.controllers
         }
 
 
-        [HttpGet("{id}/schema")]
-        public async Task<IActionResult> GetSchema(int id)
+        [HttpGet("{id}/schema1")]
+        public async Task<IActionResult> GetSchema1(int id)
         {
             try
             {
@@ -135,13 +110,19 @@ namespace DevTools.controllers
             }
         }
 
-        [HttpGet("{id}/schema1")]
-        public async Task<IActionResult> GetSchema1(int id)
+        [HttpGet("{id}/schema")]
+        public async Task<IActionResult> GetSchema(int id)
         {
             try
             {
-                var schema = await _pluginmanagerService.GetScheme1(id);
-                return Ok(schema);
+                var schema = await _pluginmanagerService.GetScheme(id);
+
+                var json = JsonSerializer.Serialize(schema, new JsonSerializerOptions
+                {
+                    DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull
+                });
+
+                return Ok(json);
             }
             catch (NotImplementedException ex)
             {
@@ -152,5 +133,6 @@ namespace DevTools.controllers
                 return BadRequest(new ErrorRespones(ex.Message));
             }
         }
+
     }
 }

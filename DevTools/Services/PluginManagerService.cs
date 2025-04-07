@@ -7,6 +7,7 @@ using DevTools.Exceptions.Plugins.PluginsException.cs;
 using DevTools.Repositories.Interfaces;
 using DevTools.Services.Interfaces;
 using Plugins.DevTool;
+using DevTool.UISchema;
 
 namespace DevTools.Services
 {
@@ -106,7 +107,6 @@ namespace DevTools.Services
         {
             var plugin = await _pluginmanagerRepository.GetByIdAsync(id);
             return plugin.Execute(input);
-
         }
 
         public Task RemovePlugin(string path)
@@ -120,7 +120,7 @@ namespace DevTools.Services
             return _mapper.Map<List<PluginsResponeDTO>>(plugins);
         }
 
-        public async Task<PluginUI> GetScheme(int id)
+        public async Task<PluginUI> GetScheme1(int id)
         {
             var plugin = await _pluginmanagerRepository.GetByIdAsync(id);
             if (plugin == null)
@@ -198,11 +198,11 @@ namespace DevTools.Services
             }
         }
 
-        public async Task<string> GetScheme1(int id)
+        public async Task<Schema> GetScheme(int id)
         {
             var plugin = await _pluginmanagerRepository.GetByIdAsync(id);
-            var scheme = plugin.GetSheme1();
-
+            var scheme = plugin.schema;
+            
             return scheme;
         }
 
