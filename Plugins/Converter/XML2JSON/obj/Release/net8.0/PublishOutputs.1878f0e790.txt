@@ -1,0 +1,6 @@
+D:\Coding\TKPM\Plugins\Converter\XML2JSON\publish\XML2JSON.dll
+D:\Coding\TKPM\Plugins\Converter\XML2JSON\publish\XML2JSON.deps.json
+D:\Coding\TKPM\Plugins\Converter\XML2JSON\publish\XML2JSON.pdb
+D:\Coding\TKPM\Plugins\Converter\XML2JSON\publish\Newtonsoft.Json.dll
+D:\Coding\TKPM\Plugins\Converter\XML2JSON\publish\DevTool.dll
+D:\Coding\TKPM\Plugins\Converter\XML2JSON\publish\DevTool.pdb

@@ -2,7 +2,13 @@
 
 using DevTool.Categories;
 using DevTool.Roles;
+using DevTool.UISchema;
 using Plugins.DevTool;
+using DevTool.Input2Execute.HashText;
+using System.Text.Json;
+using System.ComponentModel.DataAnnotations;
+using System.Security.Cryptography;
+using System.Text;
 
 public class HashText : IDevToolPlugin
 {
@@ -25,12 +31,139 @@ public class HashText : IDevToolPlugin
     </g>
 </svg>";
 
-
+    public Schema schema => new Schema
+    {
+        id = Id,
+        uiSchemas = new List<UISchema>{
+            new UISchema {
+                inputs = new List<SchemaInput>{
+                    new SchemaInput{
+                        id = "textInput",
+                        label = "Your text to hash",
+                        type = ComponentType.textarea.ToString(),
+                    },
+                    new SchemaInput{
+                        id = "digitalEncoding",
+                        label = "Digital Encoding",
+                        placeholder = "Select Digital Encoding",
+                        type = ComponentType.dropdown.ToString(),
+                        defaultValue = HashTextDigitalEncoding.Binary.ToString(),
+                        options = new List<ComponentOption>{
+                            new ComponentOption{
+                                value = HashTextDigitalEncoding.Binary.ToString(),
+                                label = "Binary (base 2)"
+                            },
+                            new ComponentOption{
+                                value = HashTextDigitalEncoding.Hexadecimal.ToString(),
+                                label = "Hexadeciaml (base 16)"
+                            },
+                            new ComponentOption{
+                                value = HashTextDigitalEncoding.Base64.ToString(),
+                                label = "Base64 (base 64)"
+                            },
+                            new ComponentOption{
+                                value = HashTextDigitalEncoding.Base64url.ToString(),
+                                label = "Base64 (base 64 with url safe chars)"
+                            }
+                        },
+                    }
+                },
+                outputs = new List<SchemaOutput>{
+                    new SchemaOutput{
+                        id = "MD5",
+                        label = "MD5",
+                        type = ComponentType.text.ToString()
+                    },
+                    new SchemaOutput{
+                        id = "SHA1",
+                        label = "SHA1",
+                        type = ComponentType.text.ToString()
+                    },
+                    new SchemaOutput{
+                        id = "SHA256",
+                        label = "SHA256",
+                        type = ComponentType.text.ToString()
+                    },
+                    new SchemaOutput{
+                        id = "SHA512",
+                        label = "SHA512",
+                        type = ComponentType.text.ToString()
+                    },
+                    new SchemaOutput{
+                        id = "SHA384",
+                        label = "SHA384",
+                        type = ComponentType.text.ToString()
+                    }
+                }
+            },
+        }
+    };
 
 
     public object Execute(object input)
     {
-        throw new NotImplementedException();
+        var dict = JsonSerializer.Deserialize<Dictionary<string, object>>(input.ToString());
+        var json = JsonSerializer.Serialize(dict);
+        var myInput = JsonSerializer.Deserialize<HashTextInput>(json);
+        Console.WriteLine("============================================");
+        Console.WriteLine(input);
+        Console.WriteLine("Mapped Input: " + JsonSerializer.Serialize(myInput));
+
+        // Khởi tạo dictionary mặc định rỗng
+        var hashResults = new Dictionary<string, string>
+    {
+        { "MD5", "" },
+        { "SHA1", "" },
+        { "SHA256", "" },
+        { "SHA512", "" },
+        { "SHA384", "" },
+    };
+        try
+        {
+            Validator.ValidateObject(myInput, new ValidationContext(myInput), validateAllProperties: true);
+            Console.WriteLine("Validated Input");
+
+            var encoding = myInput.digitalEncoding.FirstOrDefault(kvp => kvp.Value).Key;
+
+            if (!Enum.TryParse<HashTextDigitalEncoding>(encoding, out var selectedEncoding))
+                throw new Exception("Invalid encoding selection.");
+
+            var text = myInput.textInput;
+
+            // Hash từng thuật toán, gán kết quả vào dictionary
+            hashResults["MD5"] = ComputeHash(text, MD5.Create(), selectedEncoding);
+            hashResults["SHA1"] = ComputeHash(text, SHA1.Create(), selectedEncoding);
+            hashResults["SHA256"] = ComputeHash(text, SHA256.Create(), selectedEncoding);
+            hashResults["SHA512"] = ComputeHash(text, SHA512.Create(), selectedEncoding);
+            hashResults["SHA384"] = ComputeHash(text, SHA384.Create(), selectedEncoding);
+
+
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error during hashing: " + ex.Message);
+        }
+        Console.WriteLine("============================================");
+        return hashResults;
+    }
+
+
+    private string ComputeHash(string input, HashAlgorithm algorithm, HashTextDigitalEncoding encoding)
+    {
+        var bytes = Encoding.UTF8.GetBytes(input);
+        var hashBytes = algorithm.ComputeHash(bytes);
+
+        return encoding switch
+        {
+            HashTextDigitalEncoding.Hexadecimal => BitConverter.ToString(hashBytes).Replace("-", "").ToLowerInvariant(),
+            HashTextDigitalEncoding.Base64 => Convert.ToBase64String(hashBytes),
+            HashTextDigitalEncoding.Base64url => Convert.ToBase64String(hashBytes)
+                                                    .Replace("+", "-")
+                                                    .Replace("/", "_")
+                                                    .Replace("=", ""),
+            HashTextDigitalEncoding.Binary => string.Join("", hashBytes.Select(b => Convert.ToString(b, 2).PadLeft(8, '0'))),
+            _ => throw new Exception("Unsupported encoding")
+        };
     }
 
     public string GetSheme1()

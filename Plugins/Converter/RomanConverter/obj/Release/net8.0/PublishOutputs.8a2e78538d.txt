@@ -1,0 +1,5 @@
+D:\Coding\TKPM\Plugins\Converter\RomanConverter\publish\RomanConverter.dll
+D:\Coding\TKPM\Plugins\Converter\RomanConverter\publish\RomanConverter.deps.json
+D:\Coding\TKPM\Plugins\Converter\RomanConverter\publish\RomanConverter.pdb
+D:\Coding\TKPM\Plugins\Converter\RomanConverter\publish\DevTool.dll
+D:\Coding\TKPM\Plugins\Converter\RomanConverter\publish\DevTool.pdb

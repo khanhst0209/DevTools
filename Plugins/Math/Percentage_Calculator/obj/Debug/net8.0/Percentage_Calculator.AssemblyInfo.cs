@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Percentage_Calculator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+06dd9470e30ddc5322014fe9ec7e6a517f2f21fa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d2a0fa776edc86362c9ca9d8127797e3d4a2b5db")]
 [assembly: System.Reflection.AssemblyProductAttribute("Percentage_Calculator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Percentage_Calculator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

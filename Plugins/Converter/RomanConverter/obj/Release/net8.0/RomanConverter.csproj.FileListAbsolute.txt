@@ -1,0 +1,16 @@
+D:\Coding\TKPM\Plugins\Converter\RomanConverter\bin\Release\net8.0\RomanConverter.deps.json
+D:\Coding\TKPM\Plugins\Converter\RomanConverter\bin\Release\net8.0\RomanConverter.dll
+D:\Coding\TKPM\Plugins\Converter\RomanConverter\bin\Release\net8.0\RomanConverter.pdb
+D:\Coding\TKPM\Plugins\Converter\RomanConverter\bin\Release\net8.0\DevTool.dll
+D:\Coding\TKPM\Plugins\Converter\RomanConverter\bin\Release\net8.0\DevTool.pdb
+D:\Coding\TKPM\Plugins\Converter\RomanConverter\obj\Release\net8.0\RomanConverter.csproj.AssemblyReference.cache
+D:\Coding\TKPM\Plugins\Converter\RomanConverter\obj\Release\net8.0\RomanConverter.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\TKPM\Plugins\Converter\RomanConverter\obj\Release\net8.0\RomanConverter.AssemblyInfoInputs.cache
+D:\Coding\TKPM\Plugins\Converter\RomanConverter\obj\Release\net8.0\RomanConverter.AssemblyInfo.cs
+D:\Coding\TKPM\Plugins\Converter\RomanConverter\obj\Release\net8.0\RomanConverter.csproj.CoreCompileInputs.cache
+D:\Coding\TKPM\Plugins\Converter\RomanConverter\obj\Release\net8.0\RomanConverter.sourcelink.json
+D:\Coding\TKPM\Plugins\Converter\RomanConverter\obj\Release\net8.0\RomanCon.D64A8DFA.Up2Date
+D:\Coding\TKPM\Plugins\Converter\RomanConverter\obj\Release\net8.0\RomanConverter.dll
+D:\Coding\TKPM\Plugins\Converter\RomanConverter\obj\Release\net8.0\refint\RomanConverter.dll
+D:\Coding\TKPM\Plugins\Converter\RomanConverter\obj\Release\net8.0\RomanConverter.pdb
+D:\Coding\TKPM\Plugins\Converter\RomanConverter\obj\Release\net8.0\ref\RomanConverter.dll

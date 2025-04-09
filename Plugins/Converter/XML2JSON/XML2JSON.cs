@@ -1,6 +1,13 @@
-﻿using DevTool.Categories;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json;
+using DevTool.Categories;
+using DevTool.Input2Execute.XML2Token;
 using DevTool.Roles;
+using DevTool.UISchema;
 using Plugins.DevTool;
+
+using System.Xml;
+using Newtonsoft.Json;
 
 namespace XML2JSON;
 
@@ -26,13 +33,62 @@ public class XML2JSON : IDevToolPlugin
     </svg>";
 
 
+    public Schema schema => new Schema
+    {
+        id = Id,
+        uiSchemas = new List<UISchema>{
+            new UISchema {
+                inputs = new List<SchemaInput>{
+                    new SchemaInput{
+                        id = "inputText",
+                        label = "Your XML content",
+                        type = ComponentType.textarea.ToString(),
+                        defaultValue = "<a x=\"1.234\" y=\"It's\"/>",
+                        rows = 8
+                    }
+                },
+                outputs = new List<SchemaOutput>{
+                    new SchemaOutput{
+                        id = "textoutput",
+                        label = "Converted JSON",
+                        type = ComponentType.textarea.ToString(),
+                        rows = 8
+                    }
+                }
+            },
+        }
+    };
 
-
-
+    private string ConvertXmlToJson(string xml)
+    {
+        try
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(xml);
+            string json = JsonConvert.SerializeXmlNode(doc, Newtonsoft.Json.Formatting.Indented);
+            return json;
+        }
+        catch (Exception ex)
+        {
+            return "";
+        }
+    }
 
     public object Execute(object input)
     {
-        throw new NotImplementedException();
+        var dict = System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, object>>(input.ToString());
+        var json = System.Text.Json.JsonSerializer.Serialize(dict);
+        var myInput = System.Text.Json.JsonSerializer.Deserialize<XML2JsonInput>(json);
+        Console.WriteLine("Mapped Input: " + System.Text.Json.JsonSerializer.Serialize(myInput));
+
+        Validator.ValidateObject(myInput, new ValidationContext(myInput), validateAllProperties: true);
+        Console.WriteLine("Validated Input");
+
+        return new
+        {
+            textoutput = ConvertXmlToJson(myInput.inputText)
+        };
+
     }
 
     public string GetSheme1()
