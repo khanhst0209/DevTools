@@ -40,15 +40,8 @@ namespace DevTools.Repositories
 
         public async Task<IDevToolPlugin> GetByIdAsync(int Id)
         {
-            // foreach(var k in _plugins)
-            // {
-            //     Console.WriteLine($"Id ne : {k.Id} hehe");
-            // }
             var item = _plugins.FirstOrDefault(x => x.Id == Id);
-            if (item != null)
-                return item;
-
-            throw new PluginNotFound(Id);
+            return item;
         }
 
         public async Task<string> GetScheme1(int id)

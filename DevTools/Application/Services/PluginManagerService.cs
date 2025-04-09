@@ -43,12 +43,17 @@ namespace DevTools.Services
         public async Task<object> Execute(int id, object input)
         {
             var plugin = await _pluginmanagerRepository.GetByIdAsync(id);
+            if (plugin == null)
+            {
+                throw new PluginNotFound(id);
+            }
             return plugin.Execute(input);
         }
 
         public async Task<List<PluginsResponeDTO>> GetAllByQuerry(PluginQuerry querry)
         {
             var plugins = await _pluginRepository.GetAllByQuerryAsync(querry);
+            
             return _mapper.Map<List<PluginsResponeDTO>>(plugins);
         }
 
@@ -133,6 +138,10 @@ namespace DevTools.Services
         public async Task<Schema> GetScheme(int id)
         {
             var plugin = await _pluginmanagerRepository.GetByIdAsync(id);
+            if (plugin == null)
+            {
+                throw new PluginNotFound(id);
+            }
             var scheme = plugin.schema;
             
             return scheme;

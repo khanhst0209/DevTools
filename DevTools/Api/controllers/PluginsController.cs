@@ -126,7 +126,11 @@ namespace DevTools.controllers
             }
             catch (NotImplementedException ex)
             {
-                return NotFound(ex.Message);
+                return NotFound(new ErrorRespones(ex.Message));
+            }
+            catch(PluginNotFound ex)
+            {
+                return NotFound(new ErrorRespones(ex.Message));
             }
             catch (Exception ex)
             {
