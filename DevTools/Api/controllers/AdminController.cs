@@ -8,7 +8,7 @@ using MyWebAPI.Dto;
 
 namespace DevTools.controllers
 {
-    [Route("admin")]
+    [Route("api/v1/admin")]
     [ApiController]
     [Authorize]
     public class AdminController : ControllerBase

@@ -12,7 +12,7 @@ using System.Text.Json.Serialization;
 
 namespace DevTools.controllers
 {
-    [Route("plugin")]
+    [Route("api/v1/plugin")]
     [ApiController]
     public class PluginsController : ControllerBase
     {

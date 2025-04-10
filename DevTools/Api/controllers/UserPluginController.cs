@@ -9,7 +9,7 @@ using MyWebAPI.Dto;
 
 namespace DevTools.controllers
 {
-    [Route("favorite")]
+    [Route("api/v1/favorite")]
     [ApiController]
     public class UserPluginController : ControllerBase
     {

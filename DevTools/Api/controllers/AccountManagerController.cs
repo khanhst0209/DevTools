@@ -14,7 +14,7 @@ using MyWebAPI.Services.Interfaces;
 
 namespace MyWebAPI.controllers
 {
-    [Route("account")]
+    [Route("api/v1/account")]
     [ApiController]
     public class AccountManagerController : ControllerBase
     {
