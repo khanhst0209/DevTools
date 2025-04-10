@@ -6,10 +6,10 @@ namespace DevTools.Repositories.Interfaces
 {
     public interface IUserPluginRepository
     {
-        Task AddFavoritePlugin(CreateUserPluginDTO userplugindto);
+        Task AddFavoritePlugin(string userId, int pluginId);
 
         Task<List<UserPlugins>> GetPLuginsByUserId(string UserId);
 
-        Task RemoveFavoritePlugin(CreateUserPluginDTO userplugindto);
+        Task RemoveFavoritePlugin(string userId, int pluginId);
     }
 }

@@ -10,5 +10,7 @@ namespace MyWebAPI.Services.Interfaces
         Task<List<UserDTO>> GetAllUsers();
 
         Task<UserDTO> GetUserById(string Id);
+
+        Task PasswordChange(string userId,PasswordChangeDTO passwordChange);
     }
 } 

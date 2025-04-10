@@ -30,35 +30,40 @@ namespace DevTools.Repositories
             this._pluginrepoitory = _pluginrepoitory;
         }
 
-        private async Task IsValidInput(CreateUserPluginDTO userplugindto)
+        private async Task IsValidInput(string userId, int pluginId)
         {
-            var user = await _user.FindByIdAsync(userplugindto.UserId);
+
+            var user = await _user.FindByIdAsync(userId);
             if (user == null)
             {
-                throw new UserNotFound(userplugindto.UserId);
+                throw new UserNotFound(userId);
             }
 
-            var plugin = await _pluginrepoitory.GetByIdAsync(userplugindto.PluginId);
+            var plugin = await _pluginrepoitory.GetByIdAsync(pluginId);
             if (plugin == null)
             {
-                throw new PluginNotFound(userplugindto.PluginId);
+                throw new PluginNotFound(pluginId);
             }
         }
-        public async Task AddFavoritePlugin(CreateUserPluginDTO userplugindto)
+        public async Task AddFavoritePlugin(string userId, int pluginId)
         {
-            await IsValidInput(userplugindto);
+            await IsValidInput(userId, pluginId);
 
 
             var temp = await _context.UserPlugins.
-            FirstOrDefaultAsync(x => x.PluginId == userplugindto.PluginId
-                                                    && x.UserId == userplugindto.UserId);
+            FirstOrDefaultAsync(x => x.PluginId == pluginId
+                                                    && x.UserId == userId);
 
             if (temp != null)
             {
-                throw new UserPLuginExistedException(userplugindto.UserId, userplugindto.PluginId);
+                throw new UserPLuginExistedException(userId, pluginId);
             }
 
-            var item = _mapper.Map<UserPlugins>(userplugindto);
+            var item = new UserPlugins
+            {
+                UserId = userId,
+                PluginId = pluginId
+            };
             await _context.UserPlugins.AddAsync(item);
             await _context.SaveChangesAsync();
 
@@ -69,17 +74,17 @@ namespace DevTools.Repositories
             return await _context.UserPlugins.Where(x => x.UserId == UserId).Include(x => x.plugin).ThenInclude(x => x.category).AsNoTracking().ToListAsync();
         }
 
-        public async Task RemoveFavoritePlugin(CreateUserPluginDTO userplugindto)
+        public async Task RemoveFavoritePlugin(string userId, int pluginId)
         {
-            await IsValidInput(userplugindto);
+            await IsValidInput(userId, pluginId);
 
             var temp = await _context.UserPlugins.
-            FirstOrDefaultAsync(x => x.PluginId == userplugindto.PluginId
-                                                    && x.UserId == userplugindto.UserId);
+            FirstOrDefaultAsync(x => x.PluginId == pluginId
+                                                    && x.UserId == userId);
 
             if (temp == null)
             {
-                throw new UserPLuginExistedException(userplugindto.UserId, userplugindto.PluginId);
+                throw new UserPLuginExistedException(userId, pluginId);
             }
 
             _context.UserPlugins.Remove(temp);

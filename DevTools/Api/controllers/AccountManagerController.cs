@@ -1,9 +1,11 @@
 using System.Security.Claims;
+using DevTools.Application.Exceptions.AccountManager.ChangePassword;
 using DevTools.Dto.user;
 using DevTools.Exceptions.AccountManager.LoginException;
 using DevTools.Exceptions.AccountManager.RegisterException;
 using DevTools.Exceptions.AccountManager.UserException;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -82,7 +84,7 @@ namespace MyWebAPI.controllers
             {
                 var userIdClaim = User.FindFirst("Id");
                 if (userIdClaim == null)
-                    return Unauthorized("Invalid token");
+                    return Unauthorized("Please login to use this method");
 
                 var userId = userIdClaim.Value;
 
@@ -96,23 +98,40 @@ namespace MyWebAPI.controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500 ,new ErrorRespones(ex.Message));
+                return StatusCode(500, new ErrorRespones(ex.Message));
             }
         }
 
-        [HttpGet("users")]
-        [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> GetAllUsers()
+        [HttpPut("me/password-change")]
+        [Authorize()]
+        public async Task<IActionResult> ChangePassword(PasswordChangeDTO passwordChange)
         {
             try
             {
-                var user = await _accountManagerService.GetAllUsers();
-                return Ok(user);
+                var userIdClaim = User.FindFirst("Id");
+                if (userIdClaim == null)
+                    return Unauthorized("Please login to use this method");
+
+                var userId = userIdClaim.Value;
+
+                await _accountManagerService.PasswordChange(userId, passwordChange);
+
+                return Ok("Password was change successfully");
+            }
+            catch (UnvalidConfirmPasswordException ex)
+            {
+                return BadRequest(new ErrorRespones(ex.Message));
+            }
+            catch (PasswordChangeFailedException ex)
+            {
+                return BadRequest(new ErrorRespones(ex.Message));
             }
             catch (Exception ex)
             {
-                return StatusCode(500 ,new ErrorRespones(ex.Message));
+                return StatusCode(500, new ErrorRespones(ex.Message));
             }
         }
+
+
     }
 }

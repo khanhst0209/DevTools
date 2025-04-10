@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EscapeHTMLEntity")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+460bcbdd0c74a1a4bf874e7bac0b379a99292f40")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3988f6fe685995ac2dc7f51c2569fe30ff7f748f")]
 [assembly: System.Reflection.AssemblyProductAttribute("EscapeHTMLEntity")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EscapeHTMLEntity")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

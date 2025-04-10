@@ -16,9 +16,9 @@ namespace DevTools.Services
             this._userPluginRepository = _userPluginRepository;
             this._mapper = _mapper;
         }
-        public async Task AddFavoritePlugin(CreateUserPluginDTO createUserPlugin)
+        public async Task AddFavoritePlugin(string userId, int pluginId)
         {
-            await _userPluginRepository.AddFavoritePlugin(createUserPlugin);
+            await _userPluginRepository.AddFavoritePlugin(userId, pluginId);
         }
 
         public async Task<List<PluginsResponeDTO>> GetAllByUserId(string userId)
@@ -28,9 +28,9 @@ namespace DevTools.Services
             return plugins;
         }
 
-        public async Task RemoveFavoritePlugin(CreateUserPluginDTO createUserPlugin)
+        public async Task RemoveFavoritePlugin(string userId, int pluginId)
         {
-            await _userPluginRepository.RemoveFavoritePlugin(createUserPlugin);
+            await _userPluginRepository.RemoveFavoritePlugin(userId, pluginId);
         }
 
     }

@@ -6,8 +6,8 @@ namespace DevTools.Services.Interfaces
     public interface IUserPluginService
     {
          Task<List<PluginsResponeDTO>> GetAllByUserId(string userId);
-        Task RemoveFavoritePlugin(CreateUserPluginDTO createUserPlugin);
+        Task RemoveFavoritePlugin(string userId, int pluginId);
 
-        Task AddFavoritePlugin(CreateUserPluginDTO createUserPlugin);
+        Task AddFavoritePlugin(string userId, int pluginId);
     }
 }

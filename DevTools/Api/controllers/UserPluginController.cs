@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using DevTools.Dto.UserPlugin;
 using DevTools.Exceptions.AccountManager.UserException;
 using DevTools.Exceptions.Plugins.PluginsException.cs;
@@ -9,7 +10,7 @@ using MyWebAPI.Dto;
 
 namespace DevTools.controllers
 {
-    [Route("api/v1/favorite")]
+    [Route("api/v1/me/favorite")]
     [ApiController]
     public class UserPluginController : ControllerBase
     {
@@ -19,18 +20,23 @@ namespace DevTools.controllers
             this._userPluginService = userPluginService;
         }
 
-        [HttpGet("{userid}")]
+        [HttpGet()]
         [Authorize]
-        public async Task<IActionResult> GetAllByUserId(string userId)
+        public async Task<IActionResult> GetAllByUserId()
         {
             try
             {
+                var userId = User.FindFirst("Id")?.Value;
+
+                if (userId == null)
+                    return Unauthorized();
+
                 var items = await _userPluginService.GetAllByUserId(userId);
                 return Ok(items);
             }
             catch (Exception ex)
             {
-                return StatusCode(500 ,new ErrorRespones(ex.Message));
+                return StatusCode(500, new ErrorRespones(ex.Message));
             }
         }
 
@@ -40,7 +46,12 @@ namespace DevTools.controllers
         {
             try
             {
-                await _userPluginService.AddFavoritePlugin(createUserPlugin);
+                var userId = User.FindFirst("Id")?.Value;
+
+                if (userId == null)
+                    return Unauthorized();
+
+                await _userPluginService.AddFavoritePlugin(userId, createUserPlugin.PluginId);
                 return Created();
             }
             catch (UserNotFound ex)
@@ -53,7 +64,7 @@ namespace DevTools.controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500 ,new ErrorRespones(ex.Message));
+                return StatusCode(500, new ErrorRespones(ex.Message));
             }
         }
 
@@ -63,7 +74,12 @@ namespace DevTools.controllers
         {
             try
             {
-                await _userPluginService.RemoveFavoritePlugin(createUserPlugin);
+                var userId = User.FindFirst("Id")?.Value;
+
+                if (userId == null)
+                    return Unauthorized();
+
+                await _userPluginService.RemoveFavoritePlugin(userId, createUserPlugin.PluginId);
                 return Ok("Successfully");
             }
             catch (UserNotFound ex)
@@ -76,7 +92,7 @@ namespace DevTools.controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500 ,new ErrorRespones(ex.Message));
+                return StatusCode(500, new ErrorRespones(ex.Message));
             }
         }
     }

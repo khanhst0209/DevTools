@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using DevTools.Exceptions.AccountManager.LoginException;
 using AutoMapper;
 using DevTools.Exceptions.AccountManager.UserException;
+using DevTools.Application.Exceptions.AccountManager.ChangePassword;
 
 
 namespace DevTools.Services
@@ -52,9 +53,9 @@ namespace DevTools.Services
         {
             var user = await _userManager.Users.FirstOrDefaultAsync(x => x.Id == Id);
 
-            if(user == null)
+            if (user == null)
                 throw new UserNotFound(Id);
-            
+
             var userDTO = _mapper.Map<UserDTO>(user);
             userDTO.Role = (await _userManager.GetRolesAsync(user))[0];
 
@@ -82,6 +83,26 @@ namespace DevTools.Services
                 Email = user.Email,
                 Token = _tokenService.CreateToken(user, roles)
             };
+
+        }
+
+        public async Task PasswordChange(string userId, PasswordChangeDTO passwordChange)
+        {
+            if (passwordChange.NewPassword != passwordChange.ConfirmNewPassword)
+                throw new UnvalidConfirmPasswordException(passwordChange.NewPassword, passwordChange.ConfirmNewPassword);
+
+            var user = await _userManager.Users.FirstOrDefaultAsync(x => x.Id == userId);
+
+            if (user == null)
+                throw new UserNotFound(userId);
+
+            var result = await _userManager.ChangePasswordAsync(user, passwordChange.OldPassword, passwordChange.NewPassword);
+
+            if (!result.Succeeded)
+            {
+                var errors = result.Errors.Select(e => e.Description);
+                throw new PasswordChangeFailedException(errors);
+            }
 
         }
 
@@ -118,6 +139,8 @@ namespace DevTools.Services
                 Token = _tokenService.CreateToken(appuser, roles)
             };
         }
+
+
 
     }
 }
