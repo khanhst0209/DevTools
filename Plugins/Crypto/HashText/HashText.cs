@@ -123,7 +123,7 @@ public class HashText : IDevToolPlugin
             Validator.ValidateObject(myInput, new ValidationContext(myInput), validateAllProperties: true);
             Console.WriteLine("Validated Input");
 
-            var encoding = myInput.digitalEncoding.FirstOrDefault(kvp => kvp.Value).Key;
+            var encoding = myInput.digitalEncoding;
 
             if (!Enum.TryParse<HashTextDigitalEncoding>(encoding, out var selectedEncoding))
                 throw new Exception("Invalid encoding selection.");

@@ -7,7 +7,7 @@ namespace DevTool.Input2Execute.HashText
         [Required]
         public string textInput { get; set; }
         [Required]
-        public Dictionary<string, bool> digitalEncoding {get; set;} 
+        public string digitalEncoding {get; set;} 
     }
 
     public enum HashTextDigitalEncoding
