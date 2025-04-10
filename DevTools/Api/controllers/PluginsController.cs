@@ -18,10 +18,10 @@ namespace DevTools.controllers
     {
 
 
-        private readonly IPluginManagerService _pluginmanagerService;
-        public PluginsController(IPluginManagerService _pluginmanagerService)
+        private readonly IPluginManagerService _pluginManagerService;
+        public PluginsController(IPluginManagerService pluginManagerService)
         {
-            this._pluginmanagerService = _pluginmanagerService;
+            this._pluginManagerService = pluginManagerService;
         }
 
         [HttpGet]
@@ -29,12 +29,12 @@ namespace DevTools.controllers
         {
             try
             {
-                var plugin = await _pluginmanagerService.GetAllActivePlugin();
+                var plugin = await _pluginManagerService.GetAllActivePlugin();
                 return Ok(plugin);
             }
             catch (Exception ex)
             {
-                return BadRequest(new ErrorRespones(ex.Message));
+                return StatusCode(500 ,new ErrorRespones(ex.Message));
             }
         }
 
@@ -43,7 +43,7 @@ namespace DevTools.controllers
         {
             try
             {
-                var plugin = await _pluginmanagerService.GetPLuginById(id);
+                var plugin = await _pluginManagerService.GetPLuginById(id);
                 return Ok(plugin);
             }
             catch (PluginNotFound ex)
@@ -52,7 +52,7 @@ namespace DevTools.controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(new ErrorRespones(ex.Message));
+                return StatusCode(500 ,new ErrorRespones(ex.Message));
             }
         }
 
@@ -61,12 +61,12 @@ namespace DevTools.controllers
         {
             try
             {
-                var plugin = await _pluginmanagerService.GetAllByQuerry(querry);
+                var plugin = await _pluginManagerService.GetAllByQuerry(querry);
                 return Ok(plugin);
             }
             catch (Exception ex)
             {
-                return BadRequest(new ErrorRespones(ex.Message));
+                return StatusCode(500 ,new ErrorRespones(ex.Message));
             }
         }
 
@@ -76,12 +76,16 @@ namespace DevTools.controllers
         {
             try
             {
-                var result = await _pluginmanagerService.Execute(id, request);
+                var result = await _pluginManagerService.Execute(id, request);
                 return Ok(result);
+            }
+            catch(ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
             }
             catch (Exception ex)
             {
-                return BadRequest(new ErrorRespones(ex.Message));
+                return StatusCode(500 ,new ErrorRespones(ex.Message));
             }
         }
 
@@ -91,7 +95,7 @@ namespace DevTools.controllers
         {
             try
             {
-                var pluginUI = await _pluginmanagerService.GetScheme(id);
+                var pluginUI = await _pluginManagerService.GetScheme(id);
 
                 if (pluginUI == null)
                 {
@@ -106,7 +110,7 @@ namespace DevTools.controllers
             }
             catch (Exception ex)
             {
-                return BadRequest($"Internal server error: {ex.Message}");
+                return StatusCode(500 ,new ErrorRespones(ex.Message));
             }
         }
 
@@ -115,7 +119,7 @@ namespace DevTools.controllers
         {
             try
             {
-                var schema = await _pluginmanagerService.GetScheme(id);
+                var schema = await _pluginManagerService.GetScheme(id);
 
                 var json = JsonSerializer.Serialize(schema, new JsonSerializerOptions
                 {
@@ -134,7 +138,7 @@ namespace DevTools.controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(new ErrorRespones(ex.Message));
+                return StatusCode(500 ,new ErrorRespones(ex.Message));
             }
         }
 

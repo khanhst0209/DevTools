@@ -19,9 +19,9 @@ namespace MyWebAPI.controllers
     public class AccountManagerController : ControllerBase
     {
         private readonly IAccountManagerService _accountManagerService;
-        public AccountManagerController(IAccountManagerService _Accountservices)
+        public AccountManagerController(IAccountManagerService accountServices)
         {
-            this._accountManagerService = _Accountservices;
+            this._accountManagerService = accountServices;
         }
 
         [HttpPost("login")]
@@ -88,15 +88,15 @@ namespace MyWebAPI.controllers
 
                 var user = await _accountManagerService.GetUserById(userId);
 
-                return Ok(user); 
+                return Ok(user);
             }
-            catch(UserNotFound ex)
+            catch (UserNotFound ex)
             {
                 return NotFound(ex.Message);
             }
             catch (Exception ex)
             {
-                return BadRequest(new ErrorRespones(ex.Message));
+                return StatusCode(500 ,new ErrorRespones(ex.Message));
             }
         }
 
@@ -111,7 +111,7 @@ namespace MyWebAPI.controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(500 ,new ErrorRespones(ex.Message));
             }
         }
     }

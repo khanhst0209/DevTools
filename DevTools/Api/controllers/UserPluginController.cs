@@ -14,23 +14,23 @@ namespace DevTools.controllers
     public class UserPluginController : ControllerBase
     {
         private readonly IUserPluginService _userPluginService;
-        public UserPluginController(IUserPluginService _userPluginService)
+        public UserPluginController(IUserPluginService userPluginService)
         {
-            this._userPluginService = _userPluginService;
+            this._userPluginService = userPluginService;
         }
 
         [HttpGet("{userid}")]
         [Authorize]
-        public async Task<IActionResult> GetAllByUserId(string userid)
+        public async Task<IActionResult> GetAllByUserId(string userId)
         {
             try
             {
-                var items = await _userPluginService.GetAllByUserId(userid);
+                var items = await _userPluginService.GetAllByUserId(userId);
                 return Ok(items);
             }
             catch (Exception ex)
             {
-                return BadRequest(new ErrorRespones(ex.Message));
+                return StatusCode(500 ,new ErrorRespones(ex.Message));
             }
         }
 
@@ -41,7 +41,7 @@ namespace DevTools.controllers
             try
             {
                 await _userPluginService.AddFavoritePlugin(createUserPlugin);
-                return Ok("Successfully");
+                return Created();
             }
             catch (UserNotFound ex)
             {
@@ -53,7 +53,7 @@ namespace DevTools.controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(new ErrorRespones(ex.Message));
+                return StatusCode(500 ,new ErrorRespones(ex.Message));
             }
         }
 
@@ -76,7 +76,7 @@ namespace DevTools.controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(new ErrorRespones(ex.Message));
+                return StatusCode(500 ,new ErrorRespones(ex.Message));
             }
         }
     }

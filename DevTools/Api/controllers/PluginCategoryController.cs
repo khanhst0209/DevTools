@@ -11,10 +11,10 @@ namespace DevTools.controllers
     [ApiController]
     public class PluginCategoryController : ControllerBase
     {
-        private readonly IPluginCategoryService _plugincategoryservice;
-        public PluginCategoryController(IPluginCategoryService _plugincategoryservice)
+        private readonly IPluginCategoryService _pluginCategoryService;
+        public PluginCategoryController(IPluginCategoryService pluginCategoryService)
         {
-            this._plugincategoryservice = _plugincategoryservice;
+            this._pluginCategoryService = pluginCategoryService;
         }
 
         [HttpGet]
@@ -22,12 +22,12 @@ namespace DevTools.controllers
         {
             try
             {
-                var categories = await _plugincategoryservice.GetAllCategoryWithplugin();
+                var categories = await _pluginCategoryService.GetAllCategoryWithplugin();
                 return Ok(categories);
             }
             catch (Exception ex)
             {
-                return BadRequest(new ErrorRespones(ex.Message));
+                return StatusCode(500 ,new ErrorRespones(ex.Message));
             }
         }
 
@@ -37,7 +37,7 @@ namespace DevTools.controllers
         {
             try
             {
-                var category = await _plugincategoryservice.GetCategoryById(id);
+                var category = await _pluginCategoryService.GetCategoryById(id);
                 return Ok(category);
             }
             catch(PluginCategoryNotFound ex)
@@ -46,7 +46,7 @@ namespace DevTools.controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(new ErrorRespones(ex.Message));
+                return StatusCode(500,new ErrorRespones(ex.Message));
             }
         }
     }

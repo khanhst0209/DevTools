@@ -4,6 +4,7 @@ using DevTools.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using MyWebAPI.Dto;
 
 namespace DevTools.controllers
 {
@@ -35,19 +36,19 @@ namespace DevTools.controllers
                     return NotFound(ex.Message);
                 }
                 else{
-                    return BadRequest(ex.Message);
+                    return StatusCode(500 ,new ErrorRespones(ex.Message));
                 }
             }
         }
 
         [HttpPost("{pluginId}/activation")]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> SetActiveStatus(int pluginId, [FromQuery] bool IsActive)
+        public async Task<IActionResult> SetActiveStatus(int pluginId, [FromQuery] bool isActive)
         {
             try
             {
-                await _pluginManagerService.SetActiveStatus(pluginId, IsActive);
-                return Ok($"Pluing with id: {pluginId} has been change Activation to : {IsActive}");
+                await _pluginManagerService.SetActiveStatus(pluginId, isActive);
+                return Ok($"Pluing with id: {pluginId} has been change Activation to : {isActive}");
             }
             catch (Exception ex)
             {
@@ -56,7 +57,7 @@ namespace DevTools.controllers
                     return NotFound(ex.Message);
                 }
                 else{
-                    return BadRequest(ex.Message);
+                    return StatusCode(500 ,new ErrorRespones(ex.Message));
                 }
             }
         }
