@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DevTools.controllers
 {
-    [Route("Admin")]
+    [Route("admin")]
     [ApiController]
     [Authorize]
     public class AdminController : ControllerBase

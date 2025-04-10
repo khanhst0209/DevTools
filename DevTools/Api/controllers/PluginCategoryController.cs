@@ -7,7 +7,7 @@ using MyWebAPI.Dto;
 namespace DevTools.controllers
 {
 
-    [Route("PluginCategory")]
+    [Route("plugin-category")]
     [ApiController]
     public class PluginCategoryController : ControllerBase
     {

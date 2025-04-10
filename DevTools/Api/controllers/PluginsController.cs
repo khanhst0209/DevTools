@@ -12,7 +12,7 @@ using System.Text.Json.Serialization;
 
 namespace DevTools.controllers
 {
-    [Route("Plugin")]
+    [Route("plugin")]
     [ApiController]
     public class PluginsController : ControllerBase
     {
@@ -71,7 +71,7 @@ namespace DevTools.controllers
         }
 
 
-        [HttpPost("{id}/execute")]
+        [HttpPost("{id}/execution")]
         public async Task<IActionResult> ExecutePlugin(int id, [FromBody] object request)
         {
             try

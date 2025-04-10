@@ -14,7 +14,7 @@ using MyWebAPI.Services.Interfaces;
 
 namespace MyWebAPI.controllers
 {
-    [Route("Account")]
+    [Route("account")]
     [ApiController]
     public class AccountManagerController : ControllerBase
     {
@@ -24,7 +24,7 @@ namespace MyWebAPI.controllers
             this._accountManagerService = _Accountservices;
         }
 
-        [HttpPost("Login")]
+        [HttpPost("login")]
         public async Task<IActionResult> Login(LoginDTO logindto)
         {
             if (!ModelState.IsValid)
@@ -48,7 +48,7 @@ namespace MyWebAPI.controllers
 
         }
 
-        [HttpPost("Register")]
+        [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterDTO registerDto)
         {
             if (!ModelState.IsValid)
