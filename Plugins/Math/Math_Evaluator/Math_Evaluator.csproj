@@ -10,4 +10,9 @@
 <ItemGroup>
     <ProjectReference Include="..\..\DevTool\DevTool.csproj" />
 </ItemGroup>
+
+
+<ItemGroup>
+  <PackageReference Include="NCalc" Version="1.3.8" />
+</ItemGroup>
 </Project>

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SVGPlaceholderGenerator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3ecde91c6a0df736e4ded2a6acd5b4e70b9b4557")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bea0d7576653831a159ee40cc7144b0a87eed099")]
 [assembly: System.Reflection.AssemblyProductAttribute("SVGPlaceholderGenerator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SVGPlaceholderGenerator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,0 +1,6 @@
+D:\Coding\TKPM\Plugins\Math\Math_Evaluator\publish\Math_Evaluator.dll
+D:\Coding\TKPM\Plugins\Math\Math_Evaluator\publish\Math_Evaluator.deps.json
+D:\Coding\TKPM\Plugins\Math\Math_Evaluator\publish\Math_Evaluator.pdb
+D:\Coding\TKPM\Plugins\Math\Math_Evaluator\publish\NCalc.dll
+D:\Coding\TKPM\Plugins\Math\Math_Evaluator\publish\DevTool.dll
+D:\Coding\TKPM\Plugins\Math\Math_Evaluator\publish\DevTool.pdb
