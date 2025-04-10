@@ -1,0 +1,5 @@
+D:\Coding\TKPM\Plugins\Web\BasicAuthGenerator\publish\BasicAuthGenerator.dll
+D:\Coding\TKPM\Plugins\Web\BasicAuthGenerator\publish\BasicAuthGenerator.deps.json
+D:\Coding\TKPM\Plugins\Web\BasicAuthGenerator\publish\BasicAuthGenerator.pdb
+D:\Coding\TKPM\Plugins\Web\BasicAuthGenerator\publish\DevTool.dll
+D:\Coding\TKPM\Plugins\Web\BasicAuthGenerator\publish\DevTool.pdb

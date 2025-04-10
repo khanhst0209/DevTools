@@ -4,8 +4,8 @@ using DevTool.Input2Execute.Math_Evaluator;
 using DevTool.Roles;
 using DevTool.UISchema;
 using Plugins.DevTool;
-using NCalc;
-
+using Flee;
+using Flee.PublicTypes;
 namespace Math_Evaluator;
 
 public class Math_Evaluator : IDevToolPlugin
@@ -52,8 +52,25 @@ public class Math_Evaluator : IDevToolPlugin
 
     private object EvaluateMathExpression(string expr)
     {
-        var e = new Expression(expr);
-        return e.Evaluate();
+        var context = new ExpressionContext();
+
+        context.Imports.AddType(typeof(Math));
+
+        try
+        {
+            IDynamicExpression e = context.CompileDynamic(expr);
+            return e.Evaluate();
+        }
+        catch (ExpressionCompileException ex)
+        {
+            Console.WriteLine("Flee Compile Error: " + ex.Message);
+            return null;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Flee Runtime Error: " + ex.Message);
+            return null;
+        }
     }
 
     public object Execute(object input)

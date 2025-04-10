@@ -12,4 +12,14 @@
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <SourceRoot Include="C:\Users\phamn\.nuget\packages\" />
   </ItemGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Content Include="$(NuGetPackageRoot)flee\2.0.0\contentFiles\any\net6.0\Resources\DocComments.xml" Condition="Exists('$(NuGetPackageRoot)flee\2.0.0\contentFiles\any\net6.0\Resources\DocComments.xml')">
+      <NuGetPackageId>Flee</NuGetPackageId>
+      <NuGetPackageVersion>2.0.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>Resources\DocComments.xml</Link>
+    </Content>
+  </ItemGroup>
 </Project>

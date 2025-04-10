@@ -1,0 +1,5 @@
+D:\Coding\TKPM\Plugins\Web\EscapeHTMLEntity\publish\EscapeHTMLEntity.dll
+D:\Coding\TKPM\Plugins\Web\EscapeHTMLEntity\publish\EscapeHTMLEntity.deps.json
+D:\Coding\TKPM\Plugins\Web\EscapeHTMLEntity\publish\EscapeHTMLEntity.pdb
+D:\Coding\TKPM\Plugins\Web\EscapeHTMLEntity\publish\DevTool.dll
+D:\Coding\TKPM\Plugins\Web\EscapeHTMLEntity\publish\DevTool.pdb

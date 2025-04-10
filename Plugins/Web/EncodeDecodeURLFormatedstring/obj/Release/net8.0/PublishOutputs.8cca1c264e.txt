@@ -1,0 +1,5 @@
+D:\Coding\TKPM\Plugins\Web\EncodeDecodeURLFormatedstring\publish\EncodeDecodeURLFormatedstring.dll
+D:\Coding\TKPM\Plugins\Web\EncodeDecodeURLFormatedstring\publish\EncodeDecodeURLFormatedstring.deps.json
+D:\Coding\TKPM\Plugins\Web\EncodeDecodeURLFormatedstring\publish\EncodeDecodeURLFormatedstring.pdb
+D:\Coding\TKPM\Plugins\Web\EncodeDecodeURLFormatedstring\publish\DevTool.dll
+D:\Coding\TKPM\Plugins\Web\EncodeDecodeURLFormatedstring\publish\DevTool.pdb

@@ -1,5 +1,9 @@
-﻿using DevTool.Categories;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json;
+using DevTool.Categories;
+using DevTool.Input2Execute.EncodeDecodeURLFormatedstringInput;
 using DevTool.Roles;
+using DevTool.UISchema;
 using Plugins.DevTool;
 
 namespace EncodeDecodeURLFormatedstring;
@@ -25,6 +29,50 @@ public class EncodeDecodeURLFormatedstring : IDevToolPlugin
         </g>
     </svg>";
 
+    public Schema schema => new Schema
+    {
+        id = Id,
+        uiSchemas = new List<UISchema>{
+        new UISchema {
+            name = "Encode to URL format",
+            inputs = new List<SchemaInput>{
+                new SchemaInput{
+                    id = "yourString",
+                    label = "Your String",
+                    type = ComponentType.text.ToString(),
+                    defaultValue = "hello world"
+                }
+            },
+            outputs = new List<SchemaOutput>{
+                new SchemaOutput{
+                    id = "yourStringHashed",
+                    label = "URL-Encoded Result",
+                    type = ComponentType.text.ToString(),
+                    placeholder = "Your encoded string will appear here..."
+                }
+            }
+        },
+        new UISchema {
+            name = "Decode from URL format",
+            inputs = new List<SchemaInput>{
+                new SchemaInput{
+                    id = "yourEncodedString",
+                    label = "Your Encoded String",
+                    type = ComponentType.text.ToString(),
+                    defaultValue = "hello%20world"
+                }
+            },
+            outputs = new List<SchemaOutput>{
+                new SchemaOutput{
+                    id = "yourStringDecoded",
+                    label = "Decoded Result",
+                    type = ComponentType.text.ToString(),
+                    placeholder = "Decoded string will appear here..."
+                }
+            }
+        }
+    }
+    };
 
 
 
@@ -32,8 +80,27 @@ public class EncodeDecodeURLFormatedstring : IDevToolPlugin
 
     public object Execute(object input)
     {
-        throw new NotImplementedException();
+        var dict = JsonSerializer.Deserialize<Dictionary<string, object>>(input.ToString());
+        var json = JsonSerializer.Serialize(dict);
+        var myInput = JsonSerializer.Deserialize<EncodeDecodeURLFormatedstringInput>(json);
+
+        Validator.ValidateObject(myInput, new ValidationContext(myInput), validateAllProperties: true);
+
+        string encoded = string.IsNullOrEmpty(myInput.yourString)
+            ? ""
+            : Uri.EscapeDataString(myInput.yourString);
+
+        string decoded = string.IsNullOrEmpty(myInput.yourEncodedString)
+            ? ""
+            : Uri.UnescapeDataString(myInput.yourEncodedString);
+
+        return new
+        {
+            yourStringHashed = encoded,
+            yourStringDecoded = decoded
+        };
     }
+
 
     public string GetSheme1()
     {

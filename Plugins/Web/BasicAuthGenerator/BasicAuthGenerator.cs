@@ -1,5 +1,9 @@
-﻿using DevTool.Categories;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json;
+using DevTool.Categories;
+using DevTool.Input2Execute.BasicAuthInput;
 using DevTool.Roles;
+using DevTool.UISchema;
 using Plugins.DevTool;
 
 namespace BasicAuthGenerator;
@@ -23,16 +27,63 @@ public class BasicAuthGenerator : IDevToolPlugin
     </svg>";
 
 
-
-
+    public Schema schema => new Schema
+    {
+        id = Id,
+        uiSchemas = new List<UISchema>{
+        new UISchema {
+            inputs = new List<SchemaInput>{
+                new SchemaInput{
+                    id = "username",
+                    label = "Username",
+                    type = ComponentType.text.ToString()
+                },
+                new SchemaInput{
+                    id = "password",
+                    label = "Password",
+                    type = ComponentType.text.ToString()
+                }
+            },
+            outputs = new List<SchemaOutput>{
+                new SchemaOutput{
+                    id = "authHeader",
+                    label = "Authorization header:",
+                    type = ComponentType.text.ToString()
+                }
+            }
+        },
+    }
+    };
 
 
 
 
     public object Execute(object input)
     {
-        throw new NotImplementedException();
+        var dict = JsonSerializer.Deserialize<Dictionary<string, object>>(input.ToString());
+        var json = JsonSerializer.Serialize(dict);
+        var myInput = JsonSerializer.Deserialize<BasicAuthInput>(json);
+        Console.WriteLine("Mapped Input: " + JsonSerializer.Serialize(myInput));
+
+        Validator.ValidateObject(myInput, new ValidationContext(myInput), validateAllProperties: true);
+        Console.WriteLine("Validated Input");
+
+        var result = GenerateBasicAuthHeader(myInput.username, myInput.password);
+
+        return new { authHeader = result };
     }
+
+    private string GenerateBasicAuthHeader(string username, string password)
+    {
+        if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            return "Authorization: Basic ";
+
+        var plainText = $"{username}:{password}";
+        var bytes = System.Text.Encoding.UTF8.GetBytes(plainText);
+        var base64 = Convert.ToBase64String(bytes);
+        return $"Authorization: Basic {base64}";
+    }
+
 
     public string GetSheme1()
     {

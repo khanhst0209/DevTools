@@ -1,0 +1,5 @@
+D:\Coding\TKPM\Plugins\Text\String_Obfuscator\publish\String_Obfuscator.dll
+D:\Coding\TKPM\Plugins\Text\String_Obfuscator\publish\String_Obfuscator.deps.json
+D:\Coding\TKPM\Plugins\Text\String_Obfuscator\publish\String_Obfuscator.pdb
+D:\Coding\TKPM\Plugins\Text\String_Obfuscator\publish\DevTool.dll
+D:\Coding\TKPM\Plugins\Text\String_Obfuscator\publish\DevTool.pdb

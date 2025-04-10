@@ -1,10 +1,26 @@
 Tool đã triển khai: 
 
-JSON2XML
-RomanConverter
-XML2JSON
+Converter: Done
+    JSON2XML
+    RomanConverter
+    XML2JSON
 
-Bcrypt
-HashText
-TokenGenerator
+Cryto: Done
+    Bcrypt
+    HashText
+    TokenGenerator
+
+Math: 
+    Math_Evaluator
+    Percantage_Calculator
+
+Text: Done
+    Lorem_Ipsum_Generator
+    String_Obfuscator
+    Text_Statistics
+
+Web:
+    BasicAuthGenerator
+    EncodeDecodeURLFormatedstring
+    EscapeHTMLEntity
 

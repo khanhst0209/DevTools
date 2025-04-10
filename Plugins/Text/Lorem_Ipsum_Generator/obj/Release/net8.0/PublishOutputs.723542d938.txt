@@ -1,0 +1,5 @@
+D:\Coding\TKPM\Plugins\Text\Lorem_Ipsum_Generator\publish\Lorem_Ipsum_Generator.dll
+D:\Coding\TKPM\Plugins\Text\Lorem_Ipsum_Generator\publish\Lorem_Ipsum_Generator.deps.json
+D:\Coding\TKPM\Plugins\Text\Lorem_Ipsum_Generator\publish\Lorem_Ipsum_Generator.pdb
+D:\Coding\TKPM\Plugins\Text\Lorem_Ipsum_Generator\publish\DevTool.dll
+D:\Coding\TKPM\Plugins\Text\Lorem_Ipsum_Generator\publish\DevTool.pdb
