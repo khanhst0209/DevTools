@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DevTool")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1cedb4d23040e6efea3b8d335a22afa33715eb6b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e89ed4a2a79e46b5bfbb75853c9e325c2befa4c5")]
 [assembly: System.Reflection.AssemblyProductAttribute("DevTool")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DevTool")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

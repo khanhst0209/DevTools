@@ -17,7 +17,5 @@ namespace DevTools.Dto.user
         [Required]
         public string Role { get; set; }
 
-        [Required]
-        public bool IsPremium { get; set; }
     }
 }

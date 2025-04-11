@@ -26,7 +26,7 @@ namespace DevTools.data.Seed
                         FullName = fullName,
                         UserName = username,
                         Email = email,
-                        IsPremium = true,
+                        IsPremium = role == "Premium",
                         EmailConfirmed = true
                     };
 
