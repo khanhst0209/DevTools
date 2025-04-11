@@ -8,6 +8,7 @@ using DevTools.Repositories.Interfaces;
 using DevTools.Services.Interfaces;
 using Plugins.DevTool;
 using DevTool.UISchema;
+using Services.AssemblyManager;
 
 namespace DevTools.Services
 {
@@ -17,20 +18,23 @@ namespace DevTools.Services
         private readonly IWebHostEnvironment _env;
         private readonly IPluginRepository _pluginRepository;
         private readonly IMapper _mapper;
+        private readonly IAssemblyManager _assemblyManager;
 
 
         public PluginManagerService(
             IPluginManagerRepository pluginmanagerRepository,
             IPluginRepository pluginRepository,
             IMapper mapper,
-            IWebHostEnvironment env)
+            IWebHostEnvironment env,
+            IAssemblyManager assemblyManager)
         {
-  
+
 
             _pluginmanagerRepository = pluginmanagerRepository;
             _pluginRepository = pluginRepository;
             _mapper = mapper;
             _env = env;
+            _assemblyManager = assemblyManager;
         }
 
 
@@ -53,7 +57,7 @@ namespace DevTools.Services
         public async Task<List<PluginsResponeDTO>> GetAllByQuerry(PluginQuerry querry)
         {
             var plugins = await _pluginRepository.GetAllByQuerryAsync(querry);
-            
+
             return _mapper.Map<List<PluginsResponeDTO>>(plugins);
         }
 
@@ -143,7 +147,7 @@ namespace DevTools.Services
                 throw new PluginNotFound(id);
             }
             var scheme = plugin.schema;
-            
+
             return scheme;
         }
 
@@ -156,6 +160,39 @@ namespace DevTools.Services
             return _mapper.Map<PluginsResponeDTO>(plugin);
         }
 
+        public async Task DeletePluginByIdAsync(int pluginId)
+        {
+            var plugin = await _pluginRepository.GetByIdAsync(pluginId);
 
+            if (plugin == null)
+                throw new PluginNotFound(pluginId);
+
+
+
+            await _pluginmanagerRepository.RemoveAsync(pluginId);
+            await _pluginRepository.RemoveAsync(plugin.Id);
+            await Task.Delay(200); 
+            await _assemblyManager.UnloadAssemblyAsync(plugin.DllPath);
+            await Task.Delay(1000); 
+            
+            // Delete in file
+            string path = Path.GetFullPath(plugin.DllPath);
+            try
+            {
+                if (File.Exists(path))
+                {
+                    File.Delete(path);
+                    Console.WriteLine($"🗑️ Deleted plugin DLL: {path}");
+                }
+                else
+                {
+                    Console.WriteLine($"⚠️ File already deleted or not found: {path}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"❌ Failed to delete plugin DLL: {path}\n{ex}");
+            }
+        }
     }
 }

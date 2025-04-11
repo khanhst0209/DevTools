@@ -5779,11 +5779,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Coding\\TKPM\\DevTools\\MyWebAPI.csproj",
+      "projectUniqueName": "D:\\Coding\\TKPM\\DevTools\\DevTools\\MyWebAPI.csproj",
       "projectName": "MyWebAPI",
-      "projectPath": "D:\\Coding\\TKPM\\DevTools\\MyWebAPI.csproj",
+      "projectPath": "D:\\Coding\\TKPM\\DevTools\\DevTools\\MyWebAPI.csproj",
       "packagesPath": "C:\\Users\\phamn\\.nuget\\packages\\",
-      "outputPath": "D:\\Coding\\TKPM\\DevTools\\obj\\",
+      "outputPath": "D:\\Coding\\TKPM\\DevTools\\DevTools\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\phamn\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5801,8 +5801,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Coding\\TKPM\\Plugins\\DevTool\\DevTool.csproj": {
-              "projectPath": "D:\\Coding\\TKPM\\Plugins\\DevTool\\DevTool.csproj"
+            "D:\\Coding\\TKPM\\DevTools\\Plugins\\DevTool\\DevTool.csproj": {
+              "projectPath": "D:\\Coding\\TKPM\\DevTools\\Plugins\\DevTool\\DevTool.csproj"
             }
           }
         }

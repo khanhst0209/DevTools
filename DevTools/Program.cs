@@ -116,8 +116,8 @@ builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 builder.Services.AddScoped<IUserPluginRepository, UserPluginRepository>();
 
 // Background Services
-builder.Services.AddHostedService<PluginWatcherService>(); // Thêm vào Hosted Services
-builder.Services.AddHostedService<LibraryWatcherService>(); // Thêm vào Hosted Services
+// builder.Services.AddHostedService<PluginWatcherService>(); // Thêm vào Hosted Services
+// builder.Services.AddHostedService<LibraryWatcherService>(); // Thêm vào Hosted Services
 
 
 

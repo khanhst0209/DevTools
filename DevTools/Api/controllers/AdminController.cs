@@ -31,12 +31,13 @@ namespace DevTools.controllers
             }
             catch (Exception ex)
             {
-                if(ex is PluginNotFound)
+                if (ex is PluginNotFound)
                 {
                     return NotFound(ex.Message);
                 }
-                else{
-                    return StatusCode(500 ,new ErrorRespones(ex.Message));
+                else
+                {
+                    return StatusCode(500, new ErrorRespones(ex.Message));
                 }
             }
         }
@@ -52,20 +53,29 @@ namespace DevTools.controllers
             }
             catch (Exception ex)
             {
-                if(ex is PluginNotFound)
+                if (ex is PluginNotFound)
                 {
                     return NotFound(ex.Message);
                 }
-                else{
-                    return StatusCode(500 ,new ErrorRespones(ex.Message));
+                else
+                {
+                    return StatusCode(500, new ErrorRespones(ex.Message));
                 }
             }
         }
-        [HttpDelete("{pluginId}")]
+        [HttpDelete("/plugin/{pluginId}")]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> RemovePlugin(int pluginId)
         {
-            return NotFound("Cai nay chua lam, hoi bi luoi");
+            try
+            {
+                await _pluginManagerService.DeletePluginByIdAsync(pluginId);
+                return Ok("Ngon roi do xoa thu coi");
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
     }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nbCSSe8BHZd8oeX+Y4ZwEHKjk870NSqyOcW1K9bPM5k=",
+  "Hash": "3N1Tz7UXeLj1HN3XXn9EezWIuKL6ZecEoKsJCvu2YQc=",
   "Source": "MyWebAPI",
   "BasePath": "_content/MyWebAPI",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "MyWebAPI\\wwwroot",
       "Source": "MyWebAPI",
-      "ContentRoot": "D:\\Coding\\TKPM\\DevTools\\wwwroot\\",
+      "ContentRoot": "D:\\Coding\\TKPM\\DevTools\\DevTools\\wwwroot\\",
       "BasePath": "_content/MyWebAPI",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\Coding\\TKPM\\DevTools\\wwwroot\\Sources\\Base64EncoderDecoder\\assets\\index-BDBwt6y-.js",
+      "Identity": "D:\\Coding\\TKPM\\DevTools\\DevTools\\wwwroot\\Sources\\Base64EncoderDecoder\\assets\\index-BDBwt6y-.js",
       "SourceId": "MyWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Coding\\TKPM\\DevTools\\wwwroot\\",
+      "ContentRoot": "D:\\Coding\\TKPM\\DevTools\\DevTools\\wwwroot\\",
       "BasePath": "_content/MyWebAPI",
       "RelativePath": "Sources/Base64EncoderDecoder/assets/index-BDBwt6y-.js",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\Sources\\Base64EncoderDecoder\\assets\\index-BDBwt6y-.js"
     },
     {
-      "Identity": "D:\\Coding\\TKPM\\DevTools\\wwwroot\\Sources\\Base64EncoderDecoder\\assets\\index-vRU7Uekz.css",
+      "Identity": "D:\\Coding\\TKPM\\DevTools\\DevTools\\wwwroot\\Sources\\Base64EncoderDecoder\\assets\\index-vRU7Uekz.css",
       "SourceId": "MyWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Coding\\TKPM\\DevTools\\wwwroot\\",
+      "ContentRoot": "D:\\Coding\\TKPM\\DevTools\\DevTools\\wwwroot\\",
       "BasePath": "_content/MyWebAPI",
       "RelativePath": "Sources/Base64EncoderDecoder/assets/index-vRU7Uekz.css",
       "AssetKind": "All",
@@ -55,10 +55,10 @@
       "OriginalItemSpec": "wwwroot\\Sources\\Base64EncoderDecoder\\assets\\index-vRU7Uekz.css"
     },
     {
-      "Identity": "D:\\Coding\\TKPM\\DevTools\\wwwroot\\Sources\\Base64EncoderDecoder\\index.html",
+      "Identity": "D:\\Coding\\TKPM\\DevTools\\DevTools\\wwwroot\\Sources\\Base64EncoderDecoder\\index.html",
       "SourceId": "MyWebAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Coding\\TKPM\\DevTools\\wwwroot\\",
+      "ContentRoot": "D:\\Coding\\TKPM\\DevTools\\DevTools\\wwwroot\\",
       "BasePath": "_content/MyWebAPI",
       "RelativePath": "Sources/Base64EncoderDecoder/index.html",
       "AssetKind": "All",

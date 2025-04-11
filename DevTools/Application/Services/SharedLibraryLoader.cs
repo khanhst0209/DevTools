@@ -15,10 +15,10 @@ public class SharedLibraryLoader : ISharedLibraryLoader
     {
         Console.WriteLine("=================================================");
         Console.WriteLine("Load Library assembly");
-        foreach (var file in Directory.GetFiles(_pluginFolder, "*.dll"))
-        {
-            await AddLibraryAsync(file);
-        }
+        // foreach (var file in Directory.GetFiles(_pluginFolder, "*.dll"))
+        // {
+        //     await AddLibraryAsync(file);
+        // }
         Console.WriteLine("=================================================");
     }
 

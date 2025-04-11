@@ -1,5 +1,6 @@
 using System.Reflection;
 using AutoMapper;
+using DevTools.Application.Services.AssemblyManager;
 using DevTools.Dto.Plugins;
 using DevTools.Repositories.Interfaces;
 using DevTools.Services.Interfaces;
@@ -57,9 +58,13 @@ namespace DevTools.Services
         {
             try
             {
-                Assembly assembly = await _assembleManager.LoadAssemblyAsync(dllPath);
+                var assembly = await _assembleManager.LoadAssemblyAsync(dllPath);
                 Type[] types = assembly.GetTypes();
+
+
                 var pluginTypes = types.Where(t => typeof(IDevToolPlugin).IsAssignableFrom(t) && !t.IsInterface);
+                Console.WriteLine($"Found {pluginTypes.Count()} plugin types in {dllPath}");
+
 
                 foreach (var type in pluginTypes)
                 {
@@ -69,6 +74,7 @@ namespace DevTools.Services
                         if (item == null)
                         {
                             var temp = _mapper.Map<CreatePluginDTO>(plugin);
+                            temp.DllPath = dllPath;
                             await _pluginRepository.AddPluginAsync(temp);
                             plugin.Id = (await _pluginRepository.GetByName(plugin.Name)).Id;
                         }

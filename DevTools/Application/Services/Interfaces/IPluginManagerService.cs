@@ -18,6 +18,6 @@ namespace DevTools.Services.Interfaces
         Task<PluginUI> GetScheme1(int id);
 
         Task<Schema> GetScheme(int id);
-
+        Task DeletePluginByIdAsync(int pluginId);
     }
 }

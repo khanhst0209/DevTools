@@ -11,5 +11,6 @@ namespace DevTools.Dto.Plugins
         public bool IsActive { get; set; }
         public bool IsPremium { get; set; }
         public string Icon { get; set; }
+        public string DllPath { get; set; }
     }
 }
