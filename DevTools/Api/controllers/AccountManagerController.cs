@@ -1,4 +1,5 @@
 using System.Security.Claims;
+using DevTools.Application.Dto;
 using DevTools.Application.Exceptions.AccountManager.ChangePassword;
 using DevTools.Dto.user;
 using DevTools.Exceptions.AccountManager.LoginException;
@@ -110,13 +111,13 @@ namespace MyWebAPI.controllers
             {
                 var userIdClaim = User.FindFirst("Id");
                 if (userIdClaim == null)
-                    return Unauthorized("Please login to use this method");
+                    return Unauthorized(new ErrorRespones("Please login before use this method"));
 
                 var userId = userIdClaim.Value;
 
                 await _accountManagerService.PasswordChange(userId, passwordChange);
 
-                return Ok("Password was change successfully");
+                return Ok(new SuccessRespone("Password was changed successfully"));
             }
             catch (UnvalidConfirmPasswordException ex)
             {
