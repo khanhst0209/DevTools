@@ -8,6 +8,7 @@ using DevTools.Repositories.Interfaces;
 using DevTools.Services.Interfaces;
 using Plugins.DevTool;
 using DevTool.UISchema;
+using DevTools.Application.Dto.Plugins;
 
 namespace DevTools.Services
 {
@@ -25,7 +26,7 @@ namespace DevTools.Services
             IMapper mapper,
             IWebHostEnvironment env)
         {
-  
+
 
             _pluginmanagerRepository = pluginmanagerRepository;
             _pluginRepository = pluginRepository;
@@ -37,6 +38,7 @@ namespace DevTools.Services
         public async Task<List<PluginsResponeDTO>> GetAllActivePlugin()
         {
             var plugins = await _pluginRepository.GetAllAsync();
+            plugins = plugins.Where(x => x.IsActive == true).ToList();
             return _mapper.Map<List<PluginsResponeDTO>>(plugins);
         }
 
@@ -53,7 +55,7 @@ namespace DevTools.Services
         public async Task<List<PluginsResponeDTO>> GetAllByQuerry(PluginQuerry querry)
         {
             var plugins = await _pluginRepository.GetAllByQuerryAsync(querry);
-            
+
             return _mapper.Map<List<PluginsResponeDTO>>(plugins);
         }
 
@@ -143,7 +145,7 @@ namespace DevTools.Services
                 throw new PluginNotFound(id);
             }
             var scheme = plugin.schema;
-            
+
             return scheme;
         }
 
@@ -156,6 +158,10 @@ namespace DevTools.Services
             return _mapper.Map<PluginsResponeDTO>(plugin);
         }
 
-
+        public async Task<List<PluginResponeWithActiveStatusDTO>> GetAllPlugin()
+        {
+            var plugins = await _pluginRepository.GetAllAsync();
+            return _mapper.Map<List<PluginResponeWithActiveStatusDTO>>(plugins);
+        }
     }
 }

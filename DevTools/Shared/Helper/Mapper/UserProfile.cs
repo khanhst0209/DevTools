@@ -1,4 +1,5 @@
 using AutoMapper;
+using DevTools.Application.Dto.Plugins;
 using DevTools.data;
 using DevTools.Dto.Category;
 using DevTools.Dto.Plugins;
@@ -15,6 +16,8 @@ namespace DevTools.Helper.Mapper
         {
             CreateMap<Plugin, PluginsResponeDTO>()
             .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(scr => scr.category.Name));
+            CreateMap<Plugin, PluginResponeWithActiveStatusDTO>();
+            CreateMap<Plugin, PluginMinimize>();
 
 
             CreateMap<IDevToolPlugin, CreatePluginDTO>()
@@ -24,7 +27,7 @@ namespace DevTools.Helper.Mapper
             CreateMap<PluginCategory, PLuginCategoryDTO>()
            .ForMember(dest => dest.plugins, opt => opt.MapFrom(src => src.Plugins));
 
-            CreateMap<Plugin, PluginMinimize>();
+
 
             CreateMap<CreatePluginDTO, Plugin>()
             .ForMember(dest => dest.CategoryId, opt => opt.Ignore())

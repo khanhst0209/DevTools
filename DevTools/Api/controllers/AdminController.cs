@@ -70,5 +70,21 @@ namespace DevTools.controllers
             return NotFound("Cai nay chua lam, hoi bi luoi");
         }
 
+        [HttpGet("Plugin")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> GetAllPlugin()
+        {
+            try
+            {
+                var plugins = await _pluginManagerService.GetAllPlugin();
+
+                return Ok(plugins);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ErrorRespones(ex.Message));
+            }
+        }
+
     }
 }

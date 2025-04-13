@@ -16,8 +16,6 @@ namespace DevTools.controllers
     [ApiController]
     public class PluginsController : ControllerBase
     {
-
-
         private readonly IPluginManagerService _pluginManagerService;
         public PluginsController(IPluginManagerService pluginManagerService)
         {

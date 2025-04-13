@@ -52,11 +52,6 @@ namespace DevTools.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public override async Task<List<Plugin>> GetAllAsync()
-        {
-            return await _context.Plugins.Where(x => x.IsActive == true).Include(p => p.category).AsNoTracking().ToListAsync();
-        }
-
         public async Task<Plugin> GetByName(string name)
         {
             var item = await _context.Plugins.FirstOrDefaultAsync(x => x.Name == name);

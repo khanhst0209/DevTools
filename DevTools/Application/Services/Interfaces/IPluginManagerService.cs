@@ -2,6 +2,7 @@ using DevTools.Dto.Category;
 using DevTools.Dto.Plugins;
 using DevTools.Dto.Querry;
 using DevTool.UISchema;
+using DevTools.Application.Dto.Plugins;
 
 namespace DevTools.Services.Interfaces
 {
@@ -9,6 +10,7 @@ namespace DevTools.Services.Interfaces
     {
         Task<PluginsResponeDTO> GetPLuginById(int id);
         Task<List<PluginsResponeDTO>> GetAllActivePlugin();
+        Task<List<PluginResponeWithActiveStatusDTO>> GetAllPlugin();
         Task<List<PluginsResponeDTO>> GetAllByQuerry(PluginQuerry querry);
         Task SetPremiumStatus(int pluginId, bool status);
         Task SetActiveStatus(int pluginId, bool status);
