@@ -16,6 +16,7 @@ namespace DevTools.Helper.Mapper
         {
             CreateMap<Plugin, PluginsResponeDTO>()
             .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(scr => scr.category.Name));
+            
             CreateMap<Plugin, PluginResponeWithActiveStatusDTO>();
             CreateMap<Plugin, PluginMinimize>();
 

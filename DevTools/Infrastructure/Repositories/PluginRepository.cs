@@ -12,7 +12,7 @@ using MyWebAPI.data;
 
 namespace DevTools.Repositories
 {
-    public class PluginRepository :BaseRepository<Plugin>, IPluginRepository
+    public class PluginRepository : BaseRepository<Plugin>, IPluginRepository
     {
         private readonly MyDbContext _context;
         private readonly IPluginCategoryRepository _plugincategoryrepository;
@@ -37,7 +37,7 @@ namespace DevTools.Repositories
         {
             if ((await _plugincategoryrepository.GetByName(createplugindto.Category)) == null)
             {
-                var  temp = new PluginCategory{Name = createplugindto.Category};
+                var temp = new PluginCategory { Name = createplugindto.Category };
                 await _plugincategoryrepository.AddAsync(temp);
             }
 
@@ -100,6 +100,11 @@ namespace DevTools.Repositories
             }
 
             return await plugins.ToListAsync();
+        }
+
+        public override async Task<List<Plugin>> GetAllAsync()
+        {
+            return await _context.Plugins.Include(x => x.category).ToListAsync();
         }
 
     }
