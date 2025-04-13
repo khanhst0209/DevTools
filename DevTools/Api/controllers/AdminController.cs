@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using MyWebAPI.Dto;
+using MyWebAPI.Services.Interfaces;
 
 namespace DevTools.controllers
 {
@@ -17,10 +18,13 @@ namespace DevTools.controllers
     public class AdminController : ControllerBase
     {
         private readonly IPluginManagerService _pluginManagerService;
+        private readonly IAccountManagerService _accountManagerService;
 
-        public AdminController(IPluginManagerService _pluginManagerService)
+        public AdminController(IPluginManagerService pluginManagerService,
+        IAccountManagerService accountManagerService)
         {
-            this._pluginManagerService = _pluginManagerService;
+            _pluginManagerService = pluginManagerService;
+            _accountManagerService = accountManagerService;
         }
 
         [HttpPost("{pluginId}/premium")]
@@ -108,5 +112,20 @@ namespace DevTools.controllers
                 return BadRequest(new ErrorRespones(ex.Message));
             }
         }
+
+        [HttpGet("users")]
+        public async Task<IActionResult> GetAllUsers()
+        {
+            try
+            {
+                var users = await _accountManagerService.GetAllUsers();
+                return Ok(users);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ErrorRespones(ex.Message));
+            }
+        }
+
     }
 }
