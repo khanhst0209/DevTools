@@ -12,7 +12,8 @@ namespace DevTool.UISchema
             get => _type;
             set
             {
-                if (value != ComponentType.text.ToString() && value != ComponentType.textarea.ToString())
+                if (value != ComponentType.text.ToString() && value != ComponentType.textarea.ToString() 
+                && value != ComponentType.xml.ToString() && value != ComponentType.json.ToString())
                 {
                     throw new ArgumentException("Only 'text' and 'textarea' are allowed for this component.");
                 }

@@ -52,7 +52,7 @@ public class JSON2XML : IDevToolPlugin
                     new SchemaOutput{
                         id = "textoutput",
                         label = "Converted XML",
-                        type = ComponentType.textarea.ToString(),
+                        type = ComponentType.xml.ToString(),
                         rows = 8
                     }
                 }

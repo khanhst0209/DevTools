@@ -24,3 +24,16 @@ Web:
     EncodeDecodeURLFormatedstring
     EscapeHTMLEntity
 
+Measurement
+NetWork
+Development
+- che them 1 cai ben Data
+- Math ETA 
+
+Khanh:
+    Data : 2 cai 
+
+AI : 
+
+
+

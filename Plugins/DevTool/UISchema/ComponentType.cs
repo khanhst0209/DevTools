@@ -13,5 +13,7 @@ namespace DevTool.UISchema
         checkbox,
         radio,
         toggle,
+        json,
+        xml
     }
 }

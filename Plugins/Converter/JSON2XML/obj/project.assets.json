@@ -76,11 +76,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Coding\\TKPM\\Plugins\\Converter\\JSON2XML\\JSON2XML.csproj",
+      "projectUniqueName": "D:\\Coding\\TKPM\\DevTools\\Plugins\\Converter\\JSON2XML\\JSON2XML.csproj",
       "projectName": "JSON2XML",
-      "projectPath": "D:\\Coding\\TKPM\\Plugins\\Converter\\JSON2XML\\JSON2XML.csproj",
+      "projectPath": "D:\\Coding\\TKPM\\DevTools\\Plugins\\Converter\\JSON2XML\\JSON2XML.csproj",
       "packagesPath": "C:\\Users\\phamn\\.nuget\\packages\\",
-      "outputPath": "D:\\Coding\\TKPM\\Plugins\\Converter\\JSON2XML\\obj\\",
+      "outputPath": "D:\\Coding\\TKPM\\DevTools\\Plugins\\Converter\\JSON2XML\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\phamn\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -98,8 +98,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Coding\\TKPM\\Plugins\\DevTool\\DevTool.csproj": {
-              "projectPath": "D:\\Coding\\TKPM\\Plugins\\DevTool\\DevTool.csproj"
+            "D:\\Coding\\TKPM\\DevTools\\Plugins\\DevTool\\DevTool.csproj": {
+              "projectPath": "D:\\Coding\\TKPM\\DevTools\\Plugins\\DevTool\\DevTool.csproj"
             }
           }
         }

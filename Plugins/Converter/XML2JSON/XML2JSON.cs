@@ -51,7 +51,7 @@ public class XML2JSON : IDevToolPlugin
                     new SchemaOutput{
                         id = "textoutput",
                         label = "Converted JSON",
-                        type = ComponentType.textarea.ToString(),
+                        type = ComponentType.json.ToString(),
                         rows = 8
                     }
                 }

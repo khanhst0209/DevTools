@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Coding\\TKPM\\Plugins\\Converter\\XML2JSON\\XML2JSON.csproj": {}
+    "D:\\Coding\\TKPM\\DevTools\\Plugins\\Converter\\XML2JSON\\XML2JSON.csproj": {}
   },
   "projects": {
-    "D:\\Coding\\TKPM\\Plugins\\Converter\\XML2JSON\\XML2JSON.csproj": {
+    "D:\\Coding\\TKPM\\DevTools\\Plugins\\Converter\\XML2JSON\\XML2JSON.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Coding\\TKPM\\Plugins\\Converter\\XML2JSON\\XML2JSON.csproj",
+        "projectUniqueName": "D:\\Coding\\TKPM\\DevTools\\Plugins\\Converter\\XML2JSON\\XML2JSON.csproj",
         "projectName": "XML2JSON",
-        "projectPath": "D:\\Coding\\TKPM\\Plugins\\Converter\\XML2JSON\\XML2JSON.csproj",
+        "projectPath": "D:\\Coding\\TKPM\\DevTools\\Plugins\\Converter\\XML2JSON\\XML2JSON.csproj",
         "packagesPath": "C:\\Users\\phamn\\.nuget\\packages\\",
-        "outputPath": "D:\\Coding\\TKPM\\Plugins\\Converter\\XML2JSON\\obj\\",
+        "outputPath": "D:\\Coding\\TKPM\\DevTools\\Plugins\\Converter\\XML2JSON\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\phamn\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -29,8 +29,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Coding\\TKPM\\Plugins\\DevTool\\DevTool.csproj": {
-                "projectPath": "D:\\Coding\\TKPM\\Plugins\\DevTool\\DevTool.csproj"
+              "D:\\Coding\\TKPM\\DevTools\\Plugins\\DevTool\\DevTool.csproj": {
+                "projectPath": "D:\\Coding\\TKPM\\DevTools\\Plugins\\DevTool\\DevTool.csproj"
               }
             }
           }
@@ -75,14 +75,14 @@
         }
       }
     },
-    "D:\\Coding\\TKPM\\Plugins\\DevTool\\DevTool.csproj": {
+    "D:\\Coding\\TKPM\\DevTools\\Plugins\\DevTool\\DevTool.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Coding\\TKPM\\Plugins\\DevTool\\DevTool.csproj",
+        "projectUniqueName": "D:\\Coding\\TKPM\\DevTools\\Plugins\\DevTool\\DevTool.csproj",
         "projectName": "DevTool",
-        "projectPath": "D:\\Coding\\TKPM\\Plugins\\DevTool\\DevTool.csproj",
+        "projectPath": "D:\\Coding\\TKPM\\DevTools\\Plugins\\DevTool\\DevTool.csproj",
         "packagesPath": "C:\\Users\\phamn\\.nuget\\packages\\",
-        "outputPath": "D:\\Coding\\TKPM\\Plugins\\DevTool\\obj\\",
+        "outputPath": "D:\\Coding\\TKPM\\DevTools\\Plugins\\DevTool\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\phamn\\AppData\\Roaming\\NuGet\\NuGet.Config",
