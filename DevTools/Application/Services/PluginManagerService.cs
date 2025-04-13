@@ -171,11 +171,10 @@ namespace DevTools.Services
 
             await _pluginmanagerRepository.RemoveAsync(pluginId);
             await _pluginRepository.RemoveAsync(plugin.Id);
-            await Task.Delay(200); 
+            await Task.Delay(200);
             await _assemblyManager.UnloadAssemblyAsync(plugin.DllPath);
-            await Task.Delay(1000); 
-            
-            // Delete in file
+            await Task.Delay(1000);
+
             string path = Path.GetFullPath(plugin.DllPath);
             try
             {

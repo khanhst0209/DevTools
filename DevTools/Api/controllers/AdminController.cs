@@ -70,7 +70,7 @@ namespace DevTools.controllers
             try
             {
                 await _pluginManagerService.DeletePluginByIdAsync(pluginId);
-                return Ok("Ngon roi do xoa thu coi");
+                return Ok("oke");
             }
             catch(Exception ex)
             {
