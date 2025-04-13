@@ -52,7 +52,6 @@ namespace MyWebAPI.controllers
         }
 
         [HttpPost("register")]
-        [Authorize()]
         public async Task<IActionResult> Register([FromBody] RegisterDTO registerDto)
         {
             if (!ModelState.IsValid)

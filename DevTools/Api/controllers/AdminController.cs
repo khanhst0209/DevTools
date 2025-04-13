@@ -31,12 +31,13 @@ namespace DevTools.controllers
             }
             catch (Exception ex)
             {
-                if(ex is PluginNotFound)
+                if (ex is PluginNotFound)
                 {
                     return NotFound(ex.Message);
                 }
-                else{
-                    return StatusCode(500 ,new ErrorRespones(ex.Message));
+                else
+                {
+                    return StatusCode(500, new ErrorRespones(ex.Message));
                 }
             }
         }
@@ -52,12 +53,13 @@ namespace DevTools.controllers
             }
             catch (Exception ex)
             {
-                if(ex is PluginNotFound)
+                if (ex is PluginNotFound)
                 {
                     return NotFound(ex.Message);
                 }
-                else{
-                    return StatusCode(500 ,new ErrorRespones(ex.Message));
+                else
+                {
+                    return StatusCode(500, new ErrorRespones(ex.Message));
                 }
             }
         }
