@@ -4,10 +4,12 @@ using Services.AssemblyManager;
 public class SharedLibraryLoader : ISharedLibraryLoader
 {
     private readonly IAssemblyManager _assemblymanager;
-    private readonly string _pluginFolder = "./Domain/Plugins/SharedLibrary";
+    private readonly IConfiguration _configuration;
+    private readonly string _pluginFolder = "";
 
     public SharedLibraryLoader(IAssemblyManager _assemblymanager)
     {
+        _pluginFolder = _configuration["Resources_Path:SharedLibaryPath"];
         this._assemblymanager = _assemblymanager;
     }
 
@@ -15,10 +17,10 @@ public class SharedLibraryLoader : ISharedLibraryLoader
     {
         Console.WriteLine("=================================================");
         Console.WriteLine("Load Library assembly");
-        foreach (var file in Directory.GetFiles(_pluginFolder, "*.dll"))
-        {
-            await AddLibraryAsync(file);
-        }
+        // foreach (var file in Directory.GetFiles(_pluginFolder, "*.dll"))
+        // {
+        //     await AddLibraryAsync(file);
+        // }
         Console.WriteLine("=================================================");
     }
 

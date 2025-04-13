@@ -1,3 +1,6 @@
+using DevTools.Application.Dto;
+using DevTools.Application.Dto.File;
+using DevTools.Application.Exceptions.UploadFile;
 using DevTools.Exceptions.Plugins.PluginsException.cs;
 using DevTools.Repositories.Interfaces;
 using DevTools.Services.Interfaces;
@@ -10,7 +13,7 @@ namespace DevTools.controllers
 {
     [Route("api/v1/admin")]
     [ApiController]
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class AdminController : ControllerBase
     {
         private readonly IPluginManagerService _pluginManagerService;
@@ -21,7 +24,6 @@ namespace DevTools.controllers
         }
 
         [HttpPost("{pluginId}/premium")]
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> SetPremiumStatus(int pluginId, [FromQuery] bool isPremium)
         {
             try
@@ -43,7 +45,6 @@ namespace DevTools.controllers
         }
 
         [HttpPost("{pluginId}/activation")]
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> SetActiveStatus(int pluginId, [FromQuery] bool isActive)
         {
             try
@@ -63,15 +64,21 @@ namespace DevTools.controllers
                 }
             }
         }
-        [HttpDelete("{pluginId}")]
-        [Authorize(Roles = "Admin")]
+        [HttpDelete("/plugin/{pluginId}")]
         public async Task<IActionResult> RemovePlugin(int pluginId)
         {
-            return NotFound("Cai nay chua lam, hoi bi luoi");
+            try
+            {
+                await _pluginManagerService.DeletePluginByIdAsync(pluginId);
+                return Ok(new SuccessRespone("Plugin was removed successfully"));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpGet("Plugin")]
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAllPlugin()
         {
             try
@@ -86,5 +93,20 @@ namespace DevTools.controllers
             }
         }
 
+
+        [HttpPost("plugin")]
+        [RequestSizeLimit(100_100_100)]
+        public async Task<IActionResult> UploadPlugin([FromForm] UploadFileDTO upload)
+        {
+            try
+            {
+                await _pluginManagerService.UploadLoadPlugin(upload);
+                return Ok(new SuccessRespone("Files was uploaded successfully"));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ErrorRespones(ex.Message));
+            }
+        }
     }
 }

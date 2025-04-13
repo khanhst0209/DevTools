@@ -9,6 +9,9 @@ using DevTools.Services.Interfaces;
 using Plugins.DevTool;
 using DevTool.UISchema;
 using DevTools.Application.Dto.Plugins;
+using Services.AssemblyManager;
+using DevTools.Application.Dto.File;
+using DevTools.Application.Exceptions.UploadFile;
 
 namespace DevTools.Services
 {
@@ -18,20 +21,27 @@ namespace DevTools.Services
         private readonly IWebHostEnvironment _env;
         private readonly IPluginRepository _pluginRepository;
         private readonly IMapper _mapper;
+        private readonly IAssemblyManager _assemblyManager;
+        private readonly IConfiguration _configuration;
+        private readonly IPluginLoader _pluginLoader;
 
 
         public PluginManagerService(
             IPluginManagerRepository pluginmanagerRepository,
             IPluginRepository pluginRepository,
             IMapper mapper,
-            IWebHostEnvironment env)
+            IWebHostEnvironment env,
+            IAssemblyManager assemblyManager,
+            IConfiguration configuration,
+            IPluginLoader pluginLoader)
         {
-
-
             _pluginmanagerRepository = pluginmanagerRepository;
             _pluginRepository = pluginRepository;
             _mapper = mapper;
             _env = env;
+            _assemblyManager = assemblyManager;
+            _configuration = configuration;
+            _pluginLoader = pluginLoader;
         }
 
 
@@ -162,6 +172,85 @@ namespace DevTools.Services
         {
             var plugins = await _pluginRepository.GetAllAsync();
             return _mapper.Map<List<PluginResponeWithActiveStatusDTO>>(plugins);
+        }
+        public async Task DeletePluginByIdAsync(int pluginId)
+        {
+            var plugin = await _pluginRepository.GetByIdAsync(pluginId);
+
+            if (plugin == null)
+                throw new PluginNotFound(pluginId);
+
+
+
+            await _pluginmanagerRepository.RemoveAsync(pluginId);
+            await _pluginRepository.RemoveAsync(plugin.Id);
+            await Task.Delay(200);
+            await _assemblyManager.UnloadAssemblyAsync(plugin.DllPath);
+            await Task.Delay(1000);
+
+            string path = Path.GetFullPath(plugin.DllPath);
+            try
+            {
+                if (File.Exists(path))
+                {
+                    File.Delete(path);
+                    Console.WriteLine($"🗑️ Deleted plugin DLL: {path}");
+                }
+                else
+                {
+                    Console.WriteLine($"⚠️ File already deleted or not found: {path}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"❌ Failed to delete plugin DLL: {path}\n{ex}");
+            }
+        }
+
+        private async Task CopyFileIntoFolder(IFormFile file, string folderPath)
+        {
+
+            var filePath = Path.Combine(folderPath, file.FileName);
+            if (File.Exists(filePath))
+            {
+                Console.WriteLine("Plugin has been existed");
+
+                if (folderPath != _configuration["Resources_Path:SharedLibaryPath"])
+                    throw new DllFileExisted(file.FileName);
+
+                return;
+            }
+            using var stream = new FileStream(filePath, FileMode.Create);
+            await file.CopyToAsync(stream);
+        }
+        public async Task UploadLoadPlugin(UploadFileDTO upload)
+        {
+            Console.WriteLine("==============================================");
+            Console.WriteLine("Add plugin from website:");
+
+            if (upload.DllFile == null)
+                throw new PluginDllNotFound();
+            var pluginFolder = _configuration["Resources_Path:PluginPath"];
+            var sharedLibaryFolder = _configuration["Resources_Path:SharedLibaryPath"];
+            Console.WriteLine("Load Plugin:");
+            CopyFileIntoFolder(upload.DllFile, pluginFolder);
+            var result = await _pluginLoader.LoadPluginFromFile(Path.Combine(pluginFolder, upload.DllFile.FileName));
+
+            if (!result)
+            {
+                File.Delete(Path.Combine(pluginFolder, upload.DllFile.FileName));
+                Console.WriteLine($"🗑️ Deleted plugin DLL: {Path.Combine(pluginFolder, upload.DllFile.FileName)}, because wrong format");
+                throw new PluginUploadFailed(upload.DllFile.FileName);
+            }
+            if (upload.Libaries != null)
+            {
+                Console.WriteLine("Load Library:");
+                foreach (var file in upload.Libaries)
+                {
+                    CopyFileIntoFolder(file, sharedLibaryFolder);
+                }
+            }
+            Console.WriteLine("==============================================");
         }
     }
 }

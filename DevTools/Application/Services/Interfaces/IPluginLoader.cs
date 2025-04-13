@@ -7,5 +7,6 @@ namespace DevTools.Services.Interfaces
         Task RemovePluginAsync(string path);
 
         Task ReplacePluginAsync(string path);
+        Task<bool> LoadPluginFromFile(string dllPath);
     }
 }

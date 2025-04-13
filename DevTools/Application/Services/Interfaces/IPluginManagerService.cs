@@ -3,6 +3,7 @@ using DevTools.Dto.Plugins;
 using DevTools.Dto.Querry;
 using DevTool.UISchema;
 using DevTools.Application.Dto.Plugins;
+using DevTools.Application.Dto.File;
 
 namespace DevTools.Services.Interfaces
 {
@@ -12,6 +13,8 @@ namespace DevTools.Services.Interfaces
         Task<List<PluginsResponeDTO>> GetAllActivePlugin();
         Task<List<PluginResponeWithActiveStatusDTO>> GetAllPlugin();
         Task<List<PluginsResponeDTO>> GetAllByQuerry(PluginQuerry querry);
+
+        Task UploadLoadPlugin(UploadFileDTO upload);
         Task SetPremiumStatus(int pluginId, bool status);
         Task SetActiveStatus(int pluginId, bool status);
 
@@ -20,6 +23,6 @@ namespace DevTools.Services.Interfaces
         Task<PluginUI> GetScheme1(int id);
 
         Task<Schema> GetScheme(int id);
-
+        Task DeletePluginByIdAsync(int pluginId);
     }
 }

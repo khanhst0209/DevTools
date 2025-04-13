@@ -1,5 +1,6 @@
 using System.Reflection;
 using AutoMapper;
+using DevTools.Application.Services.AssemblyManager;
 using DevTools.Dto.Plugins;
 using DevTools.Repositories.Interfaces;
 using DevTools.Services.Interfaces;
@@ -14,17 +15,22 @@ namespace DevTools.Services
         private readonly IPluginRepository _pluginRepository;
         private readonly IMapper _mapper;
         private readonly IAssemblyManager _assembleManager;
-        private readonly string _pluginFolder = "./Domain/Plugins/DevTool_Plugins";
+        private readonly IConfiguration _configuration;
+        private readonly string _pluginFolder = "";
 
         public PluginLoader(IPluginManagerRepository _pluginmanagerRepository
                             , IPluginRepository _pluginRepository,
                              IMapper _mapper,
-                             IAssemblyManager _assembleManager
+                             IAssemblyManager _assembleManager,
+                             IConfiguration configuration
                              )
         {
+            _configuration = configuration;
+            _pluginFolder = _configuration["Resources_Path:PluginPath"];
 
-            if (!Directory.Exists(_pluginFolder))
-                Directory.CreateDirectory(_pluginFolder);
+            if (_pluginFolder != null)
+                if (!Directory.Exists(_pluginFolder))
+                    Directory.CreateDirectory(_pluginFolder);
 
             this._pluginmanagerRepository = _pluginmanagerRepository;
             this._pluginRepository = _pluginRepository;
@@ -53,13 +59,17 @@ namespace DevTools.Services
             await LoadPluginFromFile(path);
         }
 
-        private async Task LoadPluginFromFile(string dllPath)
+        public async Task<bool> LoadPluginFromFile(string dllPath)
         {
             try
             {
-                Assembly assembly = await _assembleManager.LoadAssemblyAsync(dllPath);
+                var assembly = await _assembleManager.LoadAssemblyAsync(dllPath);
                 Type[] types = assembly.GetTypes();
+
+
                 var pluginTypes = types.Where(t => typeof(IDevToolPlugin).IsAssignableFrom(t) && !t.IsInterface);
+                Console.WriteLine($"Found {pluginTypes.Count()} plugin types in {dllPath}");
+
 
                 foreach (var type in pluginTypes)
                 {
@@ -69,6 +79,7 @@ namespace DevTools.Services
                         if (item == null)
                         {
                             var temp = _mapper.Map<CreatePluginDTO>(plugin);
+                            temp.DllPath = dllPath;
                             await _pluginRepository.AddPluginAsync(temp);
                             plugin.Id = (await _pluginRepository.GetByName(plugin.Name)).Id;
                         }
@@ -89,10 +100,12 @@ namespace DevTools.Services
                         Console.WriteLine($"✅ Loaded {dllPath} successfully.");
                     }
                 }
+                return true;
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"❌ Failed to load plugin {dllPath}: {ex.Message}");
+                return false;
             }
         }
 
