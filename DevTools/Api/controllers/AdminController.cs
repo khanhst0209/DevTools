@@ -68,7 +68,7 @@ namespace DevTools.controllers
                 }
             }
         }
-        [HttpDelete("/plugin/{pluginId}")]
+        [HttpDelete("plugin/{pluginId}")]
         public async Task<IActionResult> RemovePlugin(int pluginId)
         {
             try
@@ -82,7 +82,7 @@ namespace DevTools.controllers
             }
         }
 
-        [HttpGet("Plugin")]
+        [HttpGet("plugin")]
         public async Task<IActionResult> GetAllPlugin()
         {
             try
