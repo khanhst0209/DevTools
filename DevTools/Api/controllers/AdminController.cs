@@ -1,6 +1,8 @@
 using DevTools.Application.Dto;
 using DevTools.Application.Dto.File;
+using DevTools.Application.Dto.user;
 using DevTools.Application.Exceptions.UploadFile;
+using DevTools.Exceptions.AccountManager.UserException;
 using DevTools.Exceptions.Plugins.PluginsException.cs;
 using DevTools.Repositories.Interfaces;
 using DevTools.Services.Interfaces;
@@ -127,5 +129,51 @@ namespace DevTools.controllers
             }
         }
 
+        [HttpPost("user/role-change")]
+        public async Task<IActionResult> ChangeUserRole(ChangeRoleDTO changeRole)
+        {
+            try
+            {
+                var userIdClaim = User.FindFirst("Id");
+                if (userIdClaim == null)
+                    return Unauthorized(new ErrorRespones("Please login before use this method"));
+
+                var userId = userIdClaim.Value;
+
+                if (userId == changeRole.UserId)
+                    return BadRequest(new ErrorRespones("Can't not change your role"));
+
+                await _accountManagerService.RoleChange(changeRole);
+                return Ok(new SuccessRespone("Role was change successfully"));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ErrorRespones(ex.Message));
+            }
+        }
+
+        [HttpDelete("user")]
+        public async Task<IActionResult> RemoveUserById(string userId)
+        {
+            try
+            {
+                var userIdClaim = User.FindFirst("Id");
+                if (userIdClaim == null)
+                    return Unauthorized(new ErrorRespones("Please login before use this method"));
+
+                var CurrentuserId = userIdClaim.Value;
+
+                if (CurrentuserId == userId)
+                    return BadRequest(new ErrorRespones("Can't not delete current account"));
+                
+                await _accountManagerService.DeleteUserById(userId);
+
+                return Ok(new SuccessRespone($"Delete user with Id : {userId} successfully"));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ErrorRespones(ex.Message));
+            }
+        }
     }
 }

@@ -9,6 +9,7 @@ using DevTools.Exceptions.AccountManager.LoginException;
 using AutoMapper;
 using DevTools.Exceptions.AccountManager.UserException;
 using DevTools.Application.Exceptions.AccountManager.ChangePassword;
+using DevTools.Application.Dto.user;
 
 
 namespace DevTools.Services
@@ -30,6 +31,22 @@ namespace DevTools.Services
             this._tokenService = tokenService;
             this._signinManager = _signinManager;
             this._mapper = _mapper;
+        }
+
+        public async Task DeleteUserById(string userId)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                throw new UserNotFound(userId);
+            }
+
+            var result = await _userManager.DeleteAsync(user);
+            if (!result.Succeeded)
+            {
+                throw new Exception(result.Errors.ToString());
+            }
+
         }
 
         public async Task<List<UserDTO>> GetAllUsers()
@@ -140,7 +157,27 @@ namespace DevTools.Services
             };
         }
 
+        public async Task RoleChange(ChangeRoleDTO changeRole)
+        {
+            var user = await _userManager.FindByIdAsync(changeRole.UserId);
+            if (user == null)
+                throw new UserNotFound(changeRole.UserId);
+
+            var currentRoles = await _userManager.GetRolesAsync(user);
+            if (currentRoles[0] == changeRole.Role)
+                throw new Exception("New Role is Current Role");
 
 
+            var removeResult = await _userManager.RemoveFromRolesAsync(user, currentRoles);
+            if (!removeResult.Succeeded)
+                throw new Exception(removeResult.Errors.ToString());
+
+            var addResult = await _userManager.AddToRoleAsync(user, changeRole.Role);
+            if (!addResult.Succeeded)
+            {
+                await _userManager.AddToRoleAsync(user, currentRoles[0]);
+                throw new Exception(addResult.Errors.ToString());
+            }
+        }
     }
 }

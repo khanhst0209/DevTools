@@ -1,3 +1,4 @@
+using DevTools.Application.Dto.user;
 using DevTools.Dto.user;
 using MyWebAPI.Dto.user;
 
@@ -11,6 +12,9 @@ namespace MyWebAPI.Services.Interfaces
 
         Task<UserDTO> GetUserById(string Id);
 
-        Task PasswordChange(string userId,PasswordChangeDTO passwordChange);
+        Task PasswordChange(string userId, PasswordChangeDTO passwordChange);
+        Task RoleChange(ChangeRoleDTO changeRole);
+
+        Task DeleteUserById(string userId);
     }
-} 
+}
