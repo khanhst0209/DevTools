@@ -54,7 +54,7 @@ namespace DevTools.controllers
             try
             {
                 await _pluginManagerService.SetActiveStatus(pluginId, isActive);
-                return Ok($"Pluing with id: {pluginId} has been change Activation to : {isActive}");
+                return Ok($"Pluing with id: {pluginId} was changed, the Activation is : {isActive}");
             }
             catch (Exception ex)
             {
