@@ -1,12 +1,12 @@
 namespace DevTools.Repositories.Interfaces
 {
-    public interface IBaseRepository<T> where T : class
+    public interface IBaseRepository<T, Tkey> where T : class
     {
         Task<List<T>> GetAllAsync();
-        Task<T> GetByIdAsync(int id);
+        Task<T> GetByIdAsync(Tkey id);
         Task AddAsync(T entity);
         Task UpdateAsync(T entity);
-        Task RemoveAsync(int id);
+        Task RemoveAsync(Tkey id);
     }
 
 }

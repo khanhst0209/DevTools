@@ -4,7 +4,7 @@ using MyWebAPI.data;
 
 namespace DevTools.Repositories
 {
-    public class BaseRepository<T> : IBaseRepository<T> where T : class
+    public class BaseRepository<T, Tkey> : IBaseRepository<T, Tkey> where T : class
     {
         private readonly MyDbContext _context;
 
@@ -18,7 +18,7 @@ namespace DevTools.Repositories
             return await _context.Set<T>().ToListAsync();
         }
 
-        public virtual async Task<T> GetByIdAsync(int id)
+        public virtual async Task<T> GetByIdAsync(Tkey id)
         {
             return await _context.Set<T>().FindAsync(id);
         }
@@ -35,7 +35,7 @@ namespace DevTools.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task RemoveAsync(int id)
+        public async Task RemoveAsync(Tkey id)
         {
             var entity = await GetByIdAsync(id);
             if (entity != null)

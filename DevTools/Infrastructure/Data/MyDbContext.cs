@@ -1,5 +1,6 @@
 
 using DevTools.data;
+using DevTools.Domain.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -18,6 +19,7 @@ namespace MyWebAPI.data
         public DbSet<Plugin> Plugins { get; set; }
         public DbSet<PluginCategory> PluginCategories { get; set; }
         public DbSet<UserPlugins> UserPlugins { get; set; }
+        public DbSet<PremiumUpgradeRequest> PremiumUpgradeRequests { get; set; }
         #endregion
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -30,7 +32,7 @@ namespace MyWebAPI.data
                 .HasOne(p => p.Role)
                 .WithMany()
                 .HasForeignKey(p => p.AccessiableRoleId);
-            
+
             modelBuilder.Entity<Plugin>()
                 .HasIndex(p => p.Name)
                 .IsUnique();
@@ -55,7 +57,7 @@ namespace MyWebAPI.data
         }
 
 
-        [DbFunction(name:"SOUNDEX",IsBuiltIn =true)]
+        [DbFunction(name: "SOUNDEX", IsBuiltIn = true)]
         public string FuzzySearch(string querry)
         {
             throw new NotImplementedException();

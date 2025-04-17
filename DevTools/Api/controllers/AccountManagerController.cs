@@ -1,6 +1,7 @@
 using System.Security.Claims;
 using DevTools.Application.Dto;
 using DevTools.Application.Exceptions.AccountManager.ChangePassword;
+using DevTools.Application.Services.Interfaces;
 using DevTools.Dto.user;
 using DevTools.Exceptions.AccountManager.LoginException;
 using DevTools.Exceptions.AccountManager.RegisterException;
@@ -22,9 +23,12 @@ namespace MyWebAPI.controllers
     public class AccountManagerController : ControllerBase
     {
         private readonly IAccountManagerService _accountManagerService;
-        public AccountManagerController(IAccountManagerService accountServices)
+        private readonly IPremiumUpgradeRequestService _premiumUpgradeService;
+        public AccountManagerController(IAccountManagerService accountServices,
+                                        IPremiumUpgradeRequestService premiumUpgradeService)
         {
-            this._accountManagerService = accountServices;
+            _accountManagerService = accountServices;
+            _premiumUpgradeService = premiumUpgradeService;
         }
 
         [HttpPost("login")]
@@ -133,6 +137,26 @@ namespace MyWebAPI.controllers
             }
         }
 
+        [HttpPost("me/premium/upgrade-submit")]
+        [Authorize]
+        public async Task<IActionResult> UpgradePremium()
+        {
+            try
+            {
+                var userIdClaim = User.FindFirst("Id");
+                if (userIdClaim == null)
+                    return Unauthorized(new ErrorRespones("Please login before use this method"));
+
+                var userId = userIdClaim.Value;
+                await _premiumUpgradeService.PremiumUpgradeSubmit(userId);
+                return Ok(new SuccessRespone("Premium Upgrade submit was sent"));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ErrorRespones(ex.Message));
+            }
+
+        }
 
     }
 }

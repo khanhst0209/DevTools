@@ -2,6 +2,7 @@ using DevTools.Application.Dto;
 using DevTools.Application.Dto.File;
 using DevTools.Application.Dto.user;
 using DevTools.Application.Exceptions.UploadFile;
+using DevTools.Application.Services.Interfaces;
 using DevTools.Exceptions.AccountManager.UserException;
 using DevTools.Exceptions.Plugins.PluginsException.cs;
 using DevTools.Repositories.Interfaces;
@@ -21,12 +22,15 @@ namespace DevTools.controllers
     {
         private readonly IPluginManagerService _pluginManagerService;
         private readonly IAccountManagerService _accountManagerService;
+        private readonly IPremiumUpgradeRequestService _premiumUpgradeService;
 
         public AdminController(IPluginManagerService pluginManagerService,
-        IAccountManagerService accountManagerService)
+        IAccountManagerService accountManagerService,
+        IPremiumUpgradeRequestService premiumUpgradeService)
         {
             _pluginManagerService = pluginManagerService;
             _accountManagerService = accountManagerService;
+            _premiumUpgradeService = premiumUpgradeService;
         }
 
         [HttpPost("{pluginId}/premium")]
@@ -165,7 +169,7 @@ namespace DevTools.controllers
 
                 if (CurrentuserId == userId)
                     return BadRequest(new ErrorRespones("Can't not delete current account"));
-                
+
                 await _accountManagerService.DeleteUserById(userId);
 
                 return Ok(new SuccessRespone($"Delete user with Id : {userId} successfully"));
@@ -173,6 +177,43 @@ namespace DevTools.controllers
             catch (Exception ex)
             {
                 return BadRequest(new ErrorRespones(ex.Message));
+            }
+        }
+
+        [HttpPost("premium/upgrade-request")]
+        public async Task<IActionResult> UpgradePremium(PremiumUpgradeRequestDTO request)
+        {
+            try
+            {
+                if (request.IsAccepted == true)
+                {
+                    await _premiumUpgradeService.AcceptPremiumUpgradeRequest(request.UserId);
+                }
+                else
+                {
+                    await _premiumUpgradeService.DeninePremiumUpgradeRequest(request.UserId);
+                }
+
+                return Ok(new SuccessRespone("Request was processed"));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ErrorRespones(ex.Message));
+            }
+        }
+
+        [HttpGet("premium/upgrade-request")]
+        public async Task<IActionResult> GetAllPremiumUpgradeRequest()
+        {
+            try
+            {
+                var requests = await _premiumUpgradeService.GetAllRequest();
+
+                return Ok(requests);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ErrorRespones(ex.Message));
             }
         }
     }

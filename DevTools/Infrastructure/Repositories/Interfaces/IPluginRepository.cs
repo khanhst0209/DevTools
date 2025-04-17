@@ -4,7 +4,7 @@ using DevTools.Dto.Querry;
 
 namespace DevTools.Repositories.Interfaces
 {
-    public interface IPluginRepository : IBaseRepository<Plugin>
+    public interface IPluginRepository : IBaseRepository<Plugin, int>
     {
          Task<List<Plugin>> GetAllByQuerryAsync(PluginQuerry querry);
          Task AddPluginAsync(CreatePluginDTO createplugindto);

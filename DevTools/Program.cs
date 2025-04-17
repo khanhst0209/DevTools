@@ -14,6 +14,10 @@ using DevTools.Repositories;
 using DevTools.Helper.Mapper;
 using DevTools.data.Seed;
 using Services.AssemblyManager;
+using DevTools.Application.Services.Interfaces;
+using DevTools.Application.Services;
+using DevTools.Infrastructure.Repositories.Interfaces;
+using DevTools.Infrastructure.Repositories;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -107,6 +111,7 @@ builder.Services.AddScoped<IUserPluginService, UserPluginService>();
 builder.Services.AddScoped<IPluginLoader, PluginLoader>();
 builder.Services.AddScoped<ISharedLibraryLoader, SharedLibraryLoader>();
 builder.Services.AddScoped<IAssemblyManager, AssemblyManager>();
+builder.Services.AddScoped<IPremiumUpgradeRequestService, PremiumUpgradeRequestService>();
 
 //  repositories
 builder.Services.AddScoped<IPluginCategoryRepository, PluginCategoryRepository>();
@@ -114,6 +119,7 @@ builder.Services.AddScoped<IPluginManagerRepository, PluginManagerRepository>();
 builder.Services.AddScoped<IPluginRepository, PluginRepository>();
 builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 builder.Services.AddScoped<IUserPluginRepository, UserPluginRepository>();
+builder.Services.AddScoped<IPremiumUpgradeRequestRepository, PremiumUpgradeRequestRepository>();
 
 // Background Services
 // builder.Services.AddHostedService<PluginWatcherService>(); // Thêm vào Hosted Services

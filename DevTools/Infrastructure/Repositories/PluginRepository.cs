@@ -12,7 +12,7 @@ using MyWebAPI.data;
 
 namespace DevTools.Repositories
 {
-    public class PluginRepository : BaseRepository<Plugin>, IPluginRepository
+    public class PluginRepository : BaseRepository<Plugin, int>, IPluginRepository
     {
         private readonly MyDbContext _context;
         private readonly IPluginCategoryRepository _plugincategoryrepository;

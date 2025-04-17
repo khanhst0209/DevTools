@@ -3,7 +3,7 @@ using DevTools.data;
 
 namespace DevTools.Repositories.Interfaces
 {
-    public interface IPluginCategoryRepository : IBaseRepository<PluginCategory>
+    public interface IPluginCategoryRepository : IBaseRepository<PluginCategory, int>
     {
          Task<PluginCategory> GetByName(string name);
 
