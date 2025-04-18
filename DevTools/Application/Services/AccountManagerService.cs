@@ -10,6 +10,7 @@ using AutoMapper;
 using DevTools.Exceptions.AccountManager.UserException;
 using DevTools.Application.Exceptions.AccountManager.ChangePassword;
 using DevTools.Application.Dto.user;
+using DevTools.Infrastructure.Repositories.Interfaces;
 
 
 namespace DevTools.Services
@@ -21,16 +22,19 @@ namespace DevTools.Services
         private readonly ITokenService _tokenService;
         private readonly SignInManager<User> _signinManager;
         private readonly IMapper _mapper;
+        private readonly IPremiumUpgradeRequestRepository _premiumUpgradeRequestRepository;
 
         public AccountManagerService(UserManager<User> userManager,
          ITokenService tokenService,
          SignInManager<User> _signinManager,
-         IMapper _mapper)
+         IMapper _mapper,
+         IPremiumUpgradeRequestRepository premiumUpgradeRequestRepository)
         {
             this._userManager = userManager;
             this._tokenService = tokenService;
             this._signinManager = _signinManager;
             this._mapper = _mapper;
+            _premiumUpgradeRequestRepository = premiumUpgradeRequestRepository;
         }
 
         public async Task DeleteUserById(string userId)
@@ -45,6 +49,13 @@ namespace DevTools.Services
             if (!result.Succeeded)
             {
                 throw new Exception(result.Errors.ToString());
+            }
+
+            var request = await _premiumUpgradeRequestRepository.GetByIdAsync(userId);
+
+            if(request != null)
+            {
+                await _premiumUpgradeRequestRepository.RemoveAsync(userId);
             }
 
         }
@@ -177,6 +188,16 @@ namespace DevTools.Services
             {
                 await _userManager.AddToRoleAsync(user, currentRoles[0]);
                 throw new Exception(addResult.Errors.ToString());
+            }
+
+            if(changeRole.Role == "Premium" || changeRole.Role == "Admin")
+            {
+                var request = await _premiumUpgradeRequestRepository.GetByIdAsync(changeRole.UserId);
+
+                if(request != null)
+                {
+                    await _premiumUpgradeRequestRepository.RemoveAsync(request.UserId);
+                }
             }
         }
     }
