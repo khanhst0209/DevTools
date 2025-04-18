@@ -56,7 +56,7 @@ namespace DevTools.Application.Services
             var temp = await _premiumUpgradeRepository.GetByIdAsync(userId);
             if (temp != null)
                 throw new Exception("User already submited Premium Upgrade before");
-            var user = _accountManagerService.GetUserById(userId);
+            var user = await _accountManagerService.GetUserById(userId);
             
             await _premiumUpgradeRepository.AddAsync(new PremiumUpgradeRequest { UserId = userId });
         }
