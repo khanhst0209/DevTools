@@ -1,0 +1,5 @@
+D:\Coding\TKPM\DevTools\Plugins\Data\IBANValidator\publish\IBANValidator.dll
+D:\Coding\TKPM\DevTools\Plugins\Data\IBANValidator\publish\IBANValidator.deps.json
+D:\Coding\TKPM\DevTools\Plugins\Data\IBANValidator\publish\IBANValidator.pdb
+D:\Coding\TKPM\DevTools\Plugins\Data\IBANValidator\publish\DevTool.dll
+D:\Coding\TKPM\DevTools\Plugins\Data\IBANValidator\publish\DevTool.pdb
