@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Text_Summarization/1.0.0": {
+        "dependencies": {
+          "DevTool": "1.0.0"
+        },
+        "runtime": {
+          "Text_Summarization.dll": {}
+        }
+      },
+      "DevTool/1.0.0": {
+        "runtime": {
+          "DevTool.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Text_Summarization/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DevTool/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

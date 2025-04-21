@@ -202,3 +202,8 @@ D:\Coding\TKPM\DevTools\DevTools\obj\Debug\net8.0\refint\MyWebAPI.dll
 D:\Coding\TKPM\DevTools\DevTools\obj\Debug\net8.0\MyWebAPI.pdb
 D:\Coding\TKPM\DevTools\DevTools\obj\Debug\net8.0\MyWebAPI.genruntimeconfig.cache
 D:\Coding\TKPM\DevTools\DevTools\obj\Debug\net8.0\ref\MyWebAPI.dll
+D:\Coding\TKPM\DevTools\DevTools\bin\Debug\net8.0\publish\web.config
+D:\Coding\TKPM\DevTools\DevTools\bin\Debug\net8.0\publish\appsettings.Development.json
+D:\Coding\TKPM\DevTools\DevTools\bin\Debug\net8.0\publish\appsettings.json
+D:\Coding\TKPM\DevTools\DevTools\bin\Debug\net8.0\publish\MyWebAPI.deps.json
+D:\Coding\TKPM\DevTools\DevTools\bin\Debug\net8.0\publish\MyWebAPI.runtimeconfig.json

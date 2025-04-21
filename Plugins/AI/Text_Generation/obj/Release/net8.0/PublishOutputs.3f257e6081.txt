@@ -1,0 +1,5 @@
+D:\Coding\TKPM\DevTools\Plugins\AI\Text_Generation\publish\Text_Generation.dll
+D:\Coding\TKPM\DevTools\Plugins\AI\Text_Generation\publish\Text_Generation.deps.json
+D:\Coding\TKPM\DevTools\Plugins\AI\Text_Generation\publish\Text_Generation.pdb
+D:\Coding\TKPM\DevTools\Plugins\AI\Text_Generation\publish\DevTool.dll
+D:\Coding\TKPM\DevTools\Plugins\AI\Text_Generation\publish\DevTool.pdb

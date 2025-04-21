@@ -1,0 +1,5 @@
+D:\Coding\TKPM\DevTools\Plugins\AI\Content_Expansion\publish\Content_Expansion.dll
+D:\Coding\TKPM\DevTools\Plugins\AI\Content_Expansion\publish\Content_Expansion.deps.json
+D:\Coding\TKPM\DevTools\Plugins\AI\Content_Expansion\publish\Content_Expansion.pdb
+D:\Coding\TKPM\DevTools\Plugins\AI\Content_Expansion\publish\DevTool.dll
+D:\Coding\TKPM\DevTools\Plugins\AI\Content_Expansion\publish\DevTool.pdb

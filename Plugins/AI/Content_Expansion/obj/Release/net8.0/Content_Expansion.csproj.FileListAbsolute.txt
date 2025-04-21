@@ -1,0 +1,16 @@
+D:\Coding\TKPM\DevTools\Plugins\AI\Content_Expansion\bin\Release\net8.0\Content_Expansion.deps.json
+D:\Coding\TKPM\DevTools\Plugins\AI\Content_Expansion\bin\Release\net8.0\Content_Expansion.dll
+D:\Coding\TKPM\DevTools\Plugins\AI\Content_Expansion\bin\Release\net8.0\Content_Expansion.pdb
+D:\Coding\TKPM\DevTools\Plugins\AI\Content_Expansion\bin\Release\net8.0\DevTool.dll
+D:\Coding\TKPM\DevTools\Plugins\AI\Content_Expansion\bin\Release\net8.0\DevTool.pdb
+D:\Coding\TKPM\DevTools\Plugins\AI\Content_Expansion\obj\Release\net8.0\Content_Expansion.csproj.AssemblyReference.cache
+D:\Coding\TKPM\DevTools\Plugins\AI\Content_Expansion\obj\Release\net8.0\Content_Expansion.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\TKPM\DevTools\Plugins\AI\Content_Expansion\obj\Release\net8.0\Content_Expansion.AssemblyInfoInputs.cache
+D:\Coding\TKPM\DevTools\Plugins\AI\Content_Expansion\obj\Release\net8.0\Content_Expansion.AssemblyInfo.cs
+D:\Coding\TKPM\DevTools\Plugins\AI\Content_Expansion\obj\Release\net8.0\Content_Expansion.csproj.CoreCompileInputs.cache
+D:\Coding\TKPM\DevTools\Plugins\AI\Content_Expansion\obj\Release\net8.0\Content_Expansion.sourcelink.json
+D:\Coding\TKPM\DevTools\Plugins\AI\Content_Expansion\obj\Release\net8.0\Content_.5E93556E.Up2Date
+D:\Coding\TKPM\DevTools\Plugins\AI\Content_Expansion\obj\Release\net8.0\Content_Expansion.dll
+D:\Coding\TKPM\DevTools\Plugins\AI\Content_Expansion\obj\Release\net8.0\refint\Content_Expansion.dll
+D:\Coding\TKPM\DevTools\Plugins\AI\Content_Expansion\obj\Release\net8.0\Content_Expansion.pdb
+D:\Coding\TKPM\DevTools\Plugins\AI\Content_Expansion\obj\Release\net8.0\ref\Content_Expansion.dll

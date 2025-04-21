@@ -24,7 +24,11 @@ Web:
     EncodeDecodeURLFormatedstring
     EscapeHTMLEntity
 
-
+Data: 
+    IBAN
+    Credit Card 
+    Phone Parser
+    
 Measurement
 NetWork
 Development
@@ -32,8 +36,7 @@ Development
 - Math ETA 
 
 Khanh:
-    Data : 2 cai 
-    AI : 
+    AI : 3
 
 
 

@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Coding\\TKPM\\DevTools\\DevTools\\wwwroot\\Sources\\Base64EncoderDecoder\\assets\\index-BDBwt6y-.js",
+      "PackagePath": "staticwebassets\\Sources\\Base64EncoderDecoder\\assets\\index-BDBwt6y-.js"
+    },
+    {
+      "Id": "D:\\Coding\\TKPM\\DevTools\\DevTools\\wwwroot\\Sources\\Base64EncoderDecoder\\assets\\index-vRU7Uekz.css",
+      "PackagePath": "staticwebassets\\Sources\\Base64EncoderDecoder\\assets\\index-vRU7Uekz.css"
+    },
+    {
+      "Id": "D:\\Coding\\TKPM\\DevTools\\DevTools\\wwwroot\\Sources\\Base64EncoderDecoder\\index.html",
+      "PackagePath": "staticwebassets\\Sources\\Base64EncoderDecoder\\index.html"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.MyWebAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.build.MyWebAPI.props",
+      "PackagePath": "build\\MyWebAPI.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.MyWebAPI.props",
+      "PackagePath": "buildMultiTargeting\\MyWebAPI.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildTransitive.MyWebAPI.props",
+      "PackagePath": "buildTransitive\\MyWebAPI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

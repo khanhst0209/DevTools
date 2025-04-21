@@ -1,0 +1,16 @@
+D:\Coding\TKPM\DevTools\Plugins\AI\Text_Generation\bin\Release\net8.0\Text_Generation.deps.json
+D:\Coding\TKPM\DevTools\Plugins\AI\Text_Generation\bin\Release\net8.0\Text_Generation.dll
+D:\Coding\TKPM\DevTools\Plugins\AI\Text_Generation\bin\Release\net8.0\Text_Generation.pdb
+D:\Coding\TKPM\DevTools\Plugins\AI\Text_Generation\bin\Release\net8.0\DevTool.dll
+D:\Coding\TKPM\DevTools\Plugins\AI\Text_Generation\bin\Release\net8.0\DevTool.pdb
+D:\Coding\TKPM\DevTools\Plugins\AI\Text_Generation\obj\Release\net8.0\Text_Generation.csproj.AssemblyReference.cache
+D:\Coding\TKPM\DevTools\Plugins\AI\Text_Generation\obj\Release\net8.0\Text_Generation.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\TKPM\DevTools\Plugins\AI\Text_Generation\obj\Release\net8.0\Text_Generation.AssemblyInfoInputs.cache
+D:\Coding\TKPM\DevTools\Plugins\AI\Text_Generation\obj\Release\net8.0\Text_Generation.AssemblyInfo.cs
+D:\Coding\TKPM\DevTools\Plugins\AI\Text_Generation\obj\Release\net8.0\Text_Generation.csproj.CoreCompileInputs.cache
+D:\Coding\TKPM\DevTools\Plugins\AI\Text_Generation\obj\Release\net8.0\Text_Generation.sourcelink.json
+D:\Coding\TKPM\DevTools\Plugins\AI\Text_Generation\obj\Release\net8.0\Text_Gen.D09773B2.Up2Date
+D:\Coding\TKPM\DevTools\Plugins\AI\Text_Generation\obj\Release\net8.0\Text_Generation.dll
+D:\Coding\TKPM\DevTools\Plugins\AI\Text_Generation\obj\Release\net8.0\refint\Text_Generation.dll
+D:\Coding\TKPM\DevTools\Plugins\AI\Text_Generation\obj\Release\net8.0\Text_Generation.pdb
+D:\Coding\TKPM\DevTools\Plugins\AI\Text_Generation\obj\Release\net8.0\ref\Text_Generation.dll

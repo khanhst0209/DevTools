@@ -1,0 +1,5 @@
+D:\Coding\TKPM\DevTools\Plugins\AI\Text_Summarization\publish\Text_Summarization.dll
+D:\Coding\TKPM\DevTools\Plugins\AI\Text_Summarization\publish\Text_Summarization.deps.json
+D:\Coding\TKPM\DevTools\Plugins\AI\Text_Summarization\publish\Text_Summarization.pdb
+D:\Coding\TKPM\DevTools\Plugins\AI\Text_Summarization\publish\DevTool.dll
+D:\Coding\TKPM\DevTools\Plugins\AI\Text_Summarization\publish\DevTool.pdb
