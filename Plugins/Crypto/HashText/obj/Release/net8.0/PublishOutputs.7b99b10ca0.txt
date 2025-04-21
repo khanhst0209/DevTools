@@ -1,0 +1,5 @@
+D:\Coding\TKPM\DevTools\Plugins\Crypto\HashText\publish\HashText.dll
+D:\Coding\TKPM\DevTools\Plugins\Crypto\HashText\publish\HashText.deps.json
+D:\Coding\TKPM\DevTools\Plugins\Crypto\HashText\publish\HashText.pdb
+D:\Coding\TKPM\DevTools\Plugins\Crypto\HashText\publish\DevTool.dll
+D:\Coding\TKPM\DevTools\Plugins\Crypto\HashText\publish\DevTool.pdb

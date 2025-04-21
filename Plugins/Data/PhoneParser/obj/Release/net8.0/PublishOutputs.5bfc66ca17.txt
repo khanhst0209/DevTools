@@ -1,0 +1,6 @@
+D:\Coding\TKPM\DevTools\Plugins\Data\PhoneParser\publish\PhoneParser.dll
+D:\Coding\TKPM\DevTools\Plugins\Data\PhoneParser\publish\PhoneParser.deps.json
+D:\Coding\TKPM\DevTools\Plugins\Data\PhoneParser\publish\PhoneParser.pdb
+D:\Coding\TKPM\DevTools\Plugins\Data\PhoneParser\publish\PhoneNumbers.dll
+D:\Coding\TKPM\DevTools\Plugins\Data\PhoneParser\publish\DevTool.dll
+D:\Coding\TKPM\DevTools\Plugins\Data\PhoneParser\publish\DevTool.pdb

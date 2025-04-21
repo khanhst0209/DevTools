@@ -34,5 +34,8 @@ namespace DevTool.Categories
         [Description("AI")]
         AI,
 
+        [Description("Data")]
+        Data
+
     }
 }
