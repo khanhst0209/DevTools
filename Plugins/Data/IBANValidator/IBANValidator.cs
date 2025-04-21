@@ -21,9 +21,12 @@ public class IBANValidator : IDevToolPlugin
     public Roles AccessiableRole { get; set; } = Roles.Anonymous;
     public bool IsActive { get; set; } = true;
     public bool IsPremium { get; set; } = false;
-    public string Icon { get; set; } = @"
-<svg viewBox=""0 0 24 24"" width=""1.2em"" height=""1.2em"" mr-3="""" h-30px="""" w-30px="""" shrink-0="""" op-50=""""><path fill=""currentColor"" d=""M11.5 1L2 6v2h19V6m-5 4v7h3v-7M2 22h19v-3H2m8-9v7h3v-7m-9 0v7h3v-7H4Z""></path></svg>";
-
+   public string Icon { get; set; } = @"
+<svg xmlns=""http://www.w3.org/2000/svg"" xmlns:xlink=""http://www.w3.org/1999/xlink"" viewBox=""0 0 24 24"" mr-3="""" h-30px="""" w-30px="""" shrink-0="""" op-50="""" fill=""currentColor"">
+  <g transform=""scale(0.025) translate(0, 960)"">
+    <path d=""M200-280v-280h80v280h-80Zm240 0v-280h80v280h-80ZM80-120v-80h800v80H80Zm600-160v-280h80v280h-80ZM80-640v-80l400-200 400 200v80H80Zm178-80h444-444Zm0 0h444L480-830 258-720Z""/>
+  </g>
+</svg>";
 
     public Schema schema => new Schema
     {

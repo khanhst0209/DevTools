@@ -1,0 +1,5 @@
+D:\Coding\TKPM\DevTools\Plugins\Data\CreditCardValidator\publish\CreditCardValidator.dll
+D:\Coding\TKPM\DevTools\Plugins\Data\CreditCardValidator\publish\CreditCardValidator.deps.json
+D:\Coding\TKPM\DevTools\Plugins\Data\CreditCardValidator\publish\CreditCardValidator.pdb
+D:\Coding\TKPM\DevTools\Plugins\Data\CreditCardValidator\publish\DevTool.dll
+D:\Coding\TKPM\DevTools\Plugins\Data\CreditCardValidator\publish\DevTool.pdb
