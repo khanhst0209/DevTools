@@ -1,0 +1,5 @@
+D:\web\DevTools\Plugins\Network\MAC_Address_Lookup\publish\MAC_Address_Lookup.dll
+D:\web\DevTools\Plugins\Network\MAC_Address_Lookup\publish\MAC_Address_Lookup.deps.json
+D:\web\DevTools\Plugins\Network\MAC_Address_Lookup\publish\MAC_Address_Lookup.pdb
+D:\web\DevTools\Plugins\Network\MAC_Address_Lookup\publish\DevTool.dll
+D:\web\DevTools\Plugins\Network\MAC_Address_Lookup\publish\DevTool.pdb
