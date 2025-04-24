@@ -1,0 +1,5 @@
+D:\web\DevTools\Plugins\Network\Ipv4_Subnet_Calculator\publish\Ipv4_Subnet_Calculator.dll
+D:\web\DevTools\Plugins\Network\Ipv4_Subnet_Calculator\publish\Ipv4_Subnet_Calculator.deps.json
+D:\web\DevTools\Plugins\Network\Ipv4_Subnet_Calculator\publish\Ipv4_Subnet_Calculator.pdb
+D:\web\DevTools\Plugins\Network\Ipv4_Subnet_Calculator\publish\DevTool.dll
+D:\web\DevTools\Plugins\Network\Ipv4_Subnet_Calculator\publish\DevTool.pdb

@@ -1,16 +1,20 @@
 {
   "Files": [
     {
-      "Id": "D:\\Coding\\TKPM\\DevTools\\DevTools\\wwwroot\\Sources\\Base64EncoderDecoder\\assets\\index-BDBwt6y-.js",
+      "Id": "D:\\web\\DevTools\\DevTools\\wwwroot\\Sources\\Base64EncoderDecoder\\assets\\index-BDBwt6y-.js",
       "PackagePath": "staticwebassets\\Sources\\Base64EncoderDecoder\\assets\\index-BDBwt6y-.js"
     },
     {
-      "Id": "D:\\Coding\\TKPM\\DevTools\\DevTools\\wwwroot\\Sources\\Base64EncoderDecoder\\assets\\index-vRU7Uekz.css",
+      "Id": "D:\\web\\DevTools\\DevTools\\wwwroot\\Sources\\Base64EncoderDecoder\\assets\\index-vRU7Uekz.css",
       "PackagePath": "staticwebassets\\Sources\\Base64EncoderDecoder\\assets\\index-vRU7Uekz.css"
     },
     {
-      "Id": "D:\\Coding\\TKPM\\DevTools\\DevTools\\wwwroot\\Sources\\Base64EncoderDecoder\\index.html",
+      "Id": "D:\\web\\DevTools\\DevTools\\wwwroot\\Sources\\Base64EncoderDecoder\\index.html",
       "PackagePath": "staticwebassets\\Sources\\Base64EncoderDecoder\\index.html"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MyWebAPI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MyWebAPI.Microsoft.AspNetCore.StaticWebAssets.props",

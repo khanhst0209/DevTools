@@ -1,0 +1,5 @@
+D:\web\DevTools\Plugins\Math\ETA_Calculator\publish\ETA_Calculator.dll
+D:\web\DevTools\Plugins\Math\ETA_Calculator\publish\ETA_Calculator.deps.json
+D:\web\DevTools\Plugins\Math\ETA_Calculator\publish\ETA_Calculator.pdb
+D:\web\DevTools\Plugins\Math\ETA_Calculator\publish\DevTool.dll
+D:\web\DevTools\Plugins\Math\ETA_Calculator\publish\DevTool.pdb

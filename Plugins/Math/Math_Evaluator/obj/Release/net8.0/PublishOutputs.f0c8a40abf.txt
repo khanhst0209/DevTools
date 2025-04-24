@@ -1,0 +1,6 @@
+D:\web\DevTools\Plugins\Math\Math_Evaluator\publish\Math_Evaluator.dll
+D:\web\DevTools\Plugins\Math\Math_Evaluator\publish\Math_Evaluator.deps.json
+D:\web\DevTools\Plugins\Math\Math_Evaluator\publish\Math_Evaluator.pdb
+D:\web\DevTools\Plugins\Math\Math_Evaluator\publish\Flee.dll
+D:\web\DevTools\Plugins\Math\Math_Evaluator\publish\DevTool.dll
+D:\web\DevTools\Plugins\Math\Math_Evaluator\publish\DevTool.pdb

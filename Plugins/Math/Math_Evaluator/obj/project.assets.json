@@ -917,19 +917,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\phamn\\.nuget\\packages\\": {}
+    "C:\\Users\\USER\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Coding\\TKPM\\Plugins\\Math\\Math_Evaluator\\Math_Evaluator.csproj",
+      "projectUniqueName": "D:\\web\\DevTools\\Plugins\\Math\\Math_Evaluator\\Math_Evaluator.csproj",
       "projectName": "Math_Evaluator",
-      "projectPath": "D:\\Coding\\TKPM\\Plugins\\Math\\Math_Evaluator\\Math_Evaluator.csproj",
-      "packagesPath": "C:\\Users\\phamn\\.nuget\\packages\\",
-      "outputPath": "D:\\Coding\\TKPM\\Plugins\\Math\\Math_Evaluator\\obj\\",
+      "projectPath": "D:\\web\\DevTools\\Plugins\\Math\\Math_Evaluator\\Math_Evaluator.csproj",
+      "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+      "outputPath": "D:\\web\\DevTools\\Plugins\\Math\\Math_Evaluator\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\phamn\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -937,15 +937,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "D:\\software\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Coding\\TKPM\\Plugins\\DevTool\\DevTool.csproj": {
-              "projectPath": "D:\\Coding\\TKPM\\Plugins\\DevTool\\DevTool.csproj"
+            "D:\\web\\DevTools\\Plugins\\DevTool\\DevTool.csproj": {
+              "projectPath": "D:\\web\\DevTools\\Plugins\\DevTool\\DevTool.csproj"
             }
           }
         }
@@ -959,7 +958,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -986,7 +986,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "D:\\software\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
