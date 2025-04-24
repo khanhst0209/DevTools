@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Coding\\TKPM\\Plugins\\Development\\JSON_minify\\JSON_minify.csproj",
+      "projectUniqueName": "D:\\Coding\\TKPM\\DevTools\\Plugins\\Development\\JSON_minify\\JSON_minify.csproj",
       "projectName": "JSON_minify",
-      "projectPath": "D:\\Coding\\TKPM\\Plugins\\Development\\JSON_minify\\JSON_minify.csproj",
+      "projectPath": "D:\\Coding\\TKPM\\DevTools\\Plugins\\Development\\JSON_minify\\JSON_minify.csproj",
       "packagesPath": "C:\\Users\\phamn\\.nuget\\packages\\",
-      "outputPath": "D:\\Coding\\TKPM\\Plugins\\Development\\JSON_minify\\obj\\",
+      "outputPath": "D:\\Coding\\TKPM\\DevTools\\Plugins\\Development\\JSON_minify\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\phamn\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -54,8 +54,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Coding\\TKPM\\Plugins\\DevTool\\DevTool.csproj": {
-              "projectPath": "D:\\Coding\\TKPM\\Plugins\\DevTool\\DevTool.csproj"
+            "D:\\Coding\\TKPM\\DevTools\\Plugins\\DevTool\\DevTool.csproj": {
+              "projectPath": "D:\\Coding\\TKPM\\DevTools\\Plugins\\DevTool\\DevTool.csproj"
             }
           }
         }

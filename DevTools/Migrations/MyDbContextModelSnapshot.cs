@@ -320,6 +320,17 @@ namespace MyWebAPI.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("DevTools.Domain.Entities.PremiumUpgradeRequest", b =>
+                {
+                    b.HasOne("MyWebAPI.data.User", "user")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("user");
+                });
+
             modelBuilder.Entity("DevTools.data.Plugin", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", "Role")

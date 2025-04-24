@@ -1,0 +1,5 @@
+D:\Coding\TKPM\DevTools\Plugins\Development\JSON_minify\publish\JSON_minify.dll
+D:\Coding\TKPM\DevTools\Plugins\Development\JSON_minify\publish\JSON_minify.deps.json
+D:\Coding\TKPM\DevTools\Plugins\Development\JSON_minify\publish\JSON_minify.pdb
+D:\Coding\TKPM\DevTools\Plugins\Development\JSON_minify\publish\DevTool.dll
+D:\Coding\TKPM\DevTools\Plugins\Development\JSON_minify\publish\DevTool.pdb

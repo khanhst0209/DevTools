@@ -1,4 +1,6 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using MyWebAPI.data;
 
 namespace DevTools.Domain.Entities
 {
@@ -6,5 +8,8 @@ namespace DevTools.Domain.Entities
     {
         [Key]
         public string UserId { get; set; }
+
+        [ForeignKey("UserId")]
+        public User user { get; set; }
     }
 }

@@ -1,0 +1,5 @@
+D:\Coding\TKPM\DevTools\Plugins\Development\XML_Formatter\publish\XML_Formatter.dll
+D:\Coding\TKPM\DevTools\Plugins\Development\XML_Formatter\publish\XML_Formatter.deps.json
+D:\Coding\TKPM\DevTools\Plugins\Development\XML_Formatter\publish\XML_Formatter.pdb
+D:\Coding\TKPM\DevTools\Plugins\Development\XML_Formatter\publish\DevTool.dll
+D:\Coding\TKPM\DevTools\Plugins\Development\XML_Formatter\publish\DevTool.pdb

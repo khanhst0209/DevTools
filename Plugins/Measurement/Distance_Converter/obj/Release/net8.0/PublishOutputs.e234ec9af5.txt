@@ -1,0 +1,5 @@
+D:\Coding\TKPM\DevTools\Plugins\Measurement\Distance_Converter\publish\Distance_Converter.dll
+D:\Coding\TKPM\DevTools\Plugins\Measurement\Distance_Converter\publish\Distance_Converter.deps.json
+D:\Coding\TKPM\DevTools\Plugins\Measurement\Distance_Converter\publish\Distance_Converter.pdb
+D:\Coding\TKPM\DevTools\Plugins\Measurement\Distance_Converter\publish\DevTool.dll
+D:\Coding\TKPM\DevTools\Plugins\Measurement\Distance_Converter\publish\DevTool.pdb

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("XML_Formatter")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+06dd9470e30ddc5322014fe9ec7e6a517f2f21fa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e25c92729c05f4fac9b5454a5c138606c9e4e1e2")]
 [assembly: System.Reflection.AssemblyProductAttribute("XML_Formatter")]
 [assembly: System.Reflection.AssemblyTitleAttribute("XML_Formatter")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

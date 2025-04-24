@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Coding\\TKPM\\Plugins\\Measurement\\Temperature_Converter\\Temperature_Converter.csproj",
+      "projectUniqueName": "D:\\Coding\\TKPM\\DevTools\\Plugins\\Measurement\\Temperature_Converter\\Temperature_Converter.csproj",
       "projectName": "Temperature_Converter",
-      "projectPath": "D:\\Coding\\TKPM\\Plugins\\Measurement\\Temperature_Converter\\Temperature_Converter.csproj",
+      "projectPath": "D:\\Coding\\TKPM\\DevTools\\Plugins\\Measurement\\Temperature_Converter\\Temperature_Converter.csproj",
       "packagesPath": "C:\\Users\\phamn\\.nuget\\packages\\",
-      "outputPath": "D:\\Coding\\TKPM\\Plugins\\Measurement\\Temperature_Converter\\obj\\",
+      "outputPath": "D:\\Coding\\TKPM\\DevTools\\Plugins\\Measurement\\Temperature_Converter\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\phamn\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -54,8 +54,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Coding\\TKPM\\Plugins\\DevTool\\DevTool.csproj": {
-              "projectPath": "D:\\Coding\\TKPM\\Plugins\\DevTool\\DevTool.csproj"
+            "D:\\Coding\\TKPM\\DevTools\\Plugins\\DevTool\\DevTool.csproj": {
+              "projectPath": "D:\\Coding\\TKPM\\DevTools\\Plugins\\DevTool\\DevTool.csproj"
             }
           }
         }

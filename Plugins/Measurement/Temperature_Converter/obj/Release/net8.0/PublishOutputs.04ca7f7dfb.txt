@@ -1,0 +1,5 @@
+D:\Coding\TKPM\DevTools\Plugins\Measurement\Temperature_Converter\publish\Temperature_Converter.dll
+D:\Coding\TKPM\DevTools\Plugins\Measurement\Temperature_Converter\publish\Temperature_Converter.deps.json
+D:\Coding\TKPM\DevTools\Plugins\Measurement\Temperature_Converter\publish\Temperature_Converter.pdb
+D:\Coding\TKPM\DevTools\Plugins\Measurement\Temperature_Converter\publish\DevTool.dll
+D:\Coding\TKPM\DevTools\Plugins\Measurement\Temperature_Converter\publish\DevTool.pdb

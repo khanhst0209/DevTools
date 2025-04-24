@@ -28,15 +28,22 @@ Data:
     IBAN
     Credit Card 
     Phone Parser
-    
-Measurement
+
+AI : 3
+
+Development:
+    Jsonminify
+    XmlFormater
+    RandomPort
+
+Measurement:
+    Distance Converter
+    Temperature Converter
+
+
 NetWork
-Development
-- che them 1 cai ben Data
 - Math ETA 
 
-Khanh:
-    AI : 3
 
 
 
