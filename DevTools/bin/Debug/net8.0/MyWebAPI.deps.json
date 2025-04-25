@@ -1326,10 +1326,7 @@
       },
       "DevTool/1.0.0": {
         "runtime": {
-          "DevTool.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "DevTool.dll": {}
         }
       }
     }
