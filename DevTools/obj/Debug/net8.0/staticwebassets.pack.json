@@ -1,6 +1,7 @@
 {
   "Files": [
     {
+<<<<<<< refs/remotes/origin/Tai-schema-tool
       "Id": "D:\\web\\DevTools\\DevTools\\wwwroot\\Sources\\Base64EncoderDecoder\\assets\\index-BDBwt6y-.js",
       "PackagePath": "staticwebassets\\Sources\\Base64EncoderDecoder\\assets\\index-BDBwt6y-.js"
     },
@@ -10,6 +11,17 @@
     },
     {
       "Id": "D:\\web\\DevTools\\DevTools\\wwwroot\\Sources\\Base64EncoderDecoder\\index.html",
+=======
+      "Id": "D:\\Coding\\TKPM\\DevTools\\Devtools\\wwwroot\\Sources\\Base64EncoderDecoder\\assets\\index-BDBwt6y-.js",
+      "PackagePath": "staticwebassets\\Sources\\Base64EncoderDecoder\\assets\\index-BDBwt6y-.js"
+    },
+    {
+      "Id": "D:\\Coding\\TKPM\\DevTools\\Devtools\\wwwroot\\Sources\\Base64EncoderDecoder\\assets\\index-vRU7Uekz.css",
+      "PackagePath": "staticwebassets\\Sources\\Base64EncoderDecoder\\assets\\index-vRU7Uekz.css"
+    },
+    {
+      "Id": "D:\\Coding\\TKPM\\DevTools\\Devtools\\wwwroot\\Sources\\Base64EncoderDecoder\\index.html",
+>>>>>>> local
       "PackagePath": "staticwebassets\\Sources\\Base64EncoderDecoder\\index.html"
     },
     {

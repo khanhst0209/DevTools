@@ -1,6 +1,10 @@
 {
   "Version": 1,
+<<<<<<< refs/remotes/origin/Tai-schema-tool
   "Hash": "adeSlhtez+SHjC0kfPE+MNZBXadJc6L0FtBq2BnMYmc=",
+=======
+  "Hash": "8nJmkWvEPkstW00TfIf9W2YwGt1fyplXVfxMUq9gyDE=",
+>>>>>>> local
   "Source": "MyWebAPI",
   "BasePath": "_content/MyWebAPI",
   "Mode": "Default",
@@ -10,17 +14,28 @@
     {
       "Name": "MyWebAPI\\wwwroot",
       "Source": "MyWebAPI",
+<<<<<<< refs/remotes/origin/Tai-schema-tool
       "ContentRoot": "D:\\web\\DevTools\\DevTools\\wwwroot\\",
+=======
+      "ContentRoot": "D:\\Coding\\TKPM\\DevTools\\Devtools\\wwwroot\\",
+>>>>>>> local
       "BasePath": "_content/MyWebAPI",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
+<<<<<<< refs/remotes/origin/Tai-schema-tool
       "Identity": "D:\\web\\DevTools\\DevTools\\wwwroot\\Sources\\Base64EncoderDecoder\\assets\\index-BDBwt6y-.js",
       "SourceId": "MyWebAPI",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\web\\DevTools\\DevTools\\wwwroot\\",
+=======
+      "Identity": "D:\\Coding\\TKPM\\DevTools\\Devtools\\wwwroot\\Sources\\Base64EncoderDecoder\\assets\\index-BDBwt6y-.js",
+      "SourceId": "MyWebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Coding\\TKPM\\DevTools\\Devtools\\wwwroot\\",
+>>>>>>> local
       "BasePath": "_content/MyWebAPI",
       "RelativePath": "Sources/Base64EncoderDecoder/assets/index-BDBwt6y-#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -38,10 +53,17 @@
       "OriginalItemSpec": "wwwroot\\Sources\\Base64EncoderDecoder\\assets\\index-BDBwt6y-.js"
     },
     {
+<<<<<<< refs/remotes/origin/Tai-schema-tool
       "Identity": "D:\\web\\DevTools\\DevTools\\wwwroot\\Sources\\Base64EncoderDecoder\\assets\\index-vRU7Uekz.css",
       "SourceId": "MyWebAPI",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\web\\DevTools\\DevTools\\wwwroot\\",
+=======
+      "Identity": "D:\\Coding\\TKPM\\DevTools\\Devtools\\wwwroot\\Sources\\Base64EncoderDecoder\\assets\\index-vRU7Uekz.css",
+      "SourceId": "MyWebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Coding\\TKPM\\DevTools\\Devtools\\wwwroot\\",
+>>>>>>> local
       "BasePath": "_content/MyWebAPI",
       "RelativePath": "Sources/Base64EncoderDecoder/assets/index-vRU7Uekz#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -59,10 +81,17 @@
       "OriginalItemSpec": "wwwroot\\Sources\\Base64EncoderDecoder\\assets\\index-vRU7Uekz.css"
     },
     {
+<<<<<<< refs/remotes/origin/Tai-schema-tool
       "Identity": "D:\\web\\DevTools\\DevTools\\wwwroot\\Sources\\Base64EncoderDecoder\\index.html",
       "SourceId": "MyWebAPI",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\web\\DevTools\\DevTools\\wwwroot\\",
+=======
+      "Identity": "D:\\Coding\\TKPM\\DevTools\\Devtools\\wwwroot\\Sources\\Base64EncoderDecoder\\index.html",
+      "SourceId": "MyWebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Coding\\TKPM\\DevTools\\Devtools\\wwwroot\\",
+>>>>>>> local
       "BasePath": "_content/MyWebAPI",
       "RelativePath": "Sources/Base64EncoderDecoder/index#[.{fingerprint}]?.html",
       "AssetKind": "All",
