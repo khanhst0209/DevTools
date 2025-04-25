@@ -1,0 +1,5 @@
+D:\web\DevTools\Plugins\Network\IPv6_ULA_Generator\publish\IPv6_ULA_Generator.dll
+D:\web\DevTools\Plugins\Network\IPv6_ULA_Generator\publish\IPv6_ULA_Generator.deps.json
+D:\web\DevTools\Plugins\Network\IPv6_ULA_Generator\publish\IPv6_ULA_Generator.pdb
+D:\web\DevTools\Plugins\Network\IPv6_ULA_Generator\publish\DevTool.dll
+D:\web\DevTools\Plugins\Network\IPv6_ULA_Generator\publish\DevTool.pdb

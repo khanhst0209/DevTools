@@ -1,0 +1,16 @@
+D:\web\DevTools\Plugins\Measurement\Time_Converter\bin\release\net8.0\Time_Converter.deps.json
+D:\web\DevTools\Plugins\Measurement\Time_Converter\bin\release\net8.0\Time_Converter.dll
+D:\web\DevTools\Plugins\Measurement\Time_Converter\bin\release\net8.0\Time_Converter.pdb
+D:\web\DevTools\Plugins\Measurement\Time_Converter\bin\release\net8.0\DevTool.dll
+D:\web\DevTools\Plugins\Measurement\Time_Converter\bin\release\net8.0\DevTool.pdb
+D:\web\DevTools\Plugins\Measurement\Time_Converter\obj\release\net8.0\Time_Converter.csproj.AssemblyReference.cache
+D:\web\DevTools\Plugins\Measurement\Time_Converter\obj\release\net8.0\Time_Converter.GeneratedMSBuildEditorConfig.editorconfig
+D:\web\DevTools\Plugins\Measurement\Time_Converter\obj\release\net8.0\Time_Converter.AssemblyInfoInputs.cache
+D:\web\DevTools\Plugins\Measurement\Time_Converter\obj\release\net8.0\Time_Converter.AssemblyInfo.cs
+D:\web\DevTools\Plugins\Measurement\Time_Converter\obj\release\net8.0\Time_Converter.csproj.CoreCompileInputs.cache
+D:\web\DevTools\Plugins\Measurement\Time_Converter\obj\release\net8.0\Time_Converter.sourcelink.json
+D:\web\DevTools\Plugins\Measurement\Time_Converter\obj\release\net8.0\Time_Con.5A92D96C.Up2Date
+D:\web\DevTools\Plugins\Measurement\Time_Converter\obj\release\net8.0\Time_Converter.dll
+D:\web\DevTools\Plugins\Measurement\Time_Converter\obj\release\net8.0\refint\Time_Converter.dll
+D:\web\DevTools\Plugins\Measurement\Time_Converter\obj\release\net8.0\Time_Converter.pdb
+D:\web\DevTools\Plugins\Measurement\Time_Converter\obj\release\net8.0\ref\Time_Converter.dll

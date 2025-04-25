@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Text_Summarization")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e25c92729c05f4fac9b5454a5c138606c9e4e1e2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+348137fadaa86e447ab8d53b9236554662a49b06")]
 [assembly: System.Reflection.AssemblyProductAttribute("Text_Summarization")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Text_Summarization")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

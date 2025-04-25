@@ -11,9 +11,9 @@ using System;
 using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("DevTool")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e25c92729c05f4fac9b5454a5c138606c9e4e1e2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+44dddae3e7a284de3c5ad27ff9c106e512a9fc91")]
 [assembly: System.Reflection.AssemblyProductAttribute("DevTool")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DevTool")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

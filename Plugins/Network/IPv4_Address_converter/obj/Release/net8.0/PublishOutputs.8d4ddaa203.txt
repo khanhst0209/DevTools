@@ -1,0 +1,5 @@
+D:\web\DevTools\Plugins\Network\IPv4_Address_Converter\publish\IPv4_Address_Converter.dll
+D:\web\DevTools\Plugins\Network\IPv4_Address_Converter\publish\IPv4_Address_Converter.deps.json
+D:\web\DevTools\Plugins\Network\IPv4_Address_Converter\publish\IPv4_Address_Converter.pdb
+D:\web\DevTools\Plugins\Network\IPv4_Address_Converter\publish\DevTool.dll
+D:\web\DevTools\Plugins\Network\IPv4_Address_Converter\publish\DevTool.pdb

@@ -1,0 +1,16 @@
+D:\web\DevTools\Plugins\Math\ETA_Calculator\bin\Debug\net8.0\ETA_Calculator.deps.json
+D:\web\DevTools\Plugins\Math\ETA_Calculator\bin\Debug\net8.0\ETA_Calculator.dll
+D:\web\DevTools\Plugins\Math\ETA_Calculator\bin\Debug\net8.0\ETA_Calculator.pdb
+D:\web\DevTools\Plugins\Math\ETA_Calculator\bin\Debug\net8.0\DevTool.dll
+D:\web\DevTools\Plugins\Math\ETA_Calculator\bin\Debug\net8.0\DevTool.pdb
+D:\web\DevTools\Plugins\Math\ETA_Calculator\obj\Debug\net8.0\ETA_Calculator.csproj.AssemblyReference.cache
+D:\web\DevTools\Plugins\Math\ETA_Calculator\obj\Debug\net8.0\ETA_Calculator.GeneratedMSBuildEditorConfig.editorconfig
+D:\web\DevTools\Plugins\Math\ETA_Calculator\obj\Debug\net8.0\ETA_Calculator.AssemblyInfoInputs.cache
+D:\web\DevTools\Plugins\Math\ETA_Calculator\obj\Debug\net8.0\ETA_Calculator.AssemblyInfo.cs
+D:\web\DevTools\Plugins\Math\ETA_Calculator\obj\Debug\net8.0\ETA_Calculator.csproj.CoreCompileInputs.cache
+D:\web\DevTools\Plugins\Math\ETA_Calculator\obj\Debug\net8.0\ETA_Calculator.sourcelink.json
+D:\web\DevTools\Plugins\Math\ETA_Calculator\obj\Debug\net8.0\ETA_Calc.2261879C.Up2Date
+D:\web\DevTools\Plugins\Math\ETA_Calculator\obj\Debug\net8.0\ETA_Calculator.dll
+D:\web\DevTools\Plugins\Math\ETA_Calculator\obj\Debug\net8.0\refint\ETA_Calculator.dll
+D:\web\DevTools\Plugins\Math\ETA_Calculator\obj\Debug\net8.0\ETA_Calculator.pdb
+D:\web\DevTools\Plugins\Math\ETA_Calculator\obj\Debug\net8.0\ref\ETA_Calculator.dll

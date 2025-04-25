@@ -1,0 +1,16 @@
+D:\web\DevTools\Plugins\Network\MAC_Address_Lookup\obj\release\net8.0\MAC_Address_Lookup.csproj.AssemblyReference.cache
+D:\web\DevTools\Plugins\Network\MAC_Address_Lookup\obj\release\net8.0\MAC_Address_Lookup.GeneratedMSBuildEditorConfig.editorconfig
+D:\web\DevTools\Plugins\Network\MAC_Address_Lookup\obj\release\net8.0\MAC_Address_Lookup.AssemblyInfoInputs.cache
+D:\web\DevTools\Plugins\Network\MAC_Address_Lookup\obj\release\net8.0\MAC_Address_Lookup.AssemblyInfo.cs
+D:\web\DevTools\Plugins\Network\MAC_Address_Lookup\obj\release\net8.0\MAC_Address_Lookup.csproj.CoreCompileInputs.cache
+D:\web\DevTools\Plugins\Network\MAC_Address_Lookup\obj\release\net8.0\MAC_Address_Lookup.sourcelink.json
+D:\web\DevTools\Plugins\Network\MAC_Address_Lookup\bin\release\net8.0\MAC_Address_Lookup.deps.json
+D:\web\DevTools\Plugins\Network\MAC_Address_Lookup\bin\release\net8.0\MAC_Address_Lookup.dll
+D:\web\DevTools\Plugins\Network\MAC_Address_Lookup\bin\release\net8.0\MAC_Address_Lookup.pdb
+D:\web\DevTools\Plugins\Network\MAC_Address_Lookup\bin\release\net8.0\DevTool.dll
+D:\web\DevTools\Plugins\Network\MAC_Address_Lookup\bin\release\net8.0\DevTool.pdb
+D:\web\DevTools\Plugins\Network\MAC_Address_Lookup\obj\release\net8.0\MAC_Addr.D4B9CCF8.Up2Date
+D:\web\DevTools\Plugins\Network\MAC_Address_Lookup\obj\release\net8.0\MAC_Address_Lookup.dll
+D:\web\DevTools\Plugins\Network\MAC_Address_Lookup\obj\release\net8.0\refint\MAC_Address_Lookup.dll
+D:\web\DevTools\Plugins\Network\MAC_Address_Lookup\obj\release\net8.0\MAC_Address_Lookup.pdb
+D:\web\DevTools\Plugins\Network\MAC_Address_Lookup\obj\release\net8.0\ref\MAC_Address_Lookup.dll

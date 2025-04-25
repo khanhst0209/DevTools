@@ -1,0 +1,5 @@
+D:\web\DevTools\Plugins\Measurement\Time_Converter\publish\Time_Converter.dll
+D:\web\DevTools\Plugins\Measurement\Time_Converter\publish\Time_Converter.deps.json
+D:\web\DevTools\Plugins\Measurement\Time_Converter\publish\Time_Converter.pdb
+D:\web\DevTools\Plugins\Measurement\Time_Converter\publish\DevTool.dll
+D:\web\DevTools\Plugins\Measurement\Time_Converter\publish\DevTool.pdb

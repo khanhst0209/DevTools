@@ -11,9 +11,9 @@ using System;
 using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("Math_Evaluator")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+460bcbdd0c74a1a4bf874e7bac0b379a99292f40")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+348137fadaa86e447ab8d53b9236554662a49b06")]
 [assembly: System.Reflection.AssemblyProductAttribute("Math_Evaluator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Math_Evaluator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

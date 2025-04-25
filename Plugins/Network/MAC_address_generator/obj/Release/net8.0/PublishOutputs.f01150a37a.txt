@@ -1,0 +1,5 @@
+D:\web\DevTools\Plugins\Network\MAC_Address_Generator\publish\MAC_address_generator.dll
+D:\web\DevTools\Plugins\Network\MAC_Address_Generator\publish\MAC_address_generator.deps.json
+D:\web\DevTools\Plugins\Network\MAC_Address_Generator\publish\MAC_address_generator.pdb
+D:\web\DevTools\Plugins\Network\MAC_Address_Generator\publish\DevTool.dll
+D:\web\DevTools\Plugins\Network\MAC_Address_Generator\publish\DevTool.pdb

@@ -1,0 +1,16 @@
+D:\web\DevTools\Plugins\Network\IPv6_ULA_Generator\bin\release\net8.0\IPv6_ULA_Generator.deps.json
+D:\web\DevTools\Plugins\Network\IPv6_ULA_Generator\bin\release\net8.0\IPv6_ULA_Generator.dll
+D:\web\DevTools\Plugins\Network\IPv6_ULA_Generator\bin\release\net8.0\IPv6_ULA_Generator.pdb
+D:\web\DevTools\Plugins\Network\IPv6_ULA_Generator\bin\release\net8.0\DevTool.dll
+D:\web\DevTools\Plugins\Network\IPv6_ULA_Generator\bin\release\net8.0\DevTool.pdb
+D:\web\DevTools\Plugins\Network\IPv6_ULA_Generator\obj\release\net8.0\IPv6_ULA_Generator.csproj.AssemblyReference.cache
+D:\web\DevTools\Plugins\Network\IPv6_ULA_Generator\obj\release\net8.0\IPv6_ULA_Generator.GeneratedMSBuildEditorConfig.editorconfig
+D:\web\DevTools\Plugins\Network\IPv6_ULA_Generator\obj\release\net8.0\IPv6_ULA_Generator.AssemblyInfoInputs.cache
+D:\web\DevTools\Plugins\Network\IPv6_ULA_Generator\obj\release\net8.0\IPv6_ULA_Generator.AssemblyInfo.cs
+D:\web\DevTools\Plugins\Network\IPv6_ULA_Generator\obj\release\net8.0\IPv6_ULA_Generator.csproj.CoreCompileInputs.cache
+D:\web\DevTools\Plugins\Network\IPv6_ULA_Generator\obj\release\net8.0\IPv6_ULA_Generator.sourcelink.json
+D:\web\DevTools\Plugins\Network\IPv6_ULA_Generator\obj\release\net8.0\IPv6_ULA.6A97201E.Up2Date
+D:\web\DevTools\Plugins\Network\IPv6_ULA_Generator\obj\release\net8.0\IPv6_ULA_Generator.dll
+D:\web\DevTools\Plugins\Network\IPv6_ULA_Generator\obj\release\net8.0\refint\IPv6_ULA_Generator.dll
+D:\web\DevTools\Plugins\Network\IPv6_ULA_Generator\obj\release\net8.0\IPv6_ULA_Generator.pdb
+D:\web\DevTools\Plugins\Network\IPv6_ULA_Generator\obj\release\net8.0\ref\IPv6_ULA_Generator.dll
