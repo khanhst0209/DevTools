@@ -149,7 +149,7 @@ namespace MyWebAPI.controllers
 
                 var userId = userIdClaim.Value;
                 var role = User.FindFirst(ClaimTypes.Role)?.Value;
-                if(role == "Admin" || role == "Premium")
+                if (role == "Admin" || role == "Premium")
                     return BadRequest($"Can't not Upgrade premium user with role : {role}");
                 await _premiumUpgradeService.PremiumUpgradeSubmit(userId);
                 return Ok(new SuccessRespone("Premium Upgrade submit was sent"));

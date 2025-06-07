@@ -18,6 +18,7 @@ using DevTools.Application.Services.Interfaces;
 using DevTools.Application.Services;
 using DevTools.Infrastructure.Repositories.Interfaces;
 using DevTools.Infrastructure.Repositories;
+using DevTools.Api.Middleware;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -131,6 +132,8 @@ builder.Services.AddScoped<IPremiumUpgradeRequestRepository, PremiumUpgradeReque
 builder.Services.AddAutoMapper(typeof(UserProfile));
 
 var app = builder.Build();
+
+app.UseMiddleware<GlobalHandlingMiddleware>();
 
 // Seed Data
 using (var scope = app.Services.CreateScope())

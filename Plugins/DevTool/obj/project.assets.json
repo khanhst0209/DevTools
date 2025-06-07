@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Coding\\TKPM\\DevTools\\Plugins\\DevTool\\DevTool.csproj",
+      "projectUniqueName": "D:\\Coding\\ProjectCode\\TKPM\\DevTools\\Plugins\\DevTool\\DevTool.csproj",
       "projectName": "DevTool",
-      "projectPath": "D:\\Coding\\TKPM\\DevTools\\Plugins\\DevTool\\DevTool.csproj",
+      "projectPath": "D:\\Coding\\ProjectCode\\TKPM\\DevTools\\Plugins\\DevTool\\DevTool.csproj",
       "packagesPath": "C:\\Users\\phamn\\.nuget\\packages\\",
-      "outputPath": "D:\\Coding\\TKPM\\DevTools\\Plugins\\DevTool\\obj\\",
+      "outputPath": "D:\\Coding\\ProjectCode\\TKPM\\DevTools\\Plugins\\DevTool\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\phamn\\AppData\\Roaming\\NuGet\\NuGet.Config",
