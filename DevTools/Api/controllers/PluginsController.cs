@@ -8,6 +8,9 @@ using System.Text.RegularExpressions;
 using DevTools.Exceptions.Plugins.PluginsException.cs;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using DevTools.Api.Response;
+using DevTools.data;
+using DevTools.Dto.Category;
 
 
 namespace DevTools.controllers
@@ -22,50 +25,19 @@ namespace DevTools.controllers
             this._pluginManagerService = pluginManagerService;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetPlugins()
-        {
-            try
-            {
-                var plugin = await _pluginManagerService.GetAllActivePlugin();
-                return Ok(plugin);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500 ,new ErrorRespones(ex.Message));
-            }
-        }
-
         [HttpGet("{id}")]
         public async Task<IActionResult> GetPluginsById(int id)
         {
-            try
-            {
-                var plugin = await _pluginManagerService.GetPLuginById(id);
-                return Ok(plugin);
-            }
-            catch (PluginNotFound ex)
-            {
-                return NotFound(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500 ,new ErrorRespones(ex.Message));
-            }
+            var plugin = await _pluginManagerService.GetPLuginById(id);
+            return Ok(new SuccessResponseBuilder<PluginsResponeDTO>()
+            .WithData(plugin).WithMessage("Get Successfully").WithStatusCode(200).Build());
         }
 
-        [HttpGet("search")]
+        [HttpGet()]
         public async Task<IActionResult> GetPluginsByQuerry([FromQuery] PluginQuerry querry)
         {
-            try
-            {
-                var plugin = await _pluginManagerService.GetAllByQuerry(querry);
-                return Ok(plugin);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500 ,new ErrorRespones(ex.Message));
-            }
+            var plugin = await _pluginManagerService.GetAllByQuerry(querry);
+            return Ok(plugin);
         }
 
 
@@ -77,40 +49,16 @@ namespace DevTools.controllers
                 var result = await _pluginManagerService.Execute(id, request);
                 return Ok(result);
             }
-            catch(ArgumentException ex)
+            catch (ArgumentException ex)
             {
                 return BadRequest(ex.Message);
             }
             catch (Exception ex)
             {
-                return StatusCode(500 ,new ErrorRespones(ex.Message));
+                return StatusCode(500, new ErrorRespones(ex.Message));
             }
         }
 
-
-        [HttpGet("{id}/schema1")]
-        public async Task<IActionResult> GetSchema1(int id)
-        {
-            try
-            {
-                var pluginUI = await _pluginManagerService.GetScheme(id);
-
-                if (pluginUI == null)
-                {
-                    return NotFound($"Plugin with id {id} not found.");
-                }
-
-                return Ok(pluginUI);
-            }
-            catch (PluginNotFound ex)
-            {
-                return NotFound(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500 ,new ErrorRespones(ex.Message));
-            }
-        }
 
         [HttpGet("{id}/schema")]
         public async Task<IActionResult> GetSchema(int id)
@@ -130,13 +78,13 @@ namespace DevTools.controllers
             {
                 return NotFound(new ErrorRespones(ex.Message));
             }
-            catch(PluginNotFound ex)
+            catch (PluginNotFound ex)
             {
                 return NotFound(new ErrorRespones(ex.Message));
             }
             catch (Exception ex)
             {
-                return StatusCode(500 ,new ErrorRespones(ex.Message));
+                return StatusCode(500, new ErrorRespones(ex.Message));
             }
         }
 

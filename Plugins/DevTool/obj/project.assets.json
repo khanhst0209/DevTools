@@ -13,11 +13,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "D:\\web\\tkpm\\DevTools\\Plugins\\DevTool\\DevTool.csproj",
       "projectName": "DevTool",
       "projectPath": "D:\\web\\tkpm\\DevTools\\Plugins\\DevTool\\DevTool.csproj",
       "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
       "outputPath": "D:\\web\\tkpm\\DevTools\\Plugins\\DevTool\\obj\\",
+=======
+      "projectUniqueName": "D:\\Coding\\ProjectCode\\TKPM\\DevTools\\Plugins\\DevTool\\DevTool.csproj",
+      "projectName": "DevTool",
+      "projectPath": "D:\\Coding\\ProjectCode\\TKPM\\DevTools\\Plugins\\DevTool\\DevTool.csproj",
+      "packagesPath": "C:\\Users\\phamn\\.nuget\\packages\\",
+      "outputPath": "D:\\Coding\\ProjectCode\\TKPM\\DevTools\\Plugins\\DevTool\\obj\\",
+>>>>>>> 0393e44ef52e90e1b6261c4dc8270e48e83f0288
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config"

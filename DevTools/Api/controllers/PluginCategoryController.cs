@@ -27,7 +27,7 @@ namespace DevTools.controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500 ,new ErrorRespones(ex.Message));
+                return StatusCode(500, new ErrorRespones(ex.Message));
             }
         }
 
@@ -40,13 +40,13 @@ namespace DevTools.controllers
                 var category = await _pluginCategoryService.GetCategoryById(id);
                 return Ok(category);
             }
-            catch(PluginCategoryNotFound ex)
+            catch (PluginCategoryNotFound ex)
             {
                 return NotFound(ex.Message);
             }
             catch (Exception ex)
             {
-                return StatusCode(500,new ErrorRespones(ex.Message));
+                return StatusCode(500, new ErrorRespones(ex.Message));
             }
         }
     }

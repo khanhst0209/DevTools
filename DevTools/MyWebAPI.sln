@@ -1,8 +1,10 @@
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWebAPI", "MyWebAPI.csproj", "{D8A38D25-22B5-170F-1686-F57E6E229A0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevTool", "..\Plugins\DevTool\DevTool.csproj", "{F5D8128F-82F2-4783-BF92-C73D3A43AC8C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,6 +16,10 @@ Global
 		{D8A38D25-22B5-170F-1686-F57E6E229A0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8A38D25-22B5-170F-1686-F57E6E229A0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8A38D25-22B5-170F-1686-F57E6E229A0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5D8128F-82F2-4783-BF92-C73D3A43AC8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5D8128F-82F2-4783-BF92-C73D3A43AC8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5D8128F-82F2-4783-BF92-C73D3A43AC8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5D8128F-82F2-4783-BF92-C73D3A43AC8C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

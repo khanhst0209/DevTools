@@ -10,18 +10,6 @@ D:\Coding\TKPM\Plugins\Devtool\obj\Debug\net8.0\DevTool.dll
 D:\Coding\TKPM\Plugins\Devtool\obj\Debug\net8.0\refint\DevTool.dll
 D:\Coding\TKPM\Plugins\Devtool\obj\Debug\net8.0\DevTool.pdb
 D:\Coding\TKPM\Plugins\Devtool\obj\Debug\net8.0\ref\DevTool.dll
-D:\Coding\TKPM\DevTools\Plugins\DevTool\bin\Debug\net8.0\DevTool.deps.json
-D:\Coding\TKPM\DevTools\Plugins\DevTool\bin\Debug\net8.0\DevTool.dll
-D:\Coding\TKPM\DevTools\Plugins\DevTool\bin\Debug\net8.0\DevTool.pdb
-D:\Coding\TKPM\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.GeneratedMSBuildEditorConfig.editorconfig
-D:\Coding\TKPM\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.AssemblyInfoInputs.cache
-D:\Coding\TKPM\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.AssemblyInfo.cs
-D:\Coding\TKPM\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.csproj.CoreCompileInputs.cache
-D:\Coding\TKPM\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.sourcelink.json
-D:\Coding\TKPM\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.dll
-D:\Coding\TKPM\DevTools\Plugins\DevTool\obj\Debug\net8.0\refint\DevTool.dll
-D:\Coding\TKPM\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.pdb
-D:\Coding\TKPM\DevTools\Plugins\DevTool\obj\Debug\net8.0\ref\DevTool.dll
 D:\web\DevTools\Plugins\DevTool\bin\Debug\net8.0\DevTool.deps.json
 D:\web\DevTools\Plugins\DevTool\bin\Debug\net8.0\DevTool.dll
 D:\web\DevTools\Plugins\DevTool\bin\Debug\net8.0\DevTool.pdb
@@ -34,6 +22,7 @@ D:\web\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.dll
 D:\web\DevTools\Plugins\DevTool\obj\Debug\net8.0\refint\DevTool.dll
 D:\web\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.pdb
 D:\web\DevTools\Plugins\DevTool\obj\Debug\net8.0\ref\DevTool.dll
+<<<<<<< HEAD
 D:\web\tkpm\DevTools\Plugins\DevTool\bin\Debug\net8.0\DevTool.deps.json
 D:\web\tkpm\DevTools\Plugins\DevTool\bin\Debug\net8.0\DevTool.dll
 D:\web\tkpm\DevTools\Plugins\DevTool\bin\Debug\net8.0\DevTool.pdb
@@ -46,3 +35,29 @@ D:\web\tkpm\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.dll
 D:\web\tkpm\DevTools\Plugins\DevTool\obj\Debug\net8.0\refint\DevTool.dll
 D:\web\tkpm\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.pdb
 D:\web\tkpm\DevTools\Plugins\DevTool\obj\Debug\net8.0\ref\DevTool.dll
+=======
+D:\Coding\TKPM\DevTools\Plugins\DevTool\bin\Debug\net8.0\DevTool.deps.json
+D:\Coding\TKPM\DevTools\Plugins\DevTool\bin\Debug\net8.0\DevTool.dll
+D:\Coding\TKPM\DevTools\Plugins\DevTool\bin\Debug\net8.0\DevTool.pdb
+D:\Coding\TKPM\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\TKPM\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.AssemblyInfoInputs.cache
+D:\Coding\TKPM\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.AssemblyInfo.cs
+D:\Coding\TKPM\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.csproj.CoreCompileInputs.cache
+D:\Coding\TKPM\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.sourcelink.json
+D:\Coding\TKPM\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.dll
+D:\Coding\TKPM\DevTools\Plugins\DevTool\obj\Debug\net8.0\refint\DevTool.dll
+D:\Coding\TKPM\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.pdb
+D:\Coding\TKPM\DevTools\Plugins\DevTool\obj\Debug\net8.0\ref\DevTool.dll
+D:\Coding\ProjectCode\TKPM\DevTools\Plugins\DevTool\bin\Debug\net8.0\DevTool.deps.json
+D:\Coding\ProjectCode\TKPM\DevTools\Plugins\DevTool\bin\Debug\net8.0\DevTool.dll
+D:\Coding\ProjectCode\TKPM\DevTools\Plugins\DevTool\bin\Debug\net8.0\DevTool.pdb
+D:\Coding\ProjectCode\TKPM\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\ProjectCode\TKPM\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.AssemblyInfoInputs.cache
+D:\Coding\ProjectCode\TKPM\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.AssemblyInfo.cs
+D:\Coding\ProjectCode\TKPM\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.csproj.CoreCompileInputs.cache
+D:\Coding\ProjectCode\TKPM\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.sourcelink.json
+D:\Coding\ProjectCode\TKPM\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.dll
+D:\Coding\ProjectCode\TKPM\DevTools\Plugins\DevTool\obj\Debug\net8.0\refint\DevTool.dll
+D:\Coding\ProjectCode\TKPM\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.pdb
+D:\Coding\ProjectCode\TKPM\DevTools\Plugins\DevTool\obj\Debug\net8.0\ref\DevTool.dll
+>>>>>>> 0393e44ef52e90e1b6261c4dc8270e48e83f0288
