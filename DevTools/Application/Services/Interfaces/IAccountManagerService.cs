@@ -16,5 +16,6 @@ namespace MyWebAPI.Services.Interfaces
         Task RoleChange(ChangeRoleDTO changeRole);
 
         Task DeleteUserById(string userId);
+        Task DeleteAccountWithPassword(string userId, string password);
     }
 }

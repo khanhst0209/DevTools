@@ -1,5 +1,6 @@
 using System.Security.Claims;
 using DevTools.Application.Dto;
+using DevTools.Application.Dto.user;
 using DevTools.Application.Exceptions.AccountManager.ChangePassword;
 using DevTools.Application.Services.Interfaces;
 using DevTools.Dto.user;
@@ -163,8 +164,18 @@ namespace MyWebAPI.controllers
 
         [HttpDelete("me")]
         [Authorize]
-        public async Task<IActionResult> DeleteAccount()
+        public async Task<IActionResult> DeleteAccount([FromBody] DeleteAccountDTO deleteDto)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new ErrorRespones("Invalid request data"));
+            }
+
+            if (string.IsNullOrEmpty(deleteDto.Password))
+            {
+                return BadRequest(new ErrorRespones("Password is required to delete account"));
+            }
+
             try
             {
                 var userIdClaim = User.FindFirst("Id");
@@ -173,13 +184,17 @@ namespace MyWebAPI.controllers
 
                 var userId = userIdClaim.Value;
 
-                await _accountManagerService.DeleteUserById(userId);
+                await _accountManagerService.DeleteAccountWithPassword(userId, deleteDto.Password);
 
                 return Ok(new SuccessRespone("Account deleted successfully"));
             }
             catch (UserNotFound ex)
             {
                 return NotFound(new ErrorRespones(ex.Message));
+            }
+            catch (InvalidUsernameOrPassword ex)
+            {
+                return Unauthorized(new ErrorRespones("Invalid password"));
             }
             catch (Exception ex)
             {

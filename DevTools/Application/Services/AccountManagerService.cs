@@ -53,7 +53,7 @@ namespace DevTools.Services
 
             var request = await _premiumUpgradeRequestRepository.GetByIdAsync(userId);
 
-            if(request != null)
+            if (request != null)
             {
                 await _premiumUpgradeRequestRepository.RemoveAsync(userId);
             }
@@ -190,14 +190,42 @@ namespace DevTools.Services
                 throw new Exception(addResult.Errors.ToString());
             }
 
-            if(changeRole.Role == "Premium" || changeRole.Role == "Admin")
+            if (changeRole.Role == "Premium" || changeRole.Role == "Admin")
             {
                 var request = await _premiumUpgradeRequestRepository.GetByIdAsync(changeRole.UserId);
 
-                if(request != null)
+                if (request != null)
                 {
                     await _premiumUpgradeRequestRepository.RemoveAsync(request.UserId);
                 }
+            }
+        }
+
+        public async Task DeleteAccountWithPassword(string userId, string password)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                throw new UserNotFound(userId);
+            }
+
+            // Verify password before deletion
+            var passwordCheck = await _userManager.CheckPasswordAsync(user, password);
+            if (!passwordCheck)
+            {
+                throw new InvalidUsernameOrPassword(user.UserName, password);
+            }
+
+            var result = await _userManager.DeleteAsync(user);
+            if (!result.Succeeded)
+            {
+                throw new Exception(string.Join(", ", result.Errors.Select(e => e.Description)));
+            }
+
+            var request = await _premiumUpgradeRequestRepository.GetByIdAsync(userId);
+            if (request != null)
+            {
+                await _premiumUpgradeRequestRepository.RemoveAsync(userId);
             }
         }
     }
