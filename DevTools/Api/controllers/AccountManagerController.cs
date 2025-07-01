@@ -149,7 +149,7 @@ namespace MyWebAPI.controllers
 
                 var userId = userIdClaim.Value;
                 var role = User.FindFirst(ClaimTypes.Role)?.Value;
-                if(role == "Admin" || role == "Premium")
+                if (role == "Admin" || role == "Premium")
                     return BadRequest($"Can't not Upgrade premium user with role : {role}");
                 await _premiumUpgradeService.PremiumUpgradeSubmit(userId);
                 return Ok(new SuccessRespone("Premium Upgrade submit was sent"));
@@ -161,5 +161,30 @@ namespace MyWebAPI.controllers
 
         }
 
+        [HttpDelete("me")]
+        [Authorize]
+        public async Task<IActionResult> DeleteAccount()
+        {
+            try
+            {
+                var userIdClaim = User.FindFirst("Id");
+                if (userIdClaim == null)
+                    return Unauthorized(new ErrorRespones("Please login before use this method"));
+
+                var userId = userIdClaim.Value;
+
+                await _accountManagerService.DeleteUserById(userId);
+
+                return Ok(new SuccessRespone("Account deleted successfully"));
+            }
+            catch (UserNotFound ex)
+            {
+                return NotFound(new ErrorRespones(ex.Message));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ErrorRespones(ex.Message));
+            }
+        }
     }
 }
