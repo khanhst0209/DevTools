@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "uq42qjnqtdw=",
+  "dgSpecHash": "SkE6ZhBA+g4=",
   "success": true,
-  "projectFilePath": "D:\\Coding\\TKPM\\DevTools\\Plugins\\DevTool\\DevTool.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\web\\tkpm\\DevTools\\Plugins\\DevTool\\DevTool.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.17\\microsoft.netcore.app.ref.8.0.17.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.17\\microsoft.windowsdesktop.app.ref.8.0.17.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.17\\microsoft.aspnetcore.app.ref.8.0.17.nupkg.sha512"
+  ],
   "logs": []
 }

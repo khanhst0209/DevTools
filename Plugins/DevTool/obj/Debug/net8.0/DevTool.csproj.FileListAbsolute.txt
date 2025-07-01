@@ -34,3 +34,15 @@ D:\web\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.dll
 D:\web\DevTools\Plugins\DevTool\obj\Debug\net8.0\refint\DevTool.dll
 D:\web\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.pdb
 D:\web\DevTools\Plugins\DevTool\obj\Debug\net8.0\ref\DevTool.dll
+D:\web\tkpm\DevTools\Plugins\DevTool\bin\Debug\net8.0\DevTool.deps.json
+D:\web\tkpm\DevTools\Plugins\DevTool\bin\Debug\net8.0\DevTool.dll
+D:\web\tkpm\DevTools\Plugins\DevTool\bin\Debug\net8.0\DevTool.pdb
+D:\web\tkpm\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.GeneratedMSBuildEditorConfig.editorconfig
+D:\web\tkpm\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.AssemblyInfoInputs.cache
+D:\web\tkpm\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.AssemblyInfo.cs
+D:\web\tkpm\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.csproj.CoreCompileInputs.cache
+D:\web\tkpm\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.sourcelink.json
+D:\web\tkpm\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.dll
+D:\web\tkpm\DevTools\Plugins\DevTool\obj\Debug\net8.0\refint\DevTool.dll
+D:\web\tkpm\DevTools\Plugins\DevTool\obj\Debug\net8.0\DevTool.pdb
+D:\web\tkpm\DevTools\Plugins\DevTool\obj\Debug\net8.0\ref\DevTool.dll
