@@ -228,5 +228,129 @@ namespace DevTools.Services
                 await _premiumUpgradeRequestRepository.RemoveAsync(userId);
             }
         }
+
+        public async Task BulkDeleteUsers(List<string> userIds)
+        {
+            var failedDeletions = new List<string>();
+            var successfulDeletions = new List<string>();
+
+            foreach (var userId in userIds)
+            {
+                try
+                {
+                    var user = await _userManager.FindByIdAsync(userId);
+                    if (user == null)
+                    {
+                        failedDeletions.Add($"User {userId} not found");
+                        continue;
+                    }
+
+                    // Prevent deletion of admin users (optional safety check)
+                    var roles = await _userManager.GetRolesAsync(user);
+                    if (roles.Contains("Admin"))
+                    {
+                        failedDeletions.Add($"Cannot delete admin user {user.UserName}");
+                        continue;
+                    }
+
+                    var result = await _userManager.DeleteAsync(user);
+                    if (!result.Succeeded)
+                    {
+                        failedDeletions.Add($"Failed to delete user {user.UserName}: {string.Join(", ", result.Errors.Select(e => e.Description))}");
+                        continue;
+                    }
+
+                    // Clean up premium upgrade requests
+                    var request = await _premiumUpgradeRequestRepository.GetByIdAsync(userId);
+                    if (request != null)
+                    {
+                        await _premiumUpgradeRequestRepository.RemoveAsync(userId);
+                    }
+
+                    successfulDeletions.Add(userId);
+                }
+                catch (Exception ex)
+                {
+                    failedDeletions.Add($"Error deleting user {userId}: {ex.Message}");
+                }
+            }
+
+            if (failedDeletions.Any())
+            {
+                throw new Exception($"Bulk deletion completed with errors. Successfully deleted: {successfulDeletions.Count}, Failed: {failedDeletions.Count}. Errors: {string.Join("; ", failedDeletions)}");
+            }
+        }
+
+        public async Task BulkChangeRole(List<string> userIds, string newRole)
+        {
+            var failedChanges = new List<string>();
+            var successfulChanges = new List<string>();
+
+            // Validate role exists
+            var validRoles = new[] { "User", "Premium", "Admin" };
+            if (!validRoles.Contains(newRole))
+            {
+                throw new Exception($"Invalid role: {newRole}. Valid roles are: {string.Join(", ", validRoles)}");
+            }
+
+            foreach (var userId in userIds)
+            {
+                try
+                {
+                    var user = await _userManager.FindByIdAsync(userId);
+                    if (user == null)
+                    {
+                        failedChanges.Add($"User {userId} not found");
+                        continue;
+                    }
+
+                    var currentRoles = await _userManager.GetRolesAsync(user);
+                    if (currentRoles.Contains(newRole))
+                    {
+                        successfulChanges.Add(userId); // Already has the role, consider it successful
+                        continue;
+                    }
+
+                    // Remove current roles
+                    var removeResult = await _userManager.RemoveFromRolesAsync(user, currentRoles);
+                    if (!removeResult.Succeeded)
+                    {
+                        failedChanges.Add($"Failed to remove roles from user {user.UserName}: {string.Join(", ", removeResult.Errors.Select(e => e.Description))}");
+                        continue;
+                    }
+
+                    // Add new role
+                    var addResult = await _userManager.AddToRoleAsync(user, newRole);
+                    if (!addResult.Succeeded)
+                    {
+                        // Rollback: restore original roles
+                        await _userManager.AddToRolesAsync(user, currentRoles);
+                        failedChanges.Add($"Failed to add new role to user {user.UserName}: {string.Join(", ", addResult.Errors.Select(e => e.Description))}");
+                        continue;
+                    }
+
+                    // Handle premium upgrade requests cleanup
+                    if (newRole == "Premium" || newRole == "Admin")
+                    {
+                        var request = await _premiumUpgradeRequestRepository.GetByIdAsync(userId);
+                        if (request != null)
+                        {
+                            await _premiumUpgradeRequestRepository.RemoveAsync(userId);
+                        }
+                    }
+
+                    successfulChanges.Add(userId);
+                }
+                catch (Exception ex)
+                {
+                    failedChanges.Add($"Error changing role for user {userId}: {ex.Message}");
+                }
+            }
+
+            if (failedChanges.Any())
+            {
+                throw new Exception($"Bulk role change completed with errors. Successfully changed: {successfulChanges.Count}, Failed: {failedChanges.Count}. Errors: {string.Join("; ", failedChanges)}");
+            }
+        }
     }
 }

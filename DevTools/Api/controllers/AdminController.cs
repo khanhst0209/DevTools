@@ -3,6 +3,7 @@ using DevTools.Application.Dto.File;
 using DevTools.Application.Dto.user;
 using DevTools.Application.Exceptions.UploadFile;
 using DevTools.Application.Services.Interfaces;
+using DevTools.Dto.user;
 using DevTools.Exceptions.AccountManager.UserException;
 using DevTools.Exceptions.Plugins.PluginsException.cs;
 using DevTools.Repositories.Interfaces;
@@ -214,6 +215,49 @@ namespace DevTools.controllers
             catch (Exception ex)
             {
                 return StatusCode(500, new ErrorRespones(ex.Message));
+            }
+        }
+
+        [HttpDelete("bulk")]
+        public async Task<IActionResult> BulkDeleteUsers([FromBody] BulkDeleteUsersDTO bulkDeleteDto)
+        {
+            if (bulkDeleteDto.UserIds == null || !bulkDeleteDto.UserIds.Any())
+            {
+                return BadRequest(new ErrorRespones("No user IDs provided"));
+            }
+
+            try
+            {
+                await _accountManagerService.BulkDeleteUsers(bulkDeleteDto.UserIds);
+                return Ok(new SuccessRespone($"Successfully deleted {bulkDeleteDto.UserIds.Count} users"));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ErrorRespones(ex.Message));
+            }
+        }
+
+        [HttpPut("bulk/role")]
+        public async Task<IActionResult> BulkChangeRole([FromBody] BulkChangeRoleDTO bulkChangeRoleDto)
+        {
+            if (bulkChangeRoleDto.UserIds == null || !bulkChangeRoleDto.UserIds.Any())
+            {
+                return BadRequest(new ErrorRespones("No user IDs provided"));
+            }
+
+            if (string.IsNullOrEmpty(bulkChangeRoleDto.NewRole))
+            {
+                return BadRequest(new ErrorRespones("New role is required"));
+            }
+
+            try
+            {
+                await _accountManagerService.BulkChangeRole(bulkChangeRoleDto.UserIds, bulkChangeRoleDto.NewRole);
+                return Ok(new SuccessRespone($"Successfully changed role for {bulkChangeRoleDto.UserIds.Count} users"));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ErrorRespones(ex.Message));
             }
         }
     }
